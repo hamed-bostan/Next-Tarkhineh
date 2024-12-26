@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/drawer";
 import Link from "next/link";
 import { X } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 import { Separator } from "@/components/ui/separator";
 
 export default function NavigationMobile({ data, isDrawerOpen, handleClose }) {
