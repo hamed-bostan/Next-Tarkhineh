@@ -3,6 +3,7 @@ import Navbar from "./navbar";
 import Header from "./Header";
 import MenuSection from "./MenuSection";
 import DescriptionSection from "./DescriptionSection";
+import BranchOverview from "./BranchOverview";
 
 export default function index() {
   return (
@@ -11,6 +12,7 @@ export default function index() {
       <Header />
       <MenuSection />
       <DescriptionSection />
+      <BranchOverview />
     </>
   );
 }
