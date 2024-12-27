@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Logo from "../../common/logo";
+import Logo from "../logo";
 import Image from "next/image";
 import NavigationMobile from "./NavigationMobile";
 import NavigationDesktop from "./NavigationDesktop";
