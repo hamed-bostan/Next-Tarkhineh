@@ -1,3 +1,7 @@
+import Menu from "@/components/RestaurantMenu";
+
 export default function page() {
-  return <div>menu page</div>;
+  return <div>
+    <Menu/>
+  </div>;
 }
