@@ -1,22 +1,24 @@
-export default function InformationAboutUs() {
+import Image from "next/image";
+
+export default function Details() {
   return (
-    <div className="information_aboutUs_container">
-      <span className="information_aboutUs_title">درباره ما</span>
-      <div className="information_aboutUs_wrapper">
-        <p className="information_aboutUs_first_text_container">
+    <section className="px-5 py-4">
+      <h3 className="text-md font-bold mb-2 text-[#353535]">درباره ما</h3>
+      <div className="text-sm grid grid-cols-2 gap-x-4 gap-y-2 text-[#717171] md:grid-rows-[auto_1fr]">
+        <p className="col-span-1 row-span-1 text-justify">
           رستوران‌های زنجیره‌ای ترخینه در سال ۱۳۶۸ افتتاح گردیده‌اند و در طی این
           سال‌ها همواره با ارائه غذاهای باکیفیت و سرویس سریع و به موقع در تلاش
           برای جلب رضایت مشتریان خود بوده‌اند. در طی این سال‌ها اولویت جلب رضایت
           مشتریان بوده است.
         </p>
-        <div className="information_aboutUs_image_container">
-          <img
-            src="assets/images/bannerImages/aboutUs_image.png"
-            alt=""
-            className="information_aboutUs_image"
-          />
-        </div>
-        <p className="information_aboutUs_second_text_container">
+        <Image
+          width={80}
+          height={80}
+          src="/assets/images/bannerImages/aboutUs_image.png"
+          alt="About us image"
+          className="rounded-md col-span-1 h-full w-full object-cover object-center md:row-span-2"
+        />
+        <p className="col-span-2 text-justify md:col-span-1">
           دراین خصوص ترخینه همیشه در تلاش بوده تا در طی این زمان‌ها کیفیت غذاهای
           خود را در بهترین حالت نگه داشته و حتی با نوسانات قیمت‌های مواد اولیه
           در بازار قیمت خود را ثابت نگه داشته است. ترخینه شعبات خودرا افتتاح
@@ -29,6 +31,6 @@ export default function InformationAboutUs() {
           ایرانیان سالم و سلامت باشند.
         </p>
       </div>
-    </div>
+    </section>
   );
 }
