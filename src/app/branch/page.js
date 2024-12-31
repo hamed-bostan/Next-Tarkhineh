@@ -1,3 +1,9 @@
+import RestaurantBranch from "@/components/RestaurantBranch";
+
 export default function page() {
-  return <div>Branch page</div>;
+  return (
+    <div>
+      <RestaurantBranch />
+    </div>
+  );
 }
