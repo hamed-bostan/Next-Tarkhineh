@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
-export default function FoodCard({ foodItem }) {
+export default function SandwichesCard({ foodItem }) {
   return (
     <div className="h-28 grid grid-cols-3 grid-rows-3 border border-[#CBCBCB] rounded-md overflow-hidden">
       <FoodImage {...foodItem} />
