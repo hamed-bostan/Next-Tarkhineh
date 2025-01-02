@@ -5,11 +5,11 @@ import SandwichesList from "./sandwiches/SandwichesList";
 
 export default function FoodList() {
   return (
-    <>
+    <div className="px-5 py-6">
       <IranianFoodList />
       <NonIranianFoodList />
       <PizzaList />
       <SandwichesList />
-    </>
+    </div>
   );
 }
