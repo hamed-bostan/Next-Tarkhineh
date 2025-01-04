@@ -1,7 +1,7 @@
 import MyButton from "../common/MyButton";
 import MyInput from "../common/MyInput";
 
-export default function FranchiseConsultation() {
+export default function Consultation() {
   return (
     <div className="py-9">
       <span className="text-center block mb-6">دریافت مشاوره</span>

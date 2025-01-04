@@ -23,7 +23,7 @@ const highlightDetails = [
   },
 ];
 
-export default function FranchiseHighlights() {
+export default function Highlights() {
   return (
     <div className="grid grid-cols-4 place-items-center py-9">
       {highlightDetails.map((item) => {

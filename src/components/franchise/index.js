@@ -1,9 +1,9 @@
 import Banner from "../common/Banner";
 import { Separator } from "../ui/separator";
-import FranchiseConsultation from "./FranchiseConsultation";
-import FranchiseHighlights from "./FranchiseHighlights";
-import FranchisePrivilege from "./FranchisePrivilege";
-import FranchiseRequestForm from "./franchiseRequestForm";
+import Consultation from "./Consultation";
+import Highlights from "./Highlights";
+import Privilege from "./Privilege";
+import RequestForm from "./requestForm";
 
 export default function Franchise() {
   return (
@@ -15,13 +15,13 @@ export default function Franchise() {
         isButton={false}
       />
       <div className="px-12">
-        <FranchiseHighlights />
+        <Highlights />
         <Separator />
-        <FranchisePrivilege />
+        <Privilege />
         <Separator />
-        <FranchiseConsultation />
+        <Consultation />
         <Separator />
-        <FranchiseRequestForm />
+        <RequestForm />
       </div>
     </div>
   );

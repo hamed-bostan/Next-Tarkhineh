@@ -11,7 +11,7 @@ const PrivilegeDetails = [
   { id: "8", text: "طرح های تشویقی برای ارتقا فروش" },
 ];
 
-export default function FranchisePrivilege() {
+export default function Privilege() {
   return (
     <div className="py-9">
       <h2 className="font-bold text-center mb-6">مزیت دریافت نمایندگی</h2>

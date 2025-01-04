@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export default function AddressProperty() {
   return (
-    <div>
+    <div className="mb-12">
       <span className="mb-6 block">آدرس ملک متقاضی</span>
-      <div className="grid grid-cols-3 gap-x-6 gap-y-4 grid-rows-3">
+      <div className="grid grid-cols-3 gap-x-4 gap-y-4 grid-rows-3">
         <MyInput placeholder="استان" style="h-full" />
         <MyInput placeholder="شهر" style="h-full" />
         <Image
