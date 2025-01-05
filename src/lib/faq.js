@@ -1,6 +1,7 @@
-export const faqDetails = [
+export const tabDetails = [
   {
     id: "1",
+    category: "faq",
     value: "item-1",
     title: "امکانات ترخینه",
     information:
@@ -8,6 +9,7 @@ export const faqDetails = [
   },
   {
     id: "2",
+    category: "faq",
     value: "item-2",
     title: "حساب کاربری در ترخینه",
     information:
@@ -15,6 +17,7 @@ export const faqDetails = [
   },
   {
     id: "3",
+    category: "faq",
     value: "item-3",
     title: "سابقه خرید",
     information:
@@ -22,6 +25,7 @@ export const faqDetails = [
   },
   {
     id: "4",
+    category: "faq",
     value: "item-4",
     title: "راه‌های پرداخت",
     information:
@@ -29,6 +33,7 @@ export const faqDetails = [
   },
   {
     id: "5",
+    category: "faq",
     value: "item-5",
     title: "تفاوت قیمت در منو شعبات و منو وبسایت",
     information:
@@ -36,16 +41,15 @@ export const faqDetails = [
   },
   {
     id: "6",
+    category: "faq",
     value: "item-6",
     title: "هدیه و تخفیف",
     information:
       "برای استفاده از کد تخفیف میتونید به سادگی کد رو در سبد خرید، در قسمت مشخص شده وارد کنید. اعتبار هدیه هنگام انتخاب روش پرداخت برای شما نمایش داده میشه و در صورت تمایل میتونید ازش استفاده کنید.",
   },
-];
-
-export const rulesDetails = [
   {
     id: "7",
+    category: "rules",
     value: "item-7",
     title: "حداقل سفارش",
     information:
@@ -53,6 +57,7 @@ export const rulesDetails = [
   },
   {
     id: "8",
+    category: "rules",
     value: "item-8",
     title: "فاصله تحویل",
     information:
@@ -60,6 +65,7 @@ export const rulesDetails = [
   },
   {
     id: "9",
+    category: "rules",
     value: "item-9",
     title: "زمان تحویل",
     information:
@@ -67,6 +73,7 @@ export const rulesDetails = [
   },
   {
     id: "10",
+    category: "rules",
     value: "item-10",
     title: "گزینه‌های پرداخت",
     information:
@@ -74,6 +81,7 @@ export const rulesDetails = [
   },
   {
     id: "11",
+    category: "rules",
     value: "item-11",
     title: "دقت سفارش",
     information:
@@ -81,6 +89,7 @@ export const rulesDetails = [
   },
   {
     id: "12",
+    category: "rules",
     value: "item-12",
     title: "شرایط لغو سفارش",
     information:
@@ -88,6 +97,7 @@ export const rulesDetails = [
   },
   {
     id: "13",
+    category: "rules",
     value: "item-13",
     title: "شرایط بازگشت سفارش",
     information:
@@ -95,16 +105,15 @@ export const rulesDetails = [
   },
   {
     id: "14",
+    category: "rules",
     value: "item-14",
     title: "تخفیفات",
     information:
       "هر‌گونه تخفیف یا برنامه‌های وفاداری ممکن است قوانین و شرایط خاصی داشته باشد که به وضوح در وب سایت مشخص می‌شود.",
   },
-];
-
-export const privacyPolicyDetails = [
   {
     id: "15",
+    category: "privacyPolicy",
     value: "item-15",
     title: "حریم خصوصی",
     information:
@@ -112,6 +121,7 @@ export const privacyPolicyDetails = [
   },
   {
     id: "16",
+    category: "privacyPolicy",
     value: "item-16",
     title: "چه اطلاعاتی را گردآوری می‌کنیم؟",
     information:
@@ -119,6 +129,7 @@ export const privacyPolicyDetails = [
   },
   {
     id: "17",
+    category: "privacyPolicy",
     value: "item-17",
     title: "چگونه اطلاعات شما را گردآوری می‌کنیم؟",
     information:
@@ -126,6 +137,7 @@ export const privacyPolicyDetails = [
   },
   {
     id: "18",
+    category: "privacyPolicy",
     value: "item-18",
     title: "چرا به شماره تلفن شما نیاز داریم؟",
     information:
@@ -133,6 +145,7 @@ export const privacyPolicyDetails = [
   },
   {
     id: "19",
+    category: "privacyPolicy",
     value: "item-19",
     title: "فعالیت‌های مرورگر شما در هنگام بازدید از وب‌سایت ترخینه",
     information:
@@ -140,6 +153,7 @@ export const privacyPolicyDetails = [
   },
   {
     id: "20",
+    category: "privacyPolicy",
     value: "item-20",
     title: "استفاده از کوکی‌ها و دستگاه‌های ذخیره‌سازی دیگر",
     information:
@@ -147,6 +161,7 @@ export const privacyPolicyDetails = [
   },
   {
     id: "21",
+    category: "privacyPolicy",
     value: "item-21",
     title: "اطلاعات بیشتر",
     information:

@@ -3,18 +3,14 @@
 import Banner from "../common/Banner";
 import { useState } from "react";
 import ContentSection from "./ContentSection";
-import { faqDetails } from "@/lib/faq";
-import { privacyPolicyDetails } from "@/lib/faq";
-import { rulesDetails } from "@/lib/faq";
-
-const sections = [
-  { id: "faq", title: "سوالات متداول", details: faqDetails },
-  { id: "rules", title: "قوانین ترخینه", details: rulesDetails },
-  { id: "privacy", title: "حریم خصوصی", details: privacyPolicyDetails },
-];
+import { tabDetails } from "@/lib/faq";
 
 export default function FAQ() {
   const [activeTab, setActiveTab] = useState("faq");
+
+  function handleTabClick(tab) {
+    setActiveTab(tab);
+  }
 
   return (
     <>
@@ -23,20 +19,52 @@ export default function FAQ() {
         text="سوالات متداول از ترخینه"
         isButton={false}
       />
-      <div className="text-sm text-[#717171] bg-[#EDEDED] flex gap-x-4 h-10 px-5 items-center">
-        {sections.map((section) => (
-          <span key={section.id} onClick={() => setActiveTab(section.id)}>
-            {section.title}
-          </span>
+      <CategoryNavigation
+        handleTabClick={handleTabClick}
+        activeTab={activeTab}
+      />
+      <ContentDisplay activeTab={activeTab} />
+    </>
+  );
+}
+
+function CategoryNavigation({ handleTabClick, activeTab }) {
+  return (
+    <div className="text-sm text-[#717171] bg-[#EDEDED] flex gap-x-4 h-10 px-5 items-center">
+      <span
+        onClick={() => handleTabClick("faq")}
+        className={activeTab === "faq" ? "font-bold" : ""}
+      >
+        سوالات متداول
+      </span>
+      <span
+        onClick={() => handleTabClick("rules")}
+        className={activeTab === "rules" ? "font-bold" : ""}
+      >
+        قوانین ترخینه
+      </span>
+      <span
+        onClick={() => handleTabClick("privacyPolicy")}
+        className={activeTab === "privacyPolicy" ? "font-bold" : ""}
+      >
+        حریم خصوصی
+      </span>
+    </div>
+  );
+}
+
+function ContentDisplay({ activeTab }) {
+  const filteredSections = tabDetails.filter(
+    (section) => section.category === activeTab
+  );
+
+  return (
+    <div className="px-5 pt-3 pb-6">
+      <div className="border border-[#CBCBCB] rounded-sm">
+        {filteredSections.map((section) => (
+          <ContentSection key={section.id} details={[section]} />
         ))}
       </div>
-
-      {sections.map(
-        (section) =>
-          activeTab === section.id && (
-            <ContentSection key={section.id} details={section.details} />
-          )
-      )}
-    </>
+    </div>
   );
 }

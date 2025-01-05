@@ -7,21 +7,15 @@ import {
 
 export default function ContentSection({ details }) {
   return (
-    <div className="px-5 pt-3 pb-6">
-      <Accordion
-        type="single"
-        collapsible
-        className="w-full text-[#353535] border border-[#CBCBCB] rounded-sm"
-      >
-        {details.map((item) => (
-          <AccordionItem value={item.value} className="px-4" key={item.id}>
-            <AccordionTrigger className="hover:no-underline py-2">
-              {item.title}
-            </AccordionTrigger>
-            <AccordionContent>{item.information}</AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
-    </div>
+    <Accordion type="single" collapsible className="w-full text-[#353535]">
+      {details.map((item) => (
+        <AccordionItem value={item.value} className="px-4 py-2" key={item.id}>
+          <AccordionTrigger className="hover:no-underline p-0 text-start">
+            {item.title}
+          </AccordionTrigger>
+          <AccordionContent>{item.information}</AccordionContent>
+        </AccordionItem>
+      ))}
+    </Accordion>
   );
 }
