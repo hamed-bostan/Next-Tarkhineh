@@ -1,17 +1,20 @@
 "use client";
 
 import Banner from "../common/Banner";
-import FAQSection from "./FAQSection";
-import RulesSection from "./RulesSection";
-import PrivacyPolicySection from "./PrivacyPolicySection";
 import { useState } from "react";
+import ContentSection from "./ContentSection";
+import { faqDetails } from "@/lib/faq";
+import { privacyPolicyDetails } from "@/lib/faq";
+import { rulesDetails } from "@/lib/faq";
+
+const sections = [
+  { id: "faq", title: "سوالات متداول", details: faqDetails },
+  { id: "rules", title: "قوانین ترخینه", details: rulesDetails },
+  { id: "privacy", title: "حریم خصوصی", details: privacyPolicyDetails },
+];
 
 export default function FAQ() {
   const [activeTab, setActiveTab] = useState("faq");
-
-  function handleClick(newTab) {
-    setActiveTab(newTab);
-  }
 
   return (
     <>
@@ -21,13 +24,19 @@ export default function FAQ() {
         isButton={false}
       />
       <div className="text-sm text-[#717171] bg-[#EDEDED] flex gap-x-4 h-10 px-5 items-center">
-        <span onClick={() => handleClick("faq")}>سوالات متداول</span>
-        <span onClick={() => handleClick("rules")}>قوانین ترخینه</span>
-        <span onClick={() => handleClick("privacy")}>حریم خصوصی</span>
+        {sections.map((section) => (
+          <span key={section.id} onClick={() => setActiveTab(section.id)}>
+            {section.title}
+          </span>
+        ))}
       </div>
-      {activeTab === "faq" && <FAQSection />}
-      {activeTab === "rules" && <RulesSection />}
-      {activeTab === "privacy" && <PrivacyPolicySection />}
+
+      {sections.map(
+        (section) =>
+          activeTab === section.id && (
+            <ContentSection key={section.id} details={section.details} />
+          )
+      )}
     </>
   );
 }

@@ -4,9 +4,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { faqDetails } from "@/lib/faq";
 
-export default function FAQSection() {
+export default function ContentSection({ details }) {
   return (
     <div className="px-5 pt-3 pb-6">
       <Accordion
@@ -14,8 +13,8 @@ export default function FAQSection() {
         collapsible
         className="w-full text-[#353535] border border-[#CBCBCB] rounded-sm"
       >
-        {faqDetails.map((item) => (
-          <AccordionItem value={item.value} className="px-4">
+        {details.map((item) => (
+          <AccordionItem value={item.value} className="px-4" key={item.id}>
             <AccordionTrigger className="hover:no-underline py-2">
               {item.title}
             </AccordionTrigger>
