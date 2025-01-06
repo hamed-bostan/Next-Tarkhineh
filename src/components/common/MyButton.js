@@ -13,7 +13,7 @@ export default function MyButton({
     <div className={containerStyle}>
       <Button
         variant={variant}
-        className={`text-[#FFFFFF] text-xs hover:bg-[#326343] md:text-base ${buttonStyle}`}
+        className={`text-[#FFFFFF] text-xs text-center hover:bg-[#326343] md:text-base ${buttonStyle}`}
       >
         <img src={imageSrc} className={iconStyle} alt={alt} />
         {label}
