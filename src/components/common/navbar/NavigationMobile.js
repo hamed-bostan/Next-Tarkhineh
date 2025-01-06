@@ -9,15 +9,19 @@ import Link from "next/link";
 import { X } from "lucide-react";
 import { Button } from "../../ui/button";
 import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
 
 export default function NavigationMobile({ data, isDrawerOpen, handleClose }) {
   return (
     <Drawer open={isDrawerOpen} onOpenChange={handleClose}>
       <DrawerContent className="md:hidden">
         <DrawerHeader className="relative gap-0">
-          <img
-            src="assets/images/bannerImages/top_frame.png"
+          <Image
+            width={200}
+            height={80}
+            src="/assets/images/bannerImages/banner-sidebar.jpg"
             alt="Banner image"
+            className="w-full h-full"
           />
           <DrawerTitle />
           <DrawerDescription className="absolute top-4 left-4">
