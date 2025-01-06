@@ -1,9 +1,37 @@
+@font-face {
+  font-family: "CustomFont";
+  src: url("/fonts/woff2/Estedad-Regular.woff2") format("woff2"),
+    url("/fonts/ttf/Estedad-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CustomFont";
+  src: url("/fonts/woff2/Estedad-Medium.woff2") format("woff2"),
+    url("/fonts/ttf/Estedad-Medium.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CustomFont";
+  src: url("/fonts/woff2/Estedad-Bold.woff2") format("woff2"),
+    url("/fonts/ttf/Estedad-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --font-custom: "CustomFont", Arial, Helvetica, sans-serif;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-custom); /* Use your custom font */
 }
 
 @layer base {
