@@ -5,13 +5,15 @@ import {
   DrawerHeader,
   DrawerTitle,
 } from "@/components/ui/drawer";
-import Link from "next/link";
 import { X } from "lucide-react";
 import { Button } from "../../ui/button";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function NavigationMobile({ data, isDrawerOpen, handleClose }) {
+
   return (
     <Drawer open={isDrawerOpen} onOpenChange={handleClose}>
       <DrawerContent className="md:hidden">
@@ -49,11 +51,19 @@ export default function NavigationMobile({ data, isDrawerOpen, handleClose }) {
 }
 
 function NavigationList({ item, isLast }) {
+  const pathname = usePathname();
+
   return (
     <>
       <Link href={item.path} className="flex items-center gap-x-1 py-2">
-        <img src={item.image} alt={item.text} className="w-4 h-4" />
-        <span className="text-sm">{item.text}</span>
+
+        <span
+          className={`text-xs text-[#353535] ${
+            pathname === item.path ? "text-[#417F56] text-lg font-bold" : ""
+          }`}
+        >
+          {item.text}
+        </span>
       </Link>
       {isLast && <Separator />}
     </>

@@ -2,28 +2,28 @@
 
 import { useState } from "react";
 import Logo from "../logo";
-import Image from "next/image";
 import NavigationMobile from "./NavigationMobile";
 import NavigationDesktop from "./NavigationDesktop";
+import Image from "next/image";
 
 const navigationItems = [
   {
     id: "1",
     text: "صفحه اصلی",
     path: "/",
-    image: "/assets/images/icons/home.png",
+    image: "/assets/images/icons/home.svg",
   },
   {
     id: "2",
     text: "شعبه",
-    icon: "assets/images/icons/arrow-down.png",
+    icon: "/assets/images/icons/arrow-down.png",
     path: "/branch",
     image: "/assets/images/icons/menu-board_02.png",
   },
   {
     id: "3",
     text: "منو",
-    icon: "assets/images/icons/arrow-down.png",
+    icon: "/assets/images/icons/arrow-down.png",
     path: "/menu",
     image: "/assets/images/icons/home-hashtag.png",
   },
@@ -37,13 +37,13 @@ const navigationItems = [
     id: "5",
     text: "درباره ما",
     path: "/about-us",
-    image: "/assets/images/icons/profile-2user.png",
+    image: "/assets/images/icons/profile-2user.svg",
   },
   {
     id: "6",
     text: "تماس با ما",
     path: "/contact-us",
-    image: "/assets/images/icons/call-calling.png",
+    image: "/assets/images/icons/call-calling.svg",
   },
 ];
 
@@ -75,11 +75,14 @@ export default function Navbar() {
 
 function MenuIcon({ handleOpen }) {
   return (
-    <img
+    <Image
       onClick={handleOpen}
-      className="h-6 md:hidden"
-      src="assets/images/icons/menu.png"
+      className="h-6 w-6 md:hidden"
+      src="/assets/images/icons/menu.png"
       alt="menu icon"
+      width={30}
+      height={30}
+      sizes="40px"
     />
   );
 }
@@ -88,24 +91,27 @@ function ActionButton() {
   return (
     <div className="flex items-center gap-x-1">
       <Image
-        src="assets/images/icons/search-normal.svg"
-        alt="cart icon"
-        width={50}
-        height={50}
+        src="/assets/images/icons/search-normal.svg"
+        alt="search icon"
+        width={30}
+        height={30}
+        sizes="40px"
         className="hidden md:block h-4 w-4 bg-[#E5F2E9] p-2 box-content rounded-sm"
       />
       <Image
-        src="assets/images/icons/shopping-cart.svg"
+        src="/assets/images/icons/shopping-cart.svg"
         alt="cart icon"
-        width={50}
-        height={50}
+        width={30}
+        height={30}
+        sizes="40px"
         className="h-4 w-4 bg-[#E5F2E9] p-2 box-content rounded-sm"
       />
       <Image
         src="/assets/images/icons/user.svg"
         alt="user icon"
-        width={50}
-        height={50}
+        width={30}
+        height={30}
+        sizes="40px"
         className="h-4 w-4 bg-[#E5F2E9] p-2 box-content rounded-sm"
       />
     </div>

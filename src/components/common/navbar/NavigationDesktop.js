@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function NavigationDesktop({ data }) {
@@ -16,7 +17,9 @@ function NavigationList({ item }) {
       <Link href={item.path}>
         <span className="text-sm">{item.text}</span>
       </Link>
-      {item.icon && <img src={item.icon} className="w-4 h-4" />}
+      {item.icon && (
+        <Image src={item.icon} width={50} height={50} alt="arrow down icon" className="w-4 h-4" />
+      )}
     </div>
   );
 }
