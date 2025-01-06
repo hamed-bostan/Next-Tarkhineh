@@ -18,7 +18,7 @@ function NavigationList({ item }) {
         <span className="text-sm">{item.text}</span>
       </Link>
       {item.icon && (
-        <Image src={item.icon} width={50} height={50} alt="arrow down icon" className="w-4 h-4" />
+        <Image src={item.icon} width={40} height={40} alt="arrow down icon" className="w-4 h-4" />
       )}
     </div>
   );

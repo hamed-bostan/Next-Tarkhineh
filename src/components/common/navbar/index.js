@@ -16,22 +16,21 @@ const navigationItems = [
   {
     id: "2",
     text: "شعبه",
-    icon: "/assets/images/icons/arrow-down.png",
+    icon: "/assets/images/icons/arrow-down.svg",
     path: "/branch",
-    image: "/assets/images/icons/menu-board_02.png",
+    image: "/assets/images/icons/menu-board.svg",
   },
   {
     id: "3",
     text: "منو",
-    icon: "/assets/images/icons/arrow-down.png",
+    icon: "/assets/images/icons/arrow-down.svg",
     path: "/menu",
-    image: "/assets/images/icons/home-hashtag.png",
+    image: "/assets/images/icons/home-hashtag.svg",
   },
   {
     id: "4",
     text: "اعطای نمایندگی",
     path: "/franchise",
-    image: "/assets/images/icons/diagram_02.png",
   },
   {
     id: "5",
@@ -65,7 +64,7 @@ export default function Navbar() {
       <NavigationMobile
         isDrawerOpen={isDrawerOpen}
         handleClose={handleClose}
-        data={navigationItems}
+        navigationItems={navigationItems}
       />
       <NavigationDesktop data={navigationItems} />
       <ActionButton />
@@ -78,11 +77,11 @@ function MenuIcon({ handleOpen }) {
     <Image
       onClick={handleOpen}
       className="h-6 w-6 md:hidden"
-      src="/assets/images/icons/menu.png"
+      src="/assets/images/icons/menu.svg"
       alt="menu icon"
       width={30}
       height={30}
-      sizes="40px"
+      sizes="30px"
     />
   );
 }
