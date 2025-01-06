@@ -66,7 +66,7 @@ export default function Navbar() {
         handleClose={handleClose}
         navigationItems={navigationItems}
       />
-      <NavigationDesktop data={navigationItems} />
+      <NavigationDesktop navigationItems={navigationItems} />
       <ActionButton />
     </div>
   );
