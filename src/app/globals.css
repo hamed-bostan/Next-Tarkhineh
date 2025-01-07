@@ -16,6 +16,14 @@
 
 @font-face {
   font-family: "CustomFont";
+  src: url("/fonts/woff2/Estedad-SemiBold.woff2") format("woff2"),
+    url("/fonts/ttf/Estedad-SemiBold.ttf") format("ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CustomFont";
   src: url("/fonts/woff2/Estedad-Bold.woff2") format("woff2"),
     url("/fonts/ttf/Estedad-Bold.ttf") format("ttf");
   font-weight: 700;
