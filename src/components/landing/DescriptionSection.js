@@ -1,61 +1,78 @@
 import Image from "next/image";
-import { Button } from "../ui/button";
+import MyButton from "../common/MyButton";
 
 const cardItems = [
   {
     id: "1",
-    icon: "/assets/images/icons/user_02.png",
+    icon: "/assets/images/icons/user-2.svg",
     text: "پرسنلی مجرب و حرفه‌ای",
   },
   {
     id: "2",
-    icon: "/assets/images/icons/diagram.png",
+    icon: "/assets/images/icons/diagram-2.svg",
     text: "کیفیت بالای غذاها",
   },
   {
     id: "3",
-    icon: "/assets/images/icons/home-wifi.png",
+    icon: "/assets/images/icons/home-wifi-2.svg",
     text: "محیطی دلنشین و آرام",
   },
   {
     id: "4",
-    icon: "/assets/images/icons/menu-board.png",
+    icon: "/assets/images/icons/menu-board-2.svg",
     text: "منوی متنوع",
   },
 ];
 
 export default function DescriptionSection() {
   return (
-    <section className="bg-[url('/assets/images/bannerImages/about.png')] bg-cover bg-center h-80 px-5 py-4">
-      <div className="text-white text-sm mb-6">
-        <span className="block mb-2">رستوران‌های زنجیره‌ای ترخینه</span>
-        <p className="mb-2">
-          مهمان‌نوازی یکی از مهم‌ترین مشخصه‌های ایرانیان است و باعث افتخار ماست
-          که بیش از 20 سال است خدمت‌گزار مردم شریف ایران هستیم. ما در
-          رستوران‌های زنجیره‌ای ترخینه همواره تلاش کردیم که در محیطی اصیل بر
-          پایه معماری و طراحی مدرن در کنار طبیعتی دلنواز، غذایی سالم و درخور شان
-          شما عزیزان ارائه دهیم.
-        </p>
-        <Button variant="outlined">اطلاعات بیشتر</Button>
-      </div>
+    <section className="bg-[url('/assets/images/bannerImages/about.png')] bg-cover bg-center px-5 py-4 md:h-80 md:px-10 lg:px-28 md:grid md:grid-cols-2 md:place-items-center lg:gap-x-10">
+      <DescriptionDetails />
       <CardSection data={cardItems} />
     </section>
   );
 }
 
+function DescriptionDetails() {
+  return (
+    <div className="text-[#FFFFFF] mb-6 md:mb-0">
+      <span className="block mb-2 md:text-lg md:mb-4">
+        رستوران‌های زنجیره‌ای ترخینه
+      </span>
+      <p className="mb-3 text-xs text-justify md:text-sm md:mb-4">
+        مهمان‌نوازی یکی از مهم‌ترین مشخصه‌های ایرانیان است و باعث افتخار ماست که
+        بیش از 20 سال است خدمت‌گزار مردم شریف ایران هستیم. ما در رستوران‌های
+        زنجیره‌ای ترخینه همواره تلاش کردیم که در محیطی اصیل بر پایه معماری و
+        طراحی مدرن در کنار طبیعتی دلنواز، غذایی سالم و درخور شان شما عزیزان
+        ارائه دهیم.
+      </p>
+      <MyButton
+        label="اطلاعات بیشتر"
+        variant="outline"
+        imageSrc="/assets/images/icons/arrow-left.svg"
+        alt="arrow left icon"
+        iconStyle="w-4 h-4 order-2 md:w-5 md:h-5"
+        buttonStyle="bg-transparent mr-auto hover:text-[#FFFFFF]"
+      />
+    </div>
+  );
+}
+
 function CardSection({ data }) {
   return (
-    <div className="grid grid-cols-2 gap-x-12 gap-y-4">
+    <div className="grid grid-cols-2 gap-x-12 gap-y-4 md:gap-6 md:mr-auto">
       {data.map((item) => (
-        <div key={item.id} className="flex flex-col gap-y-1 items-center">
+        <div key={item.id}>
           <Image
             src={item.icon}
             alt={item.text}
-            width={50}
-            height={50}
-            className="w-6 h-6"
+            width={30}
+            height={30}
+            className="w-6 h-6 md:w-7 md:h-7 mx-auto mb-1 md:mb-3"
           />
-          <span className="text-white text-sm">{item.text}</span>
+          <span className="text-center block text-[#FFFFFF] text-xs md:text-sm">
+            {item.text}
+          </span>
         </div>
       ))}
     </div>
