@@ -1,7 +1,7 @@
 import MenuSection from "./MenuSection";
 import DescriptionSection from "./DescriptionSection";
-import BranchOverview from "./BranchOverview";
 import Banner from "../common/Banner";
+import BranchOverview from "./branchOverview";
 
 export default function index() {
   return (
