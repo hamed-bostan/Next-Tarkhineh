@@ -38,7 +38,7 @@ const branchList = [
 export default function BranchOverview() {
   return (
     <section className="px-5 py-6">
-      <h2 className="block text-center mb-3">ترخینه گردی</h2>
+      <h2 className="block text-center mb-3 text-[#353535] md:text-lg font-bold md:mb-5">ترخینه گردی</h2>
       <BranchListContainer branches={branchList} />
     </section>
   );
@@ -46,7 +46,7 @@ export default function BranchOverview() {
 
 function BranchListContainer({ branches }) {
   return (
-    <div className="flex flex-col gap-y-3">
+    <div className="flex flex-col gap-y-3 md:grid md:grid-cols-4 md:gap-x-5">
       {branches.map((branch) => (
         <BranchItem branch={branch} key={branch.id} />
       ))}
@@ -56,8 +56,8 @@ function BranchListContainer({ branches }) {
 
 function BranchItem({ branch }) {
   return (
-    <div className="grid grid-cols-2 grid-rows-2 border border-[#CBCBCB] h-20 rounded-sm overflow-hidden">
-      <div className="relative col-span-1 row-span-2">
+    <div className="grid grid-cols-2 grid-rows-2 border border-[#CBCBCB] rounded-sm overflow-hidden md:grid-cols-1 md:grid-rows-[auto_1fr]">
+      <div className="relative col-span-1 row-span-2 h-20 md:h-40 lg:h-48 md:row-span-1">
         <Image
           width={100}
           height={100}
@@ -68,11 +68,11 @@ function BranchItem({ branch }) {
         <img
           src="assets/images/icons/expand_01.png"
           alt="expand icon"
-          className="absolute bottom-2 right-2 w-4 h-4"
+          className="absolute bottom-2 right-2 w-4 h-4 md:hidden"
         />
       </div>
-      <div className="p-2 grid col-span-1 row-span-2 text-center">
-        <h3 className="text-md text-[#353535] row-span-1">{branch.title}</h3>
+      <div className="p-2 col-span-1 row-span-2 text-center md:row-span-1 md:py-4">
+        <h3 className="text-md text-[#353535] row-span-1 mb-1 md:mb-2">{branch.title}</h3>
         <p className="text-sm text-[#717171] row-span-1">{branch.address}</p>
       </div>
     </div>
