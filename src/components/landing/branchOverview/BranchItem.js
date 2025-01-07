@@ -21,8 +21,10 @@ function DisplayingImage({ branch }) {
         className="w-full h-full object-cover group-hover:opacity-40"
       />
       <div className="hidden md:block absolute inset-0 bg-[#181818] opacity-0 group-hover:opacity-65 transition-opacity duration-300 z-20"></div>
-      <img
-        src="assets/images/icons/expand_01.png"
+      <Image
+        src="/assets/images/icons/expand_01.png"
+        width={30}
+        height={30}
         alt="expand icon"
         className="absolute bottom-2 right-2 w-4 h-4 md:hidden"
       />
@@ -31,7 +33,7 @@ function DisplayingImage({ branch }) {
         height={40}
         src="/assets/images/icons/expand-desktop.svg"
         alt="expand icon"
-        className="hidden absolute top-1/2 left-1/2 w-12 h-12 -translate-x-1/2 -translate-y-1/2 z-30 md:group-hover:block"
+        className="hidden absolute top-1/2 left-1/2 w-12 h-12 -translate-x-1/2 -translate-y-1/2 z-30 md:group-hover:block cursor-pointer"
       />
     </div>
   );
@@ -39,9 +41,9 @@ function DisplayingImage({ branch }) {
 
 function DisplayingDetails({ branch }) {
   return (
-    <div className="md:h-32">
+    <div className="md:h-28">
       <div className="p-2 col-span-1 row-span-2 text-center md:row-span-1 md:py-4">
-        <h3 className="text-sm font-medium text-[#353535] row-span-1 mb-1 md:mb-4 md:text-lg md:font-semibold">
+        <h3 className="text-sm font-medium text-[#353535] row-span-1 mb-1 md:mb-3 md:text-lg md:font-semibold">
           {branch.title}
         </h3>
         <p className="text-xs text-[#717171] row-span-1 md:text-sm md:mb-4">
