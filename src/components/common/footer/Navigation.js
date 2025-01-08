@@ -16,7 +16,7 @@ const footerIcons = [
 
 export default function Navigation() {
   return (
-    <div className="col-span-2 md:col-span-1 grid grid-cols-2 grid-rows-5 text-[#fff]">
+    <div className="col-span-2 md:col-span-1 grid grid-cols-2 grid-rows-5 text-[#EDEDED]">
       <span className="text-sm mb-2 md:text-base md:mb-3 md:font-medium">
         دتسرسی آسان
       </span>
