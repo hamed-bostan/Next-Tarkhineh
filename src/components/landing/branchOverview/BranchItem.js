@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function BranchItem({ branch }) {
   return (
-    <div className="grid grid-cols-2 grid-rows-2 border border-[#CBCBCB] rounded-sm overflow-hidden md:grid-cols-1 md:grid-rows-[auto_1fr] md:rounded-lg group">
+    <div className="grid grid-cols-2 grid-rows-2 border border-[#CBCBCB] rounded-sm overflow-hidden md:grid-cols-1 md:grid-rows-[auto_1fr] md:rounded-lg group md:hover:border-[#315F41] md:hover:shadow-lg">
       <DisplayingImage branch={branch} />
       <DisplayingDetails branch={branch} />
     </div>
