@@ -20,12 +20,10 @@ export default function BranchCard({ data }) {
         <div className="mt-3 flex gap-x-4 justify-center">
           <MyButton
             variant="outline"
-            containerStyle="w-full "
             label="صفحه شعبه"
             buttonStyle="h-6 py-0 w-full text-[#417F56] border-[#417F56] rounded-sm md:h-9 md:w-2/3"
           />
           <MyButton
-            containerStyle="w-full "
             label="دیدن در نقشه"
             buttonStyle="h-6 bg-[#417F56] py-0 w-full rounded-sm md:h-9 md:w-2/3"
           />

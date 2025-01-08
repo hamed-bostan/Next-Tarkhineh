@@ -10,11 +10,7 @@ export default function Consultation() {
         <MyInput placeholder="شماره تماس" />
         <MyInput placeholder="زمان ایده‌آل" />
       </div>
-      <MyButton
-        containerStyle="text-center"
-        buttonStyle="bg-[#417F56] text-[#fff]"
-        label="درخواست مشاوره"
-      />
+      <MyButton buttonStyle="bg-[#417F56] text-[#fff] mx-auto" label="درخواست مشاوره" />
     </div>
   );
 }
