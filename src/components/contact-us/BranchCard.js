@@ -5,7 +5,7 @@ export default function BranchCard({ data }) {
   const { title, image, address, phoneNumber, workTime } = data;
 
   return (
-    <div className="border border-[#CBCBCB] rounded-sm overflow-hidden md:grid md:grid-cols-2 md:h-52 group">
+    <div className="border border-[#CBCBCB] rounded-sm overflow-hidden md:grid md:grid-cols-2 md:h-52 group md:rounded-lg md:hover:shadow-md">
       <div className="relative">
         <img
           src={image}
@@ -21,7 +21,7 @@ export default function BranchCard({ data }) {
           className="hidden absolute top-1/2 left-1/2 w-12 h-12 -translate-x-1/2 -translate-y-1/2 z-30 md:group-hover:block cursor-pointer"
         />
       </div>
-      <div className="text-[#717171] text-xs text-center p-4 pt-2 md:px-3 md:py-3 md:text-sm lg:py-4">
+      <div className="text-[#717171] text-xs text-center p-4 pt-2 md:px-3 md:text-sm md:flex md:flex-col md:justify-center md:py-0">
         <h3 className="block text-sm mb-2 text-[#353535] md:text-base md:font-medium md:mb-3">
           {title}
         </h3>
