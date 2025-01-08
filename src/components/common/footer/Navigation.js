@@ -39,7 +39,7 @@ export default function Navigation() {
           <img
             key={item.id}
             src={item.image}
-            className="w-4 h-4 md:w-5 md:h-5"
+            className="w-4 h-4 md:w-5 md:h-5 cursor-pointer"
           />
         ))}
       </div>
