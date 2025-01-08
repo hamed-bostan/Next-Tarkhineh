@@ -4,7 +4,7 @@ export default function Details() {
   return (
     <section className="px-5 py-4">
       <h3 className="font-bold mb-1 text-[#353535] md:text-lg md:mb-5">درباره ما</h3>
-      <div className="text-xs grid grid-cols-2 gap-x-4 gap-y-2 text-[#717171] md:grid-rows-[auto_1fr] md:text-sm">
+      <div className="text-xs grid grid-cols-2 gap-x-4 gap-y-2 text-[#717171] md:grid-rows-1 md:text-sm">
         <p className="col-span-1 row-span-1 text-justify">
           رستوران‌های زنجیره‌ای ترخینه در سال ۱۳۶۸ افتتاح گردیده‌اند و در طی این
           سال‌ها همواره با ارائه غذاهای باکیفیت و سرویس سریع و به موقع در تلاش
