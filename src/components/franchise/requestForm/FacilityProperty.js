@@ -12,7 +12,7 @@ export default function FacilityProperty() {
       </div>
       <MyButton
         label="ثبت اطلاعات"
-        buttonStyle="bg-[#417F56] text-[#fff] w-32 mx-auto"
+        buttonStyle="bg-[#417F56] w-32 mx-auto"
       />
     </div>
   );

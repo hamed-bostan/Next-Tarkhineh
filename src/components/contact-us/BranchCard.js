@@ -21,7 +21,7 @@ export default function BranchCard({ data }) {
           <MyButton
             variant="outline"
             label="صفحه شعبه"
-            buttonStyle="h-6 py-0 w-full text-[#417F56] border-[#417F56] rounded-sm md:h-9 md:w-2/3"
+            buttonStyle="h-6 py-0 w-full text-[#417F56] border-[#417F56] rounded-sm md:h-9 md:w-2/3 hover:text-[#fff]"
           />
           <MyButton
             label="دیدن در نقشه"
