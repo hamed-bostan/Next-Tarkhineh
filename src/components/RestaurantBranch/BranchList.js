@@ -36,8 +36,8 @@ export default function BranchList() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="border-none shadow-none absolute right-3 top-1/2 -translate-y-1/2 z-10" />
-        <CarouselNext className="border-none shadow-none absolute left-3 top-1/2 -translate-y-1/2 z-10" />
+        <CarouselPrevious className="border-none shadow-none absolute right-3 top-1/2 -translate-y-1/2 z- w-6 h-6 md:w-8 md:h-8" />
+        <CarouselNext className="border-none shadow-none absolute left-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 md:w-8 md:h-8" />
       </Carousel>
     </>
   );
