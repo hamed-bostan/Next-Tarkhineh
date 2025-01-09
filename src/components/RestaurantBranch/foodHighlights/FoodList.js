@@ -17,6 +17,8 @@ export default function FoodList({ title, filter }) {
             <FoodCard item={item} key={item.id} />
           ))}
         </CarouselContent>
+      </Carousel>
+      <Carousel rtl>
         <CarouselContent>
           {nonIranianFood.map((item) => (
             <FoodCard item={item} key={item.id} />
