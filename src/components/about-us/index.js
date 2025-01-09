@@ -4,13 +4,13 @@ import Highlights from "./Highlights";
 
 export default function AboutUs() {
   return (
-    <>
+    <section className="container mx-auto">
       <Banner
         imageSrc="/assets/images/bannerImages/slider_05.png"
         text="درباره ترخینه بیشتر بدانید!"
       />
       <Details />
       <Highlights />
-    </>
+    </section>
   );
 }
