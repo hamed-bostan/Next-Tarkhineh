@@ -6,7 +6,7 @@ import MyButton from "@/components/common/MyButton";
 export default function FoodCard({ item }) {
   return (
     <CarouselItem className="basis-auto">
-      <Card className="shadow-none border border-[#CBCBCB] rounded-sm overflow-hidden w-48 md:w-52 md:rounded-lg">
+      <Card className="shadow-none border border-[#CBCBCB] rounded-sm overflow-hidden w-48 md:min-h-80 md:w-52 md:rounded-lg">
         <CardContent className="p-0">
           <DisplayingImage item={item} />
           <OfferDetails item={item} />
