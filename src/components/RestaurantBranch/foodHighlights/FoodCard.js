@@ -1,14 +1,13 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { CarouselItem } from "@/components/ui/carousel";
-
-import { Button } from "../../ui/button";
 import Image from "next/image";
+import MyButton from "@/components/common/MyButton";
 
 export default function FoodCard({ item }) {
   return (
     <CarouselItem className="basis-auto">
-      <Card className="shadow-none border border-[#CBCBCB] rounded-sm overflow-hidden w-48 min-h-64">
-        <CardContent className=" p-0">
+      <Card className="shadow-none border border-[#CBCBCB] rounded-sm overflow-hidden w-48 md:w-52 md:rounded-lg">
+        <CardContent className="p-0">
           <DisplayingImage item={item} />
           <OfferDetails item={item} />
         </CardContent>
@@ -25,7 +24,7 @@ function DisplayingImage({ item }) {
       alt={title}
       width={110}
       height={110}
-      className="h-28 w-full object-cover"
+      className="h-28 w-full object-cover md:h-36"
     />
   );
 }
@@ -33,16 +32,16 @@ function DisplayingImage({ item }) {
 function OfferDetails({ item }) {
   const { title, highPrice, discount, finalPrice } = item;
   return (
-    <div className="col-span-2 row-span-3 grid grid-cols-2 p-2 text-[#353535] text-sm gap-y-1">
-      <h3 className="text-base font-bold col-span-full text-center">{title}</h3>
+    <div className="col-span-2 row-span-3 grid grid-cols-2 p-2 pt-1 text-[#353535] text-xs gap-y-1 md:text-sm md:gap-y-2 md:p-3">
+      <h3 className="col-span-full text-center text-sm md:text-base md:font-semibold">{title}</h3>
       <img
         src="/assets/images/icons/like.svg"
         alt="like icon"
         className="w-4 h-4"
       />
-      <div className="flex gap-x-2 items-center">
+      <div className="flex gap-x-1 items-center mr-auto">
         <span className="text-[#ADADAD] line-through">{highPrice}</span>
-        <span className="text-[#C30000] bg-[#FFF2F2] rounded-lg px-1">
+        <span className="text-[#C30000] bg-[#FFF2F2] rounded-lg w-8 text-center">
           {discount}
         </span>
       </div>
@@ -54,14 +53,11 @@ function OfferDetails({ item }) {
         />
         <span>5</span>
       </div>
-      <div className="flex gap-x-2">
-        <span>{finalPrice}</span>
-        <span>تومان</span>
-      </div>
-
-      <Button className="bg-[#417F56] text-[#FFFFFF] col-span-2 mt-3">
-        افزودن به سبد خرید
-      </Button>
+      <span className="mr-auto">{finalPrice} تومان</span>
+      <MyButton
+        label="افزودن به سبد خرید"
+        buttonStyle="col-span-2 mt-3 bg-[#417F56] md:text-sm md:mt-4"
+      />
     </div>
   );
 }

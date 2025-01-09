@@ -10,7 +10,7 @@ export default function FoodList({ title, filter }) {
 
   return (
     <div className="px-5 mb-6">
-      <span className="font-bold text-[#353535] mb-3 block">{title}</span>
+      <span className="font-bold text-[#353535] mb-3 block md:text-lg md:mb-5">{title}</span>
       <Carousel rtl>
         <CarouselContent>
           {filteredFood.map((item) => (
