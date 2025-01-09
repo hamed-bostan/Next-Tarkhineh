@@ -6,8 +6,8 @@ export default function ActionButton() {
       <MyButton
         imageSrc="/assets/images/icons/note.svg"
         variant="outline"
-        buttonStyle="text-[#417F56] border border-[#417F56] px-4 h-8"
-        iconStyle="w-4 h-4"
+        buttonStyle="text-[#417F56] border border-[#417F56] px-4 h-8 mx-auto md:hover:text-[#fff] md:h-9"
+        iconStyle="w-4 h-4 md:w-5 md:h-5"
         alt="note icon"
         label="مشهاده منوی کامل"
       />
