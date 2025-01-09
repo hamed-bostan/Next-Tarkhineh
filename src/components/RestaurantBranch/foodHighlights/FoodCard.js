@@ -4,7 +4,7 @@ import { CarouselItem } from "@/components/ui/carousel";
 import { Button } from "../../ui/button";
 import Image from "next/image";
 
-export default function NotIranianFoodCard({ item }) {
+export default function FoodCard({ item }) {
   return (
     <CarouselItem className="basis-auto">
       <Card className="shadow-none border border-[#CBCBCB] rounded-sm overflow-hidden w-48 min-h-64">
@@ -32,7 +32,6 @@ function DisplayingImage({ item }) {
 
 function OfferDetails({ item }) {
   const { title, highPrice, discount, finalPrice } = item;
-
   return (
     <div className="col-span-2 row-span-3 grid grid-cols-2 p-2 text-[#353535] text-sm gap-y-1">
       <h3 className="text-base font-bold col-span-full text-center">{title}</h3>

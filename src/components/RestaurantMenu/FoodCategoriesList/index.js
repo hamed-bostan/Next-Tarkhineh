@@ -1,4 +1,4 @@
-import { foodInformation } from "@/lib/data";
+import { foodInformation } from "@/lib/dataOld";
 import FoodCategoriesCard from "./FoodCategoriesCard";
 
 export default function FoodCategoriesList() {
