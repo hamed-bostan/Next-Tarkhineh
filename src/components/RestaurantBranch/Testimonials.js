@@ -56,7 +56,7 @@ const testimonialDetails = [
       "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم. ",
   },
 ];
-export default function Testimonial() {
+export default function Testimonials() {
   return (
     <div className="mt-14 px-5 py-6">
       <span className="block text-center font-bold text-[#353535] mb-3 text-sm md:text-base md:mb-4">

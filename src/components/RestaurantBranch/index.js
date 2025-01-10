@@ -3,7 +3,7 @@ import ActionButton from "./ActionButton";
 import Address from "./Address";
 import BranchList from "./BranchList";
 import FoodHighlights from "./foodHighlights";
-import Testimonial from "./Testimonial";
+import Testimonials from "./Testimonials";
 
 export default function RestaurantBranch() {
   return (
@@ -18,7 +18,7 @@ export default function RestaurantBranch() {
         <BranchList />
         <Address />
       </div>
-      <Testimonial />
+      <Testimonials />
     </section>
   );
 }
