@@ -59,39 +59,39 @@ const testimonialDetails = [
 export default function Testimonial() {
   return (
     <div className="mt-14 px-5 py-6">
-      <span className="block text-center font-bold text-[#353535] mb-3">
+      <span className="block text-center font-bold text-[#353535] mb-3 text-sm md:text-base md:mb-4">
         نظرات کاربران
       </span>
       <Carousel rtl className="w-full">
         <CarouselContent>
           {testimonialDetails.map((item, index) => (
-            <CarouselItem key={index}>
+            <CarouselItem key={index} className="md:basis-auto">
               <Card className="border-none shadow-none">
-                <CardContent className="p-0 relative h-44">
-                  <div className="border border-[#CBCBCB] rounded-md grid grid-cols-[auto_1fr] px-4 py-3">
+                <CardContent className="p-0 relative min-h-44 md:max-w-sm lg:max-w-xl">
+                  <div className="border border-[#CBCBCB] rounded-sm grid grid-cols-[auto_1fr] p-4 text-xs text-[#353535] lg:text-sm">
                     <Image
                       src={item.image}
                       alt={`Profile image of ${item.name}`}
                       width={80}
                       height={80}
-                      className="mb-1 w-14 h-14 block mx-auto"
+                      className="mb-1 w-14 h-14 block mx-auto md:w-20 md:h-20 md:mb-2"
                     />
-                    <p className="col-span-full row-span-3 col-start-2 text-[#353535] pr-2 text-justify">
+                    <p className="col-span-full row-span-3 col-start-2 pr-3 pt-2 text-justify md:p-4">
                       {item.comment}
                     </p>
-                    <span className="text-[#717171] text-sm text-center">
+                    <span className="text-[#717171] text-center md:mb-1">
                       {item.name}
                     </span>
-                    <span className="text-[#717171] text-sm text-center">
+                    <span className="text-[#717171] text-center">
                       {item.date}
                     </span>
-                    <div className="flex gap-x-1 justify-end items-center col-start-2">
+                    <div className="flex gap-x-1 justify-end items-center col-start-2 md:gap-x-2">
                       <img
                         src="/assets/images/icons/star-rate.svg"
                         alt="star rate icon"
-                        className="w-3 h-3"
+                        className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5"
                       />
-                      <span>3</span>
+                      <span className="text-sm lg:text-base">3</span>
                     </div>
                   </div>
                 </CardContent>
