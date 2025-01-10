@@ -1,6 +1,6 @@
 export default function Address() {
   return (
-    <div className="grid grid-cols-2 text-xs text-[#353535] gap-y-2 p-2 border-2 border-[#417F56] rounded-sm absolute -bottom-14 left-4 right-4 bg-[#FFFFFF] md:grid-cols-3 lg:text-sm md:left-20 md:right-20 lg:left-56 lg:right-56 lg:p-3">
+    <div className="grid grid-cols-2 text-xs text-[#353535] gap-y-2 p-2 border-2 border-[#417F56] rounded-sm absolute -bottom-11 left-5 right-5 bg-[#FFFFFF] md:grid-cols-3 lg:text-sm md:left-20 md:right-20 lg:left-56 lg:right-56 lg:p-3 md:-bottom-14 lg:-bottom-16">
       <div className="col-span-full flex gap-x-1 items-center md:col-start-2 md:col-span-1 md:flex md:flex-col">
         <img
           src="/assets/images/icons/location.svg"

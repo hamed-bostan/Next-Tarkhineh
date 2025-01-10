@@ -7,7 +7,7 @@ import Testimonial from "./Testimonial";
 
 export default function RestaurantBranch() {
   return (
-    <>
+    <section className="container mx-auto">
       <Banner
         imageSrc="/assets/images/bannerImages/Slider-RestaurantBranch.jpg"
         text="طعم بی‌نظیر طبیعت!"
@@ -19,6 +19,6 @@ export default function RestaurantBranch() {
         <Address />
       </div>
       <Testimonial />
-    </>
+    </section>
   );
 }
