@@ -5,7 +5,7 @@ export default function MyButton({
   iconStyle,
   variant,
   buttonStyle,
-  alt,
+  alt = "icon",
   label,
 }) {
   return (
@@ -13,7 +13,7 @@ export default function MyButton({
       variant={variant}
       className={`flex items-center text-[#FFFFFF] text-xs text-center hover:bg-[#326343] md:text-sm ${buttonStyle}`}
     >
-      <img src={imageSrc} className={iconStyle} alt={alt} />
+      {imageSrc && <img src={imageSrc} className={iconStyle} alt={alt} />}
       {label}
     </Button>
   );
