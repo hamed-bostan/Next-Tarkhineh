@@ -153,8 +153,8 @@ const iranianFood = [
 export default function IranianFoodList() {
   return (
     <>
-      <div className="flex justify-between mb-3">
-        <h3 className="text-[#353535] font-bold self-end">غذاهای ایرانی</h3>
+      <div className="flex justify-between mb-3 md:mb-5">
+        <h3 className="text-sm text-[#353535] font-bold self-end md:text-lg">غذاهای ایرانی</h3>
         <CheckoutButton />
       </div>
       <div className="flex flex-col gap-y-3 mb-6">
