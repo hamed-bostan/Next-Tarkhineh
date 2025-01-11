@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button";
+import MyButton from "@/components/common/MyButton";
 import Image from "next/image";
 
-export default function IranianFoodCard({ foodItem }) {
+export default function FoodCard({ foodItem }) {
   return (
     <div className="h-28 grid grid-cols-3 grid-rows-3 border border-[#CBCBCB] rounded-md overflow-hidden">
       <FoodImage {...foodItem} />
@@ -27,7 +27,7 @@ function FoodDetails({ foodItem }) {
     foodItem;
 
   return (
-    <div className="col-span-2 row-span-3 grid grid-cols-2 p-2 text-[#353535] text-sm">
+    <div className="col-span-2 row-span-3 grid grid-cols-2 p-1 text-[#353535] text-sm">
       <h3 className="text-base font-bold">{title}</h3>
       <div className="flex gap-x-2 items-center">
         <span className="text-[#ADADAD] line-through">{highPrice}</span>
@@ -40,7 +40,7 @@ function FoodDetails({ foodItem }) {
         <span>{finalPrice}</span>
         <span>تومان</span>
       </div>
-      <div className="flex gap-x-2 items-center">
+      <div className="flex gap-x-2 items-center min-w-fit">
         <img
           src="/assets/images/icons/like.svg"
           alt="like icon"
@@ -48,9 +48,7 @@ function FoodDetails({ foodItem }) {
         />
         <span>{star}</span>
       </div>
-      <Button className="bg-[#417F56] text-[#FFFFFF]">
-        افزودن به سبد خرید
-      </Button>
+      <MyButton label="افزودن به سبد خرید" buttonStyle="bg-[#417F56] text-[10px]" />
     </div>
   );
 }

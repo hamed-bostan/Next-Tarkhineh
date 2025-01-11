@@ -1,6 +1,6 @@
 import Banner from "../common/Banner";
 import FoodCategoriesList from "./FoodCategoriesList";
-import FoodList from "./foodList";
+import Foods from "./foods";
 import FoodTypesList from "./FoodTypesList";
 
 export default function RestaurantMenu() {
@@ -14,7 +14,7 @@ export default function RestaurantMenu() {
       />
       <FoodTypesList />
       <FoodCategoriesList />
-      <FoodList />
+      <Foods />
     </section>
   );
 }
