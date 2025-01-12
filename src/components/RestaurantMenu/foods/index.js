@@ -1,8 +1,4 @@
 import FoodList from "./FoodList";
-import IranianFoodList from "./iranianFood/IranianFoodList";
-import NonIranianFoodList from "./nonIranianFood/NonIranianFoodList";
-import PizzaList from "./pizza/PizzaList";
-import SandwichesList from "./sandwiches/SandwichesList";
 
 export default function Foods() {
   return (
