@@ -11,7 +11,7 @@ export default function FoodList({ filter, title }) {
       <h3 className="text-sm text-[#353535] font-bold self-end md:text-lg">
         {title}
       </h3>
-      <div className="flex flex-col gap-y-3 mb-6">
+      <div className="grid grid-cols-1 gap-y-3 mb-6 md:grid-cols-2 md:gap-5">
         {filteredFood.map((foodItem) => {
           return <FoodCard foodItem={foodItem} key={foodItem.id} />;
         })}
