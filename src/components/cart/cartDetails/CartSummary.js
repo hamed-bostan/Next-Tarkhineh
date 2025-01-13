@@ -4,7 +4,7 @@ import { OctagonAlert, Trash2 } from "lucide-react";
 
 export default function CartSummary() {
   return (
-    <div className="text-sm text-[#353535] md:border md:border-[#CBCBCB] md:p-6 md:rounded-lg">
+    <div className="text-sm text-[#353535] md:border md:border-[#CBCBCB] md:p-6 md:rounded-lg md:h-fit">
       <div className="hidden md:flex justify-between mb-3">
         <span className="text-base">سبد خرید (4)</span>
         <Trash2 color="#353535" size={20} />
