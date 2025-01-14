@@ -1,25 +1,26 @@
-import Image from "next/image";
 import MyButton from "../common/MyButton";
+
+import { User, Wifi, ChartSpline, NotepadText } from "lucide-react";
 
 const cardItems = [
   {
     id: "1",
-    icon: "/assets/images/icons/user-2.svg",
+    icon: User,
     text: "پرسنلی مجرب و حرفه‌ای",
   },
   {
     id: "2",
-    icon: "/assets/images/icons/diagram-2.svg",
+    icon: ChartSpline,
     text: "کیفیت بالای غذاها",
   },
   {
     id: "3",
-    icon: "/assets/images/icons/home-wifi-2.svg",
+    icon: Wifi,
     text: "محیطی دلنشین و آرام",
   },
   {
     id: "4",
-    icon: "/assets/images/icons/menu-board-2.svg",
+    icon: NotepadText,
     text: "منوی متنوع",
   },
 ];
@@ -63,13 +64,7 @@ function CardSection({ data }) {
     <div className="grid grid-cols-2 gap-x-12 gap-y-4 md:gap-6 md:mr-auto">
       {data.map((item) => (
         <div key={item.id}>
-          <Image
-            src={item.icon}
-            alt={item.text}
-            width={30}
-            height={30}
-            className="w-6 h-6 md:w-7 md:h-7 mx-auto mb-1 md:mb-3"
-          />
+          <item.icon className="w-6 h-6 md:w-7 md:h-7 mx-auto mb-1 md:mb-3 text-[#FFFFFF]" />
           <span className="text-center block text-[#FFFFFF] text-xs md:text-sm">
             {item.text}
           </span>

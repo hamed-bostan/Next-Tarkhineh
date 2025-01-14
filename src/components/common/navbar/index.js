@@ -4,8 +4,8 @@ import { useState } from "react";
 import Logo from "../logo";
 import NavigationMobile from "./NavigationMobile";
 import NavigationDesktop from "./NavigationDesktop";
-import Image from "next/image";
 import Link from "next/link";
+import { Menu, Search, ShoppingCart, User } from "lucide-react";
 
 const navigationItems = [
   {
@@ -75,47 +75,22 @@ export default function Navbar() {
 
 function MenuIcon({ handleOpen }) {
   return (
-    <Image
-      onClick={handleOpen}
-      className="h-6 w-6 md:hidden"
-      src="/assets/images/icons/menu.svg"
-      alt="menu icon"
-      width={30}
-      height={30}
-      sizes="30px"
-    />
+    <Menu color="#417F56" className="h-6 w-6 md:hidden" onClick={handleOpen} />
   );
 }
 
 function ActionButton() {
   return (
     <div className="flex items-center gap-x-1">
-      <Image
-        src="/assets/images/icons/search-normal.svg"
-        alt="search icon"
-        width={30}
-        height={30}
-        sizes="40px"
-        className="hidden md:block h-4 w-4 bg-[#E5F2E9] p-2 box-content rounded-sm"
-      />
-      <Link href="/cart">
-        <Image
-          src="/assets/images/icons/shopping-cart.svg"
-          alt="cart icon"
-          width={30}
-          height={30}
-          sizes="40px"
-          className="h-4 w-4 bg-[#E5F2E9] p-2 box-content rounded-sm"
-        />
+      <div className="bg-[#E5F2E9] p-2 box-content rounded-sm">
+        <Search color="#417F56" className="h-4 w-4" />
+      </div>
+      <Link href="/cart" className="bg-[#E5F2E9] p-2 box-content rounded-sm">
+        <ShoppingCart color="#417F56" className="h-4 w-4" />
       </Link>
-      <Image
-        src="/assets/images/icons/user.svg"
-        alt="user icon"
-        width={30}
-        height={30}
-        sizes="40px"
-        className="h-4 w-4 bg-[#E5F2E9] p-2 box-content rounded-sm"
-      />
+      <div className="bg-[#E5F2E9] p-2 box-content rounded-sm">
+        <User color="#417F56" className="h-4 w-4" />
+      </div>
     </div>
   );
 }

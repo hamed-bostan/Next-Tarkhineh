@@ -1,5 +1,6 @@
 import MyButton from "@/components/common/MyButton";
 import Image from "next/image";
+import { Images, Fullscreen } from "lucide-react";
 
 export default function BranchItem({ branch }) {
   return (
@@ -21,20 +22,8 @@ function DisplayingImage({ branch }) {
         className="w-full h-full object-cover"
       />
       <div className="hidden md:block absolute inset-0 bg-[#181818] opacity-0 group-hover:opacity-65 transition-opacity duration-300 z-20"></div>
-      <Image
-        src="/assets/images/icons/expand_01.png"
-        width={30}
-        height={30}
-        alt="expand icon"
-        className="absolute bottom-2 right-2 w-4 h-4 md:hidden"
-      />
-      <Image
-        width={40}
-        height={40}
-        src="/assets/images/icons/expand-desktop.svg"
-        alt="expand icon"
-        className="hidden absolute top-1/2 left-1/2 w-12 h-12 -translate-x-1/2 -translate-y-1/2 z-30 md:group-hover:block cursor-pointer"
-      />
+      <Fullscreen className="absolute bottom-2 right-2 w-4 h-4 text-[#fff] md:hidden" />
+      <Images className="hidden absolute top-1/2 left-1/2 w-8 h-8 -translate-x-1/2 -translate-y-1/2 z-30 md:group-hover:block cursor-pointer text-[#fff]" />
     </div>
   );
 }

@@ -1,3 +1,7 @@
+import { X } from "lucide-react";
+import { Instagram } from "lucide-react";
+import { Linkedin } from "lucide-react";
+
 const footerLinks = [
   { id: "1", text: "پرسش‌های متداول" },
   { id: "2", text: "شعبه اکباتان" },
@@ -9,9 +13,9 @@ const footerLinks = [
 ];
 
 const footerIcons = [
-  { id: "1", image: "/assets/images/icons/twitter.svg" },
-  { id: "2", image: "/assets/images/icons/instagram.svg" },
-  { id: "3", image: "/assets/images/icons/telegram.svg" },
+  { id: "1", image: X },
+  { id: "2", image: Instagram },
+  { id: "3", image: Linkedin },
 ];
 
 export default function Navigation() {
@@ -36,9 +40,8 @@ export default function Navigation() {
       ))}
       <div className="flex gap-x-2 row-start-5">
         {footerIcons.map((item) => (
-          <img
+          <item.image
             key={item.id}
-            src={item.image}
             className="w-4 h-4 md:w-5 md:h-5 cursor-pointer"
           />
         ))}
