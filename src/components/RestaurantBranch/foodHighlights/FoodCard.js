@@ -37,7 +37,7 @@ function OfferDetails({ item }) {
       <h3 className="col-span-full text-center text-sm md:text-base md:font-semibold">
         {title}
       </h3>
-      <Heart color="#ADADAD" className="w-4 h-4" />
+      <Heart color="#ADADAD" className="w-4 h-4 cursor-pointer" />
       <div className="flex gap-x-1 items-center mr-auto">
         <span className="text-[#ADADAD] line-through">{highPrice}</span>
         <span className="text-[#C30000] bg-[#FFF2F2] rounded-lg w-8 text-center">

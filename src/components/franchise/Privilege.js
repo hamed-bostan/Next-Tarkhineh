@@ -15,7 +15,7 @@ export default function Privilege() {
   return (
     <div className="py-9">
       <h2 className="font-bold text-center mb-6">مزیت دریافت نمایندگی</h2>
-      <div className="grid grid-cols-2 mx-auto max-w-lg gap-x-12 gap-y-4">
+      <div className="grid grid-cols-2 mx-auto max-w-2xl gap-y-4">
         {PrivilegeDetails.map((item) => (
           <div key={item.id} className="flex items-center gap-x-1 ">
             <Image

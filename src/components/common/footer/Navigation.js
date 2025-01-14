@@ -1,15 +1,16 @@
 import { X } from "lucide-react";
 import { Instagram } from "lucide-react";
 import { Linkedin } from "lucide-react";
+import Link from "next/link";
 
 const footerLinks = [
-  { id: "1", text: "پرسش‌های متداول" },
-  { id: "2", text: "شعبه اکباتان" },
-  { id: "3", text: "قوانین ترخینه" },
-  { id: "4", text: "شعبه چالوس" },
-  { id: "5", text: "حریم خصوصی" },
-  { id: "6", text: "شعبه اقدسیه" },
-  { id: "7", text: "شعبه ونک" },
+  { id: "1", text: "پرسش‌های متداول", to: "/faq" },
+  { id: "2", text: "شعبه اکباتان", to: "/branch" },
+  { id: "3", text: "قوانین ترخینه", to: "/faq" },
+  { id: "4", text: "شعبه چالوس", to: "/branch" },
+  { id: "5", text: "حریم خصوصی", to: "/faq" },
+  { id: "6", text: "شعبه اقدسیه", to: "/branch" },
+  { id: "7", text: "شعبه ونک", to: "/branch" },
 ];
 
 const footerIcons = [
@@ -28,15 +29,17 @@ export default function Navigation() {
         شعبه های ترخینه
       </span>
       {footerLinks.map((item, index) => (
-        <span
-          key={item.id}
-          className={`text-xs md:text-sm ${
-            index < footerLinks.length - 1 ? "mb-1 md:mb-2" : ""
-          }
+        <Link href={item.to}>
+          <span
+            key={item.id}
+            className={`text-xs md:text-sm ${
+              index < footerLinks.length - 1 ? "mb-1 md:mb-2" : ""
+            }
           ${index === footerLinks.length - 1 ? "col-start-2" : ""}`}
-        >
-          {item.text}
-        </span>
+          >
+            {item.text}
+          </span>
+        </Link>
       ))}
       <div className="flex gap-x-2 row-start-5">
         {footerIcons.map((item) => (

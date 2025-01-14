@@ -10,10 +10,7 @@ export default function FacilityProperty() {
         <ApplicantFeatures />
         <PropertyImages />
       </div>
-      <MyButton
-        label="ثبت اطلاعات"
-        buttonStyle="bg-[#417F56] w-32 mx-auto"
-      />
+      <MyButton label="ثبت اطلاعات" buttonStyle="bg-[#417F56] w-32 mx-auto" />
     </div>
   );
 }
@@ -25,25 +22,25 @@ function ApplicantFeatures() {
       <div className="grid grid-cols-2">
         <div className="flex items-center gap-x-2">
           <Checkbox id="terms-1" />
-          <label htmlFor="terms-1" className="text-[#717171]">
+          <label htmlFor="terms-1" className="text-[#717171] cursor-pointer">
             پروانه کسب دارد.
           </label>
         </div>
         <div className="flex items-center gap-x-2">
           <Checkbox id="terms-2" />
-          <label htmlFor="terms-2" className="text-[#717171]">
+          <label htmlFor="terms-2" className="text-[#717171] cursor-pointer">
             پارکینگ دارد.
           </label>
         </div>
         <div className="flex items-center gap-x-2">
           <Checkbox id="terms-3" />
-          <label htmlFor="terms-3" className="text-[#717171]">
+          <label htmlFor="terms-3" className="text-[#717171] cursor-pointer">
             آشپزخانه دارد.
           </label>
         </div>
         <div className="flex items-center gap-x-2">
           <Checkbox id="terms-4" />
-          <label htmlFor="terms-4" className="text-[#717171]">
+          <label htmlFor="terms-4" className="text-[#717171] cursor-pointer">
             انبار دارد.
           </label>
         </div>
@@ -62,10 +59,10 @@ function PropertyImages() {
           alt="upload image icon"
           width={50}
           height={50}
-          className="w-10 h-10"
+          className="w-10 h-10 cursor-pointer"
         />
-        <span className="text-[#717171]">
-          تصاویری از ملک را بارگذاری کنید...
+        <span className="text-[#717171] cursor-pointer">
+          تصاویری از ملک را بارگذاری کنید ...
         </span>
       </div>
     </div>
