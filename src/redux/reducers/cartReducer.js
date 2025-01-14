@@ -5,77 +5,77 @@ const initialState = {
   checkout: false,
 };
 
-// Helper function to calculate itemsCounter and totalPrice
-const sumItems = (items) =>
-  items.reduce(
-    (totals, item) => {
-      totals.itemsCounter += item.quantity;
-      totals.totalPrice += item.quantity * item.finalPrice;
-      return totals;
-    },
-    { itemsCounter: 0, totalPrice: 0 }
-  );
+const sumItems = (item) => {
+  const itemsCounter = item.reduce((total, currentQuantity) => {
+    return total + currentQuantity.quantity;
+  }, 0);
+  const totalPrice = item
+    .reduce((total, currentPrice) => {
+      return total + currentPrice.quantity * currentPrice.finalPrice;
+    }, 0)
+    .toFixed(2);
+  return { itemsCounter, totalPrice };
+};
 
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_ITEM":
-      // Check if item exists and increase quantity if so
-      const existingItem = state.selectedItems.find(
-        (item) => item.id === action.payload.id
-      );
-      const updatedItems = existingItem
-        ? state.selectedItems.map((item) =>
-            item.id === action.payload.id
-              ? { ...item, quantity: item.quantity + 1 }
-              : item
-          )
-        : [...state.selectedItems, { ...action.payload, quantity: 1 }];
+      if (!state.selectedItems.find((item) => item.id === action.payload.id)) {
+        state.selectedItems.push({
+          ...action.payload,
+          quantity: 1,
+        });
+      }
+      console.log("Updated Cart:", state.selectedItems);
 
       return {
         ...state,
-        selectedItems: updatedItems,
-        ...sumItems(updatedItems),
+        selectedItems: [...state.selectedItems],
+        ...sumItems(state.selectedItems),
+        checkout: false,
       };
 
     case "REMOVE_ITEM":
-      const remainingItems = state.selectedItems.filter(
+      const newSelectedItems = state.selectedItems.filter(
         (item) => item.id !== action.payload.id
       );
       return {
         ...state,
-        selectedItems: remainingItems,
-        ...sumItems(remainingItems),
+        selectedItems: [...newSelectedItems],
+        ...sumItems(newSelectedItems),
       };
 
     case "INCREASE":
-      const increasedItems = state.selectedItems.map((item) =>
-        item.id === action.payload.id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
+      const increaseItem = state.selectedItems.find(
+        (item) => item.id === action.payload.id
       );
-      return {
-        ...state,
-        selectedItems: increasedItems,
-        ...sumItems(increasedItems),
-      };
+      increaseItem.quantity++;
+      return { ...state, ...sumItems(state.selectedItems) };
 
     case "DECREASE":
-      const decreasedItems = state.selectedItems.map((item) =>
-        item.id === action.payload.id && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
+      const decreaseItem = state.selectedItems.find(
+        (item) => item.id === action.payload.id
       );
-      return {
-        ...state,
-        selectedItems: decreasedItems,
-        ...sumItems(decreasedItems),
-      };
+      if (decreaseItem.quantity > 1) {
+        decreaseItem.quantity--;
+      }
+      return { ...state, ...sumItems(state.selectedItems) };
 
     case "CHECKOUT":
-      return { ...initialState, checkout: true };
+      return {
+        selectedItems: [],
+        itemsCounter: 0,
+        totalPrice: 0,
+        checkout: true,
+      };
 
     case "CLEAR":
-      return initialState;
+      return {
+        selectedItems: [],
+        itemsCounter: 0,
+        totalPrice: 0,
+        checkout: false,
+      };
 
     default:
       return state;

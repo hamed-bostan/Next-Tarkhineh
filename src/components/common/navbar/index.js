@@ -5,6 +5,7 @@ import Logo from "../logo";
 import NavigationMobile from "./NavigationMobile";
 import NavigationDesktop from "./NavigationDesktop";
 import Image from "next/image";
+import Link from "next/link";
 
 const navigationItems = [
   {
@@ -97,14 +98,16 @@ function ActionButton() {
         sizes="40px"
         className="hidden md:block h-4 w-4 bg-[#E5F2E9] p-2 box-content rounded-sm"
       />
-      <Image
-        src="/assets/images/icons/shopping-cart.svg"
-        alt="cart icon"
-        width={30}
-        height={30}
-        sizes="40px"
-        className="h-4 w-4 bg-[#E5F2E9] p-2 box-content rounded-sm"
-      />
+      <Link href="/cart">
+        <Image
+          src="/assets/images/icons/shopping-cart.svg"
+          alt="cart icon"
+          width={30}
+          height={30}
+          sizes="40px"
+          className="h-4 w-4 bg-[#E5F2E9] p-2 box-content rounded-sm"
+        />
+      </Link>
       <Image
         src="/assets/images/icons/user.svg"
         alt="user icon"
