@@ -5,6 +5,7 @@ import { addItem } from "@/redux/actions/cartAction";
 
 import MyButton from "@/components/common/MyButton";
 import Image from "next/image";
+import { Heart } from "lucide-react";
 
 export default function FoodCard({ foodItem }) {
   return (
@@ -55,10 +56,9 @@ function FoodDetails({ foodItem }) {
         <span>{finalPrice}</span>
         <span>تومان</span>
       </div>
-      <img
-        src="/assets/images/icons/like.svg"
-        alt="like icon"
-        className="w-4 h-4 row-start-3 col-start-1 md:row-start-1 md:col-start-2 md:mr-auto self-center lg:self-start lg:w-6 lg:h-6 cursor-pointer"
+      <Heart
+        color="#717171"
+        className="w-4 h-4 row-start-3 col-start-1 md:row-start-1 md:col-start-2 md:mr-auto self-center lg:self-start lg:w-5 lg:h-5 cursor-pointer"
       />
       <span className="row-start-3 col-start-1 mr-6 md:row-start-4 md:mr-0 self-center">
         {star}

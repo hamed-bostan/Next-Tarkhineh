@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CarouselItem } from "@/components/ui/carousel";
 import Image from "next/image";
 import MyButton from "@/components/common/MyButton";
+import { Heart } from "lucide-react";
 
 export default function FoodCard({ item }) {
   return (
@@ -33,12 +34,10 @@ function OfferDetails({ item }) {
   const { title, highPrice, discount, finalPrice } = item;
   return (
     <div className="col-span-2 row-span-3 grid grid-cols-2 p-2 pt-1 text-[#353535] text-xs gap-y-1 md:text-sm md:gap-y-2 md:p-3">
-      <h3 className="col-span-full text-center text-sm md:text-base md:font-semibold">{title}</h3>
-      <img
-        src="/assets/images/icons/like.svg"
-        alt="like icon"
-        className="w-4 h-4"
-      />
+      <h3 className="col-span-full text-center text-sm md:text-base md:font-semibold">
+        {title}
+      </h3>
+      <Heart color="#ADADAD" className="w-4 h-4" />
       <div className="flex gap-x-1 items-center mr-auto">
         <span className="text-[#ADADAD] line-through">{highPrice}</span>
         <span className="text-[#C30000] bg-[#FFF2F2] rounded-lg w-8 text-center">

@@ -1,24 +1,24 @@
-import Image from "next/image";
+import { User, Wifi, ChartSpline, NotepadText } from "lucide-react";
 
 const info = [
   {
     id: "1",
-    image: "/assets/images/icons/user.svg",
+    image: User,
     text: "پرسنلی مجرب و حرفه‌ای",
   },
   {
     id: "2",
-    image: "/assets/images/icons/diagram.svg",
+    image: ChartSpline,
     text: "کیفیت بالای غذاها",
   },
   {
     id: "3",
-    image: "/assets/images/icons/home-wifi.svg",
+    image: Wifi,
     text: "محیطی دلنشین و آرام",
   },
   {
     id: "4",
-    image: "/assets/images/icons/menu-board.svg",
+    image: NotepadText,
     text: "منوی متنوع",
   },
 ];
@@ -33,13 +33,7 @@ export default function Highlights() {
             index < info.length - 1 ? "md:border-l md:border-[#CBCBCB]" : ""
           }`}
         >
-          <Image
-            src={item.image}
-            width={40}
-            height={40}
-            alt={item.text}
-            className="w-4 h-4 md:w-6 md:h-6 mx-auto mb-1 md:mb-2 lg:mb-3 lg:w-8 lg:h-8"
-          />
+          <item.image className="w-4 h-4 md:w-6 md:h-6 mx-auto mb-1 md:mb-2 lg:mb-3 lg:w-8 lg:h-8 text-[#353535]" />
           <span className="text-xs text-[#717171] text-center md:text-sm block">
             {item.text}
           </span>

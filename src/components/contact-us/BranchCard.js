@@ -1,5 +1,5 @@
-import Image from "next/image";
 import MyButton from "../common/MyButton";
+import { Images } from "lucide-react";
 
 export default function BranchCard({ data }) {
   const { title, image, address, phoneNumber, workTime } = data;
@@ -13,13 +13,7 @@ export default function BranchCard({ data }) {
           className="h-28 w-full object-cover md:h-52"
         />
         <div className="hidden md:block absolute inset-0 bg-[#181818] opacity-0 group-hover:opacity-65 transition-opacity duration-300 z-20"></div>
-        <Image
-          width={40}
-          height={40}
-          src="/assets/images/icons/expand-desktop.svg"
-          alt="expand icon"
-          className="hidden absolute top-1/2 left-1/2 w-12 h-12 -translate-x-1/2 -translate-y-1/2 z-30 md:group-hover:block cursor-pointer"
-        />
+        <Images className="hidden absolute top-1/2 left-1/2 w-8 h-8 -translate-x-1/2 -translate-y-1/2 z-30 md:group-hover:block cursor-pointer text-[#fff] lg:w-9 lg:h-9" />
       </div>
       <div className="text-[#717171] text-xs text-center p-4 pt-2 md:px-3 md:text-sm md:flex md:flex-col md:justify-center md:py-0">
         <h3 className="block text-sm mb-2 text-[#353535] md:text-base md:font-medium md:mb-3">

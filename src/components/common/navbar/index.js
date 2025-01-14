@@ -82,13 +82,13 @@ function MenuIcon({ handleOpen }) {
 function ActionButton() {
   return (
     <div className="flex items-center gap-x-1">
-      <div className="bg-[#E5F2E9] p-2 box-content rounded-sm">
+      <div className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer">
         <Search color="#417F56" className="h-4 w-4" />
       </div>
       <Link href="/cart" className="bg-[#E5F2E9] p-2 box-content rounded-sm">
         <ShoppingCart color="#417F56" className="h-4 w-4" />
       </Link>
-      <div className="bg-[#E5F2E9] p-2 box-content rounded-sm">
+      <div className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer">
         <User color="#417F56" className="h-4 w-4" />
       </div>
     </div>
