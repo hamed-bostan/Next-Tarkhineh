@@ -7,9 +7,11 @@ export default function MyButton({
   buttonStyle,
   alt = "icon",
   label,
+  onClick,
 }) {
   return (
     <Button
+      onClick={onClick}
       variant={variant}
       className={`flex items-center text-[#FFFFFF] text-xs text-center hover:bg-[#326343] md:text-sm ${buttonStyle}`}
     >

@@ -1,3 +1,8 @@
+"use client";
+
+import { useDispatch } from "react-redux";
+import { addItem } from "@/redux/actions/cartAction";
+
 import MyButton from "@/components/common/MyButton";
 import Image from "next/image";
 
@@ -25,6 +30,12 @@ function FoodImage({ image, title }) {
 function FoodDetails({ foodItem }) {
   const { title, description, highPrice, discount, finalPrice, star } =
     foodItem;
+  const dispatch = useDispatch();
+
+  function handleAddToCart() {
+    dispatch(addItem(foodItem));
+    console.log("works");
+  }
 
   return (
     <div className="col-span-2 row-span-3 grid grid-cols-2 p-2 text-[#353535] text-xs md:text-sm lg:p-0 lg:py-3 lg:ml-3 lg:mr-5 lg:gap-y-1">
@@ -53,6 +64,7 @@ function FoodDetails({ foodItem }) {
         {star}
       </span>
       <MyButton
+        onClick={handleAddToCart}
         label="افزودن به سبد خرید"
         buttonStyle="bg-[#417F56] text-[0.688rem] p-0 md:text-xs lg:text-sm md:row-start-4 md:col-start-2 self-center h-8"
       />
