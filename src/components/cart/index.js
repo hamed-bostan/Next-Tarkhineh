@@ -1,6 +1,5 @@
 import CartDetails from "./cartDetails";
-import CartHeaderDesktop from "./CartHeaderDesktop";
-import CartHeaderMobile from "./CartHeaderMobile";
+import CartHeader from "./header";
 
 const data = [
   { name: "پاستا سبزیجات", price: "140000 تومان" },
@@ -14,8 +13,7 @@ const data = [
 export default function Cart() {
   return (
     <section className="px-5 py-6">
-      <CartHeaderMobile />
-      <CartHeaderDesktop />
+      <CartHeader />
       <CartDetails data={data} />
     </section>
   );
