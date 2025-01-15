@@ -1,8 +1,9 @@
 import { Minus, Plus, Trash2 } from "lucide-react";
 import Image from "next/image";
+import { useDispatch, useSelector } from "react-redux";
+import { increase, decrease, removeItem } from "@/redux/actions/cartAction";
 
 export default function ItemsCard({ foodItem }) {
-
   return (
     <div className="min-h-24 grid grid-cols-[auto_1fr_1fr] grid-rows-3 border border-[#CBCBCB] rounded-sm overflow-hidden md:hover:shadow-md md:min-h-32 lg:min-h-36 lg:rounded-lg">
       <FoodImage {...foodItem} />
@@ -26,6 +27,18 @@ function FoodImage({ image, title }) {
 function FoodDetails({ foodItem }) {
   const { title, description, highPrice, discount, finalPrice, star } =
     foodItem;
+
+  const dispatch = useDispatch();
+  const selectedItems = useSelector((state) => state.cart.selectedItems);
+
+  // Check if the current food item is selected
+  const selectedItem = selectedItems.find((item) => item.id === foodItem.id);
+
+  const handleIncrease = () => dispatch(increase(foodItem.id));
+
+  const handleDecrease = () => dispatch(decrease(foodItem.id));
+
+  const handleRemove = () => dispatch(removeItem(foodItem.id));
 
   return (
     <div className="col-span-2 row-span-3 grid grid-cols-2 md:grid-rows-4 lg:grid-rows-3 p-2 text-[#353535] md:text-sm lg:p-0 lg:py-3 lg:ml-3 lg:mr-5 md:gap-y-1 lg:gap-y-2 md:grid-cols-3">
@@ -51,9 +64,21 @@ function FoodDetails({ foodItem }) {
       <div className="md:col-start-1 md:row-start-4 md:flex md:col-span-2 md:gap-x-2 lg:gap-x-4">
         <span className="self-center">{star}</span>
         <div className="bg-[#E5F2E9] rounded-sm h-8 px-1 flex items-center gap-x-1 w-14 self-center">
-          <Plus color="#417F56" size={16} className="cursor-pointer" />
-          <span className="text-[#417F56] text-sm">1</span>
-          <Minus color="#417F56" size={16} className="cursor-pointer" />
+          <Plus
+            color="#417F56"
+            size={16}
+            className="cursor-pointer"
+            onClick={handleIncrease}
+          />
+          <span className="text-[#417F56] text-sm">
+            {selectedItem ? selectedItem.quantity : 1}
+          </span>
+          <Minus
+            color="#417F56"
+            size={16}
+            className="cursor-pointer"
+            onClick={handleDecrease}
+          />
         </div>
       </div>
     </div>

@@ -1,23 +1,30 @@
-import { ADD_ITEM, REMOVE_ITEM, INCREASE, DECREASE, CHECKOUT, CLEAR } from "./cartActionTypes";
+import {
+  ADD_ITEM,
+  REMOVE_ITEM,
+  INCREASE,
+  DECREASE,
+  CHECKOUT,
+  CLEAR,
+} from "./cartActionTypes";
 
 const addItem = (product) => ({
   type: ADD_ITEM,
   payload: product,
 });
 
-const removeItem = (product) => ({
-  type: REMOVE_ITEM,
-  payload: product,
-});
-
-const increase = (product) => ({
+const increase = (id) => ({
   type: INCREASE,
-  payload: product,
+  payload: { id },
 });
 
-const decrease = (product) => ({
+const decrease = (id) => ({
   type: DECREASE,
-  payload: product,
+  payload: { id },
+});
+
+const removeItem = (id) => ({
+  type: REMOVE_ITEM,
+  payload: { id },
 });
 
 const checkout = () => ({

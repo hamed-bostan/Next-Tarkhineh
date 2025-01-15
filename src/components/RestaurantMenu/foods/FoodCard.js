@@ -35,7 +35,6 @@ function FoodDetails({ foodItem }) {
 
   function handleAddToCart() {
     dispatch(addItem(foodItem));
-    console.log("works");
   }
 
   return (
