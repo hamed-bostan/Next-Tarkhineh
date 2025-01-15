@@ -1,6 +1,19 @@
-import { Plus, Trash2 } from "lucide-react";
+import QuantitySelector from "@/components/common/QuantitySelector";
+import { useDispatch, useSelector } from "react-redux";
+import { increase, decrease, removeItem } from "@/redux/actions/cartAction";
 
-export default function ItemsCard({ item, index }) {
+export default function ItemsCard({ foodItem, index }) {
+  const dispatch = useDispatch();
+  const selectedItems = useSelector((state) => state.cart.selectedItems);
+
+  // Check if the current food item is selected
+  const selectedItem = selectedItems.find((item) => item.id === foodItem.id);
+
+  const handleIncrease = () => dispatch(increase(foodItem.id));
+
+  const handleDecrease = () => dispatch(decrease(foodItem.id));
+
+  const handleRemove = () => dispatch(removeItem(foodItem.id));
   return (
     <div
       className={`grid grid-cols-2 p-2 ${
@@ -8,14 +21,16 @@ export default function ItemsCard({ item, index }) {
       }`}
     >
       <div>
-        <h3 className="text-[#353535] text-sm">{item.title}</h3>
-        <span className="text-[#717171] text-xs">{item.finalPrice}</span>
+        <h3 className="text-[#353535] text-sm">{foodItem.title}</h3>
+        <span className="text-[#717171] text-xs">{foodItem.finalPrice}</span>
       </div>
-      <div className="bg-[#E5F2E9] rounded-sm h-8 px-1 flex items-center gap-x-1 w-14 self-center mr-auto">
-        <Plus color="#417F56" size={16} />
-        <span className="text-[#417F56] text-sm">1</span>
-        <Trash2 color="#417F56" size={16} />
-      </div>
+      <QuantitySelector
+        selectedItem={selectedItem}
+        handleIncrease={handleIncrease}
+        handleDecrease={handleDecrease}
+        handleRemove={handleRemove}
+        styles="mr-auto"
+      />
     </div>
   );
 }

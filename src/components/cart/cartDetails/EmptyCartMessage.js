@@ -20,7 +20,7 @@ export default function EmptyCartMessage() {
         <MyButton
           label="منوی رستوران"
           variant="outline"
-          buttonStyle="text-[#417F56] border-[#417F56] absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-3"
+          buttonStyle="text-[#417F56] border-[#417F56] absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-3 md:hover:text-[#FFFFFF]"
         />
       </Link>
     </div>

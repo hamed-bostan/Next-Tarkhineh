@@ -1,7 +1,8 @@
-import { Minus, Plus, Trash2 } from "lucide-react";
+import { Trash2 } from "lucide-react";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { increase, decrease, removeItem } from "@/redux/actions/cartAction";
+import QuantitySelector from "@/components/common/QuantitySelector";
 
 export default function ItemsCard({ foodItem }) {
   return (
@@ -60,26 +61,16 @@ function FoodDetails({ foodItem }) {
         color="#353535"
         size={16}
         className="md:row-start-1 md:mr-auto cursor-pointer lg:w-5 lg:h-5 md:col-start-3"
+        onClick={handleRemove}
       />
       <div className="md:col-start-1 md:row-start-4 md:flex md:col-span-2 md:gap-x-2 lg:gap-x-4">
         <span className="self-center">{star}</span>
-        <div className="bg-[#E5F2E9] rounded-sm h-8 px-1 flex items-center gap-x-1 w-14 self-center">
-          <Plus
-            color="#417F56"
-            size={16}
-            className="cursor-pointer"
-            onClick={handleIncrease}
-          />
-          <span className="text-[#417F56] text-sm">
-            {selectedItem ? selectedItem.quantity : 1}
-          </span>
-          <Minus
-            color="#417F56"
-            size={16}
-            className="cursor-pointer"
-            onClick={handleDecrease}
-          />
-        </div>
+        <QuantitySelector
+          selectedItem={selectedItem}
+          handleIncrease={handleIncrease}
+          handleDecrease={handleDecrease}
+          handleRemove={handleRemove}
+        />
       </div>
     </div>
   );
