@@ -23,13 +23,13 @@ export default function Navigation() {
   return (
     <div className="col-span-2 md:col-span-1 grid grid-cols-2 grid-rows-5 text-[#EDEDED]">
       <span className="text-sm mb-2 md:text-base md:mb-3 md:font-medium">
-        دتسرسی آسان
+        دسترسی آسان
       </span>
       <span className="text-sm mb-2 md:text-base md:mb-3 md:font-medium">
         شعبه های ترخینه
       </span>
       {footerLinks.map((item, index) => (
-        <Link href={item.to}>
+        <Link href={item.to} className="w-fit">
           <span
             key={item.id}
             className={`text-xs md:text-sm ${

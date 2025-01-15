@@ -1,6 +1,6 @@
 import MyButton from "@/components/common/MyButton";
 import Image from "next/image";
-import { Images, Fullscreen } from "lucide-react";
+import { Fullscreen } from "lucide-react";
 import Link from "next/link";
 
 export default function BranchItem({ branch }) {
@@ -24,7 +24,13 @@ function DisplayingImage({ branch }) {
       />
       <div className="hidden md:block absolute inset-0 bg-[#181818] opacity-0 group-hover:opacity-65 transition-opacity duration-300 z-20"></div>
       <Fullscreen className="absolute bottom-2 right-2 w-4 h-4 text-[#fff] md:hidden" />
-      <Images className="hidden absolute top-1/2 left-1/2 w-8 h-8 -translate-x-1/2 -translate-y-1/2 z-30 md:group-hover:block cursor-pointer text-[#fff]" />
+      <Image
+        width={40}
+        height={40}
+        src="/assets/images/icons/expand-desktop.svg"
+        alt="expand icon"
+        className="hidden absolute top-1/2 left-1/2 w-12 h-12 -translate-x-1/2 -translate-y-1/2 z-30 md:group-hover:block cursor-pointer"
+      />
     </div>
   );
 }
@@ -38,7 +44,7 @@ function DisplayingDetails({ branch }) {
       <p className="text-xs text-[#717171] row-span-1 md:text-sm md:mb-4">
         {branch.address}
       </p>
-      <Link href='/branch'>
+      <Link href="/branch">
         <MyButton
           label="صفحه شعبه"
           variant="outline"
