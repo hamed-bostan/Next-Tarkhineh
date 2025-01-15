@@ -1,6 +1,6 @@
 import { Plus, Trash2 } from "lucide-react";
 
-export default function CartItemsMobile({ data }) {
+export default function ItemsMobile({ data }) {
   return (
     <div className="h-52 overflow-y-scroll mb-3 md:hidden">
       {data.map((item, index) => (

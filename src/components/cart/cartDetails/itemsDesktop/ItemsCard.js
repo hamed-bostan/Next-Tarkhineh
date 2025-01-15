@@ -1,8 +1,7 @@
 import { Minus, Plus, Trash2 } from "lucide-react";
 import Image from "next/image";
 
-export default function CartItemsCardDesktop({ foodItem }) {
-  console.log("Food Item:", foodItem);
+export default function ItemsCard({ foodItem }) {
 
   return (
     <div className="min-h-24 grid grid-cols-[auto_1fr_1fr] grid-rows-3 border border-[#CBCBCB] rounded-sm overflow-hidden md:hover:shadow-md md:min-h-32 lg:min-h-36 lg:rounded-lg">
