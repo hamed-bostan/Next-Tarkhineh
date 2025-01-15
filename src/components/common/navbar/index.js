@@ -6,6 +6,7 @@ import NavigationMobile from "./NavigationMobile";
 import NavigationDesktop from "./NavigationDesktop";
 import Link from "next/link";
 import { Menu, Search, ShoppingCart, User } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const navigationItems = [
   {
@@ -80,13 +81,24 @@ function MenuIcon({ handleOpen }) {
 }
 
 function ActionButton() {
+  const pathname = usePathname();
+
   return (
     <div className="flex items-center gap-x-1">
       <div className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer">
         <Search color="#417F56" className="h-4 w-4" />
       </div>
-      <Link href="/cart" className="bg-[#E5F2E9] p-2 box-content rounded-sm">
-        <ShoppingCart color="#417F56" className="h-4 w-4" />
+      <Link
+        href="/cart"
+        className={`p-2 box-content rounded-sm ${
+          pathname === "/cart" ? "bg-[#417F56]" : "bg-[#E5F2E9]"
+        }`}
+      >
+        <ShoppingCart
+          className={`h-4 w-4 ${
+            pathname === "/cart" ? "text-[#fff]" : "text-[#417F56]"
+          }`}
+        />
       </Link>
       <div className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer">
         <User color="#417F56" className="h-4 w-4" />
