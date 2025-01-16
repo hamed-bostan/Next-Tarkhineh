@@ -1,6 +1,6 @@
 import { ShoppingCart, SquareCheckBig, Wallet } from "lucide-react";
 
-export default function CartHeaderDesktop() {
+export default function HeaderDesktop() {
   return (
     <div className="hidden md:flex justify-between mb-7">
       <div className="flex gap-x-1">

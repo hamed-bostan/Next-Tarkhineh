@@ -89,14 +89,14 @@ function ActionButton() {
         <Search color="#417F56" className="h-4 w-4" />
       </div>
       <Link
-        href="/cart"
+        href="/checkout"
         className={`p-2 box-content rounded-sm ${
-          pathname === "/cart" ? "bg-[#417F56]" : "bg-[#E5F2E9]"
+          pathname === "/checkout" ? "bg-[#417F56]" : "bg-[#E5F2E9]"
         }`}
       >
         <ShoppingCart
           className={`h-4 w-4 ${
-            pathname === "/cart" ? "text-[#fff]" : "text-[#417F56]"
+            pathname === "/checkout" ? "text-[#fff]" : "text-[#417F56]"
           }`}
         />
       </Link>

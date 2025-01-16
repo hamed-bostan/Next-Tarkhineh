@@ -3,7 +3,7 @@ import MyButton from "../common/MyButton";
 
 export default function CheckoutButton() {
   return (
-    <Link href="/cart">
+    <Link href="/checkout">
       <MyButton
         variant="outline"
         label="تکمیل خرید"
