@@ -1,4 +1,4 @@
-import CartSummary from "../CartSummary";
+import CartSummary from "../../CartSummary";
 import ItemsCard from "./ItemsCard";
 
 export default function ItemsMobile({ selectedItems }) {

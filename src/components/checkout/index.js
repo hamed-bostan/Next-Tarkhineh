@@ -17,10 +17,10 @@ export default function Checkout() {
   const ActiveTabComponent = tabs[activeTab];
 
   return (
-    <>
+    <section className="px-5 py-6">
       <Header setActiveTab={setActiveTab} activeTab={activeTab} />
       {/* Render the active tab component */}
       <ActiveTabComponent />
-    </>
+    </section>
   );
 }
