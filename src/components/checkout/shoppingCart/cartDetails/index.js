@@ -1,9 +1,9 @@
 "use client";
 
 import { useSelector } from "react-redux";
-import EmptyCartMessage from "./EmptyCartMessage";
 import { Separator } from "@/components/ui/separator";
 import Items from "./items";
+import EmptyCartMessage from "../../EmptyCartMessage";
 
 export default function CartDetails() {
   const selectedItems = useSelector((state) => state.cart.selectedItems);
@@ -16,7 +16,10 @@ export default function CartDetails() {
           <Separator className="md:hidden" />
         </>
       ) : (
-        <EmptyCartMessage />
+        <EmptyCartMessage
+          button={true}
+          text="شما در حال حاضر هیچ سفارشی ثبت نکرده‌اید!"
+        />
       )}
     </>
   );
