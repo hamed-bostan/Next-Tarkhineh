@@ -29,7 +29,7 @@ export default function Navigation() {
         شعبه های ترخینه
       </span>
       {footerLinks.map((item, index) => (
-        <Link href={item.to} className="w-fit">
+        <Link href={item.to} className="w-fit" key={item.id}>
           <span
             key={item.id}
             className={`text-xs md:text-sm ${
