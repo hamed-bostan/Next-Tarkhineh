@@ -1,6 +1,6 @@
 "use client";
 
-import CartSummary from "../../CartSummary";
+import CartSummary from "@/components/checkout/CartSummary";
 import ItemsCard from "./ItemsCard";
 
 export default function ItemsDesktop({ selectedItems }) {
