@@ -5,11 +5,13 @@ import OrderDeliveryMethod from "./OrderDeliveryMethod";
 
 export default function OrderOverview() {
   return (
-    <>
-      <OrderDeliveryMethod />
-      <Address />
-      <MoreInformation />
+    <section className="md:grid md:grid-cols-[60fr_40fr] md:gap-x-4 lg:gap-x-6">
+      <div>
+        <OrderDeliveryMethod />
+        <Address />
+        <MoreInformation />
+      </div>
       <CartSummaryOverview />
-    </>
+    </section>
   );
 }
