@@ -9,7 +9,7 @@ export default function CartDetails() {
   const selectedItems = useSelector((state) => state.cart.selectedItems);
 
   return (
-    <div>
+    <>
       {selectedItems.length > 0 ? (
         <>
           <Items selectedItems={selectedItems} />
@@ -18,6 +18,6 @@ export default function CartDetails() {
       ) : (
         <EmptyCartMessage />
       )}
-    </div>
+    </>
   );
 }
