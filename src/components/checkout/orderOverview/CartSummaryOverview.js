@@ -18,7 +18,7 @@ export default function CartSummaryOverview() {
   };
 
   return (
-    <div className="text-sm text-[#353535] md:border md:border-[#CBCBCB] md:p-6 md:rounded-lg md:h-fit">
+    <div className="text-sm text-[#353535] border border-[#CBCBCB] p-4 md:p-6 rounded-lg md:h-fit">
       <div className="hidden md:flex justify-between mb-3">
         <span className="text-base">سبد خرید ({itemsCounter})</span>
         <Trash2
@@ -28,7 +28,12 @@ export default function CartSummaryOverview() {
           className="cursor-pointer"
         />
       </div>
-      <ItemsMobile selectedItems={selectedItems} />
+      {/* Increament section */}
+      {/* Increament section */}
+      <ItemsMobile
+        selectedItems={selectedItems}
+        containerStyle="hidden md:block"
+      />
       <Separator className="hidden md:block" />
       <div className="flex justify-between py-3">
         <span>تخفیف محصولات</span>
