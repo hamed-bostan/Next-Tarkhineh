@@ -7,10 +7,10 @@ export default function HeaderDesktop({ setActiveTab, activeTab }) {
         <div
           key={tab.tabIndex}
           onClick={() => setActiveTab(tab.tabIndex)}
-          className="flex gap-x-1 cursor-pointer"
+          className="flex gap-x-1 cursor-pointer items-center"
         >
           <tab.icon
-            size={20}
+            size={activeTab === tab.tabIndex ? 26 : 20}
             color={activeTab === tab.tabIndex ? "#417F56" : "#CBCBCB"}
           />
           <span
