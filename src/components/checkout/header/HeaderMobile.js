@@ -11,8 +11,6 @@ export default function HeaderMobile({ setActiveTab, activeTab }) {
 
   const isCartEmpty = cartItems.length === 0;
 
-  const tabTitles = ["سبد خرید", "تکمیل اطلاعات", "پرداخت"];
-
   function handleClearCart() {
     dispatch(clear());
   }
