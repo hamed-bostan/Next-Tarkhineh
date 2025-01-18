@@ -3,6 +3,7 @@
 import { ArrowLeft, ArrowRight, Trash2 } from "lucide-react";
 import { clear } from "@/redux/actions/cartAction";
 import { useDispatch, useSelector } from "react-redux";
+import { tabsConfig } from "./TabsConfig";
 
 export default function HeaderMobile({ setActiveTab, activeTab }) {
   const dispatch = useDispatch();
@@ -34,13 +35,13 @@ export default function HeaderMobile({ setActiveTab, activeTab }) {
         size={16}
         onClick={handleNext}
         className={`${
-          activeTab === 2
+          activeTab === tabsConfig.length - 1
             ? "text-[#A0A0A0] pointer-events-none"
             : "text-[#353535] cursor-pointer"
         }`}
       />
       <h1 className="text-sm font-bold text-[#353535]">
-        {tabTitles[activeTab]}
+        {tabsConfig[activeTab].label}
       </h1>
       {activeTab > 0 ? (
         <ArrowLeft

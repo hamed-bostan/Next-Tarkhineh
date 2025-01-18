@@ -5,7 +5,7 @@ export default function Header({ setActiveTab, activeTab }) {
   return (
     <>
       <HeaderMobile setActiveTab={setActiveTab} activeTab={activeTab} />
-      <HeaderDesktop />
+      <HeaderDesktop setActiveTab={setActiveTab} activeTab={activeTab} />
     </>
   );
 }
