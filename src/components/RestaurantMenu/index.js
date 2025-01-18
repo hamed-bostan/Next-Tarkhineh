@@ -1,9 +1,15 @@
+"use client";
+
+import { useState } from "react";
 import Banner from "../common/Banner";
 import FoodCategoriesList from "./FoodCategoriesList";
 import Foods from "./foods";
 import FoodTypesList from "./FoodTypesList";
 
 export default function RestaurantMenu() {
+  const [selectedCategory, setSelectedCategory] = useState("نمایش همه");
+
+
   return (
     <section>
       <Banner
@@ -13,8 +19,11 @@ export default function RestaurantMenu() {
         imageSrc="/assets/images/bannerImages/banner-menu.jpg"
       />
       <FoodTypesList />
-      <FoodCategoriesList />
-      <Foods />
+      <FoodCategoriesList
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+      />
+      <Foods selectedCategory={selectedCategory} />
     </section>
   );
 }
