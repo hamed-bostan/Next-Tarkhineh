@@ -1,15 +1,13 @@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
-import { ShoppingBag, Truck } from "lucide-react";
+import { CreditCard, Wallet, WalletCards } from "lucide-react";
 
-export default function OrderDeliveryMethod() {
+export default function PaymentMethod() {
   return (
     <div className="border border-[#CBCBCB] rounded-lg text-xs text-[#717171] p-4 md:text-sm md:grid md:grid-cols-3 mb-3">
       <div className="flex gap-x-1 items-center mb-4 md:mb-0">
-        <Truck color="#353535" className="w-4 h-4 md:w-5 md:h-5" />
-        <span className="text-[#353535] text-sm md:text-base">
-          روش تحویل سفارش
-        </span>
+        <CreditCard color="#353535" className="w-4 h-4 md:w-5 md:h-5" />
+        <span className="text-[#353535] text-sm md:text-base">روش پرداخت</span>
       </div>
       <Separator className="md:hidden" />
       <div className="flex items-center py-4 md:p-0 md:grid md:grid-cols-[auto_1fr_afr_auto]">
@@ -18,12 +16,12 @@ export default function OrderDeliveryMethod() {
           htmlFor="term1"
           className="cursor-pointer md:col-span-2 ml-1 mr-2 md:mx-0"
         >
-          ارسال توسط پیک
+          پرداخت اینترنتی
         </label>
         <span className="hidden md:block md:row-start-2 md:col-start-2 md:col-span-2 text-xs">
-          توسط پیک رستوران ارسال شود.
+          آنلاین پرداخت میکنم.
         </span>
-        <Truck
+        <WalletCards
           color="#717171"
           className="w-4 h-4 md:col-start-4 md:row-span-2 md:w-5 md:h-5"
         />
@@ -34,12 +32,12 @@ export default function OrderDeliveryMethod() {
           htmlFor="term2"
           className="cursor-pointer md:col-span-2 ml-1 mr-2 md:mx-0"
         >
-          تحویل حضوری
+          پرداخت در محل
         </label>
         <span className="hidden md:block md:row-start-2 md:col-start-2 md:col-span-2 text-xs">
-          حضوری تحویل میگیرم.
+          در محل پرداخت میکنم.
         </span>
-        <ShoppingBag
+        <Wallet
           color="#717171"
           className="w-4 h-4 md:col-start-4 md:row-span-2 md:w-5 md:h-5"
         />

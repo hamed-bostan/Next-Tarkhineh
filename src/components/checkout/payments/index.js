@@ -1,3 +1,11 @@
+import DiscountCode from "./DiscountCode";
+import PaymentMethod from "./PaymentMethod";
+
 export default function Payments() {
-  return <div>Payments component</div>;
+  return (
+    <>
+      <DiscountCode />
+      <PaymentMethod/>
+    </>
+  );
 }

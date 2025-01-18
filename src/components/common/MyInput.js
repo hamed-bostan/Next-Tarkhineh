@@ -5,7 +5,7 @@ export default function MyInput({ placeholder, style }) {
     <Input
       type="text"
       placeholder={placeholder}
-      className={`border border-[#CBCBCB] ${style}`}
+      className={`border border-[#CBCBCB] placeholder:text-xs text-xs ${style}`}
     />
   );
 }
