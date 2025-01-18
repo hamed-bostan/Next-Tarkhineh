@@ -5,10 +5,10 @@ import Banner from "../common/Banner";
 import FoodCategoriesList from "./FoodCategoriesList";
 import Foods from "./foods";
 import FoodTypesList from "./FoodTypesList";
+import CheckoutButton from "./CheckoutButton";
 
 export default function RestaurantMenu() {
   const [selectedCategory, setSelectedCategory] = useState("نمایش همه");
-
 
   return (
     <section>
@@ -23,7 +23,10 @@ export default function RestaurantMenu() {
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
       />
-      <Foods selectedCategory={selectedCategory} />
+      <div className="px-5 py-6">
+        <CheckoutButton />
+        <Foods selectedCategory={selectedCategory} />
+      </div>
     </section>
   );
 }

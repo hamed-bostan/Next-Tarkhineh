@@ -1,10 +1,7 @@
 import { foodInformation } from "@/lib/dataOld";
 import FoodCategoriesCard from "./FoodCategoriesCard";
 
-export default function FoodCategoriesList({
-  selectedCategory,
-  setSelectedCategory,
-}) {
+export default function FoodCategoriesList({ setSelectedCategory }) {
   const FoodCategories = [
     "نمایش همه",
     ...new Set(foodInformation.map((item) => item.category)),
