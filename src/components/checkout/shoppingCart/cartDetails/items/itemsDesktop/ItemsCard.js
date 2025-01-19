@@ -28,6 +28,16 @@ function FoodImage({ image, title }) {
 function FoodDetails({ foodItem }) {
   const { title, description, highPrice, discount, finalPrice, star } =
     foodItem;
+    console.log(highPrice);
+    
+
+  const calculateFinalPrice = (highPrice, discount) => {
+    if (discount === null || discount === undefined) {
+      return highPrice; // No discount, return original price
+    }
+    const discountAmount = (highPrice * discount) / 100;
+    return (highPrice - discountAmount).toFixed(2); // Apply discount and return the final price
+  };
 
   const dispatch = useDispatch();
   const selectedItems = useSelector((state) => state.cart.selectedItems);
@@ -54,7 +64,7 @@ function FoodDetails({ foodItem }) {
         {description.slice(0, 40)} ...
       </p>
       <div className="flex gap-x-2 mr-auto md:col-start-3 items-center md:row-start-4">
-        <span>{finalPrice}</span>
+        <span>{calculateFinalPrice(highPrice, discount)}</span>
         <span>تومان</span>
       </div>
       <Trash2
