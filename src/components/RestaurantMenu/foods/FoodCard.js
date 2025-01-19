@@ -56,10 +56,10 @@ function FoodDetails({ foodItem }) {
           </span>
         </div>
       )}
-      <p className="self-center md:row-span-2 md:self-start">
+      <p className="self-center col-start-1 row-start-2 md:row-span-2 md:self-start">
         {description.slice(0, 10)} ...
       </p>
-      <div className="flex gap-x-2 mr-auto md:col-start-2 items-center">
+      <div className="flex gap-x-2 mr-auto row-start-2 col-start-2 md:col-start-2 items-center md:row-start-3">
         <span>{discountedPrice}</span>
         <span>تومان</span>
       </div>
@@ -73,7 +73,7 @@ function FoodDetails({ foodItem }) {
       <MyButton
         onClick={handleAddToCart}
         label="افزودن به سبد خرید"
-        buttonStyle="bg-[#417F56] text-[0.688rem] p-0 md:text-xs lg:text-sm md:row-start-4 md:col-start-2 self-center h-8"
+        buttonStyle="bg-[#417F56] text-[0.688rem] p-0 md:text-xs lg:text-sm row-start-3 col-start-2 md:row-start-4  self-center h-8"
       />
     </div>
   );
