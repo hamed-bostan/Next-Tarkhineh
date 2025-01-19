@@ -6,6 +6,8 @@ import { addItem } from "@/redux/actions/cartAction";
 import MyButton from "@/components/common/MyButton";
 import Image from "next/image";
 import { Heart } from "lucide-react";
+import formatToPersianStyle from "@/lib/formattedPrice";
+import discountPrice from "@/lib/discountPrice";
 
 export default function FoodCard({ foodItem }) {
   return (
@@ -29,8 +31,10 @@ function FoodImage({ image, title }) {
 }
 
 function FoodDetails({ foodItem }) {
-  const { title, description, highPrice, discount, finalPrice, star } =
-    foodItem;
+  const { title, description, price, discount, star } = foodItem;
+
+  const discountedPrice = formatToPersianStyle(discountPrice(price, discount));
+
   const dispatch = useDispatch();
 
   function handleAddToCart() {
@@ -42,17 +46,21 @@ function FoodDetails({ foodItem }) {
       <h3 className="text-sm md:text-base md:font-semibold self-center lg:self-start">
         {title}
       </h3>
-      <div className="flex gap-x-2 items-center mr-auto md:row-start-2 md:col-start-2">
-        <span className="text-[#ADADAD] line-through">{highPrice}</span>
-        <span className="text-[#C30000] bg-[#FFF2F2] rounded-lg px-1">
-          {discount}
-        </span>
-      </div>
+      {discount && (
+        <div className="flex gap-x-2 items-center mr-auto md:row-start-2 md:col-start-2">
+          <span className="text-[#ADADAD] line-through">
+            {formatToPersianStyle(price)}
+          </span>
+          <span className="text-[#C30000] bg-[#FFF2F2] rounded-lg px-1">
+            {discount} %
+          </span>
+        </div>
+      )}
       <p className="self-center md:row-span-2 md:self-start">
         {description.slice(0, 10)} ...
       </p>
       <div className="flex gap-x-2 mr-auto md:col-start-2 items-center">
-        <span>{finalPrice}</span>
+        <span>{discountedPrice}</span>
         <span>تومان</span>
       </div>
       <Heart
