@@ -3,6 +3,8 @@ import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { increase, decrease, removeItem } from "@/redux/actions/cartAction";
 import QuantitySelector from "@/components/common/QuantitySelector";
+import formatToPersianStyle from "@/lib/formattedPrice";
+import discountPrice from "@/lib/discountPrice";
 
 export default function ItemsCard({ foodItem }) {
   return (
@@ -26,18 +28,9 @@ function FoodImage({ image, title }) {
 }
 
 function FoodDetails({ foodItem }) {
-  const { title, description, highPrice, discount, finalPrice, star } =
-    foodItem;
-    console.log(highPrice);
-    
+  const { title, description, price, discount, star } = foodItem;
 
-  const calculateFinalPrice = (highPrice, discount) => {
-    if (discount === null || discount === undefined) {
-      return highPrice; // No discount, return original price
-    }
-    const discountAmount = (highPrice * discount) / 100;
-    return (highPrice - discountAmount).toFixed(2); // Apply discount and return the final price
-  };
+  const discountedPrice = formatToPersianStyle(discountPrice(price, discount));
 
   const dispatch = useDispatch();
   const selectedItems = useSelector((state) => state.cart.selectedItems);
@@ -54,17 +47,21 @@ function FoodDetails({ foodItem }) {
   return (
     <div className="col-span-2 row-span-3 grid grid-cols-2 md:grid-rows-4 lg:grid-rows-3 p-2 text-[#353535] md:text-sm lg:p-0 lg:py-3 lg:ml-3 lg:mr-5 md:gap-y-1 lg:gap-y-2 md:grid-cols-3">
       <h3 className="lg:text-base md:font-semibold md:col-span-2">{title}</h3>
-      <div className="flex gap-x-2 items-center mr-auto md:row-start-2 md:col-start-3">
-        <span className="text-[#ADADAD] line-through">{highPrice}</span>
-        <span className="text-[#C30000] bg-[#FFF2F2] rounded-lg px-1">
-          {discount}
-        </span>
-      </div>
+      {discount && (
+        <div className="flex gap-x-2 items-center mr-auto md:row-start-2 md:col-start-3">
+          <span className="text-[#ADADAD] line-through">
+            {formatToPersianStyle(price)}
+          </span>
+          <span className="text-[#C30000] bg-[#FFF2F2] rounded-lg px-1">
+            {formatToPersianStyle(discount)} %
+          </span>
+        </div>
+      )}
       <p className="md:row-span-2 md:text-xs lg:text-sm md:row-start-2 md:col-span-2">
         {description.slice(0, 40)} ...
       </p>
       <div className="flex gap-x-2 mr-auto md:col-start-3 items-center md:row-start-4">
-        <span>{calculateFinalPrice(highPrice, discount)}</span>
+        <span>{discountedPrice}</span>
         <span>تومان</span>
       </div>
       <Trash2

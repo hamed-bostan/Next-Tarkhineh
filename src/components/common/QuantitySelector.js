@@ -1,3 +1,4 @@
+import formatToPersianStyle from "@/lib/formattedPrice";
 import { Minus, Plus, Trash2 } from "lucide-react";
 
 export default function QuantitySelector({
@@ -18,7 +19,7 @@ export default function QuantitySelector({
         onClick={handleIncrease}
       />
       <span className="text-[#417F56] text-sm">
-        {selectedItem ? selectedItem.quantity : 1}
+        {selectedItem ? formatToPersianStyle(selectedItem.quantity) : 1}
       </span>
       {selectedItem && selectedItem.quantity > 1 ? (
         <Minus
