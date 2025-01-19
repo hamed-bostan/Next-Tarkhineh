@@ -41,7 +41,6 @@ function FoodDetails({ foodItem }) {
   const cartItems = useSelector((state) => state.cart.selectedItems);
   const isAddedToCart = cartItems.some((item) => item.id === id); // Check if the item is in the cart
 
-  console.log(isAddedToCart);
 
   function handleAddToCart() {
     if (!isAddedToCart) {

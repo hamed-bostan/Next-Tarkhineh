@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { CarouselItem } from "@/components/ui/carousel";
 import Image from "next/image";
@@ -5,6 +7,8 @@ import MyButton from "@/components/common/MyButton";
 import { Heart } from "lucide-react";
 import formatToPersianStyle from "@/lib/formattedPrice";
 import discountPrice from "@/lib/discountPrice";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem } from "@/redux/actions/cartAction";
 
 export default function FoodCard({ item }) {
   return (
@@ -33,8 +37,20 @@ function DisplayingImage({ item }) {
 }
 
 function OfferDetails({ item }) {
-  const { title, price, discount } = item;
+  const { id, title, price, discount } = item;
   const discountedPrice = formatToPersianStyle(discountPrice(price, discount));
+
+  const dispatch = useDispatch();
+
+  // Access the cart from Redux store
+  const cartItems = useSelector((state) => state.cart.selectedItems);
+  const isAddedToCart = cartItems.some((item) => item.id === id); // Check if the item is in the cart
+
+  function handleAddToCart() {
+    if (!isAddedToCart) {
+      dispatch(addItem(item));
+    }
+  }
 
   return (
     <div className="col-span-2 row-span-3 grid grid-cols-2 p-2 pt-1 text-[#353535] text-xs gap-y-1 md:text-sm md:gap-y-2 md:p-3">
@@ -60,10 +76,15 @@ function OfferDetails({ item }) {
         />
         <span>5</span>
       </div>
-      <span className="mr-auto row-start-3 col-start-2">{discountedPrice} تومان</span>
+      <span className="mr-auto row-start-3 col-start-2">
+        {discountedPrice} تومان
+      </span>
       <MyButton
-        label="افزودن به سبد خرید"
-        buttonStyle="col-span-2 mt-3 bg-[#417F56] md:text-sm md:mt-4"
+        onClick={handleAddToCart}
+        label={isAddedToCart ? "افزوده شد" : "افزودن به سبد خرید"}
+        buttonStyle={`col-span-2 mt-3 bg-[#417F56] md:text-sm md:mt-4 ${
+          isAddedToCart ? "bg-[#717171] pointer-events-none" : "bg-[#417F56] "
+        }`}
       />
     </div>
   );
