@@ -3,6 +3,8 @@ import { CarouselItem } from "@/components/ui/carousel";
 import Image from "next/image";
 import MyButton from "@/components/common/MyButton";
 import { Heart } from "lucide-react";
+import formatToPersianStyle from "@/lib/formattedPrice";
+import discountPrice from "@/lib/discountPrice";
 
 export default function FoodCard({ item }) {
   return (
@@ -31,20 +33,26 @@ function DisplayingImage({ item }) {
 }
 
 function OfferDetails({ item }) {
-  const { title, highPrice, discount, finalPrice } = item;
+  const { title, price, discount } = item;
+  const discountedPrice = formatToPersianStyle(discountPrice(price, discount));
+
   return (
     <div className="col-span-2 row-span-3 grid grid-cols-2 p-2 pt-1 text-[#353535] text-xs gap-y-1 md:text-sm md:gap-y-2 md:p-3">
       <h3 className="col-span-full text-center text-sm md:text-base md:font-semibold">
         {title}
       </h3>
       <Heart color="#ADADAD" className="w-4 h-4 cursor-pointer" />
-      <div className="flex gap-x-1 items-center mr-auto">
-        <span className="text-[#ADADAD] line-through">{highPrice}</span>
-        <span className="text-[#C30000] bg-[#FFF2F2] rounded-lg w-8 text-center">
-          {discount}
-        </span>
-      </div>
-      <div className="flex gap-x-1 items-center">
+      {discount && (
+        <div className="flex gap-x-1 items-center mr-auto">
+          <span className="text-[#ADADAD] line-through">
+            {formatToPersianStyle(price)}
+          </span>
+          <span className="text-[#C30000] bg-[#FFF2F2] rounded-lg w-8 text-center">
+            {formatToPersianStyle(discount)} %
+          </span>
+        </div>
+      )}
+      <div className="flex gap-x-1 items-center col-start-1 row-start-3">
         <img
           src="/assets/images/icons/star-rate-fill.svg"
           alt="like icon"
@@ -52,7 +60,7 @@ function OfferDetails({ item }) {
         />
         <span>5</span>
       </div>
-      <span className="mr-auto">{finalPrice} تومان</span>
+      <span className="mr-auto row-start-3 col-start-2">{discountedPrice} تومان</span>
       <MyButton
         label="افزودن به سبد خرید"
         buttonStyle="col-span-2 mt-3 bg-[#417F56] md:text-sm md:mt-4"
