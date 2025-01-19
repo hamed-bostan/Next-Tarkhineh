@@ -52,7 +52,7 @@ function FoodDetails({ foodItem }) {
             {formatToPersianStyle(price)}
           </span>
           <span className="text-[#C30000] bg-[#FFF2F2] rounded-lg px-1">
-            {discount} %
+            {formatToPersianStyle(discount)} %
           </span>
         </div>
       )}
