@@ -1,6 +1,6 @@
 "use client";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "@/redux/actions/cartAction";
 
 import MyButton from "@/components/common/MyButton";
@@ -31,14 +31,22 @@ function FoodImage({ image, title }) {
 }
 
 function FoodDetails({ foodItem }) {
-  const { title, description, price, discount, star } = foodItem;
+  const { id, title, description, price, discount, star } = foodItem;
 
   const discountedPrice = formatToPersianStyle(discountPrice(price, discount));
 
   const dispatch = useDispatch();
 
+  // Access the cart from Redux store
+  const cartItems = useSelector((state) => state.cart.selectedItems);
+  const isAddedToCart = cartItems.some((item) => item.id === id); // Check if the item is in the cart
+
+  console.log(isAddedToCart);
+
   function handleAddToCart() {
-    dispatch(addItem(foodItem));
+    if (!isAddedToCart) {
+      dispatch(addItem(foodItem));
+    }
   }
 
   return (
@@ -72,8 +80,10 @@ function FoodDetails({ foodItem }) {
       </span>
       <MyButton
         onClick={handleAddToCart}
-        label="افزودن به سبد خرید"
-        buttonStyle="bg-[#417F56] text-[0.688rem] p-0 md:text-xs lg:text-sm row-start-3 col-start-2 md:row-start-4  self-center h-8"
+        label={isAddedToCart ? "افزوده شد" : "افزودن به سبد خرید"}
+        buttonStyle={`text-[0.688rem] p-0 md:text-xs lg:text-sm row-start-3 col-start-2 md:row-start-4 self-center h-8 ${
+          isAddedToCart ? "bg-[#717171] pointer-events-none" : "bg-[#417F56] "
+        }`}
       />
     </div>
   );
