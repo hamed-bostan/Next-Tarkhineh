@@ -3,7 +3,7 @@ import BranchCard from "./BranchCard";
 const branchesData = [
   {
     id: "1",
-    image: "/assets/images/branchImages/branch_01.png",
+    image: "/assets/images/branchImages/branch-01.jpg",
     title: "شعبه اکباتان",
     address: "شهرک اکباتان، فاز ۳، مجتمع تجاری کوروش، طبقه سوم",
     phoneNumber: "۰۲۱-۵۴۸۹۱۲۵۰-۵۱",
@@ -11,7 +11,7 @@ const branchesData = [
   },
   {
     id: "2",
-    image: "/assets/images/branchImages/branch_02.png",
+    image: "/assets/images/branchImages/branch-02.jpg",
     title: "شعبه چالوس",
     address: "چالوس، خیابان ۱۷ شهریور، بعد کوچه کوروش، جنب داروخانه",
     phoneNumber: "۰۲۱-۵۴۸۹۱۲۵۲-۵۳",
@@ -19,7 +19,7 @@ const branchesData = [
   },
   {
     id: "3",
-    image: "/assets/images/branchImages/branch_03.png",
+    image: "/assets/images/branchImages/branch-03.jpg",
     title: "شعبه اقدسیه",
     address: "خیابان اقدسیه ، نرسیده به میدان خیام، پلاک ۸",
     phoneNumber: "۰۲۱-۵۴۸۹۱۲۵۴-۵۵",
@@ -27,7 +27,7 @@ const branchesData = [
   },
   {
     id: "4",
-    image: "/assets/images/branchImages/branch_04.png",
+    image: "/assets/images/branchImages/branch-04.jpg",
     title: "شعبه ونک",
     address: "میدان ونک، خیابان فردوسی، نبش کوچه نیلوفر، پلاک ۲۶",
     phoneNumber: "۰۲۱-۵۴۸۹۱۲۵۶-۵۷",

@@ -8,9 +8,11 @@ export default function BranchCard({ data }) {
   return (
     <div className="border border-[#CBCBCB] rounded-sm overflow-hidden md:grid md:grid-cols-2 md:h-52 group md:rounded-lg md:hover:shadow-md">
       <div className="relative">
-        <img
+        <Image
           src={image}
           alt={title}
+          width={400}
+          height={400}
           className="h-28 w-full object-cover md:h-52"
         />
         <div className="hidden md:block absolute inset-0 bg-[#181818] opacity-0 group-hover:opacity-65 transition-opacity duration-300 z-20"></div>
