@@ -12,9 +12,9 @@ export default function Details() {
           مشتریان بوده است.
         </p>
         <Image
-          width={80}
-          height={80}
-          src="/assets/images/bannerImages/aboutUs_image.png"
+          width={400}
+          height={400}
+          src="/assets/images/bannerImages/banner-09.jpg"
           alt="About us image"
           className="rounded-md col-span-1 h-full w-full object-cover object-center md:row-span-2 lg:h-64"
         />
