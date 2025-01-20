@@ -19,8 +19,8 @@ function FoodImage({ image, title }) {
   return (
     <Image
       src={image}
-      width={80}
-      height={80}
+      width={300}
+      height={300}
       alt={title}
       className="h-full row-span-3 w-24 md:w-28 lg:w-40"
     />
