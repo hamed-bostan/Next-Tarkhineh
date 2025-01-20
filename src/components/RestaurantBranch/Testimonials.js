@@ -9,48 +9,48 @@ import Image from "next/image";
 const testimonialDetails = [
   {
     id: "1",
-    image: "/assets/images/branchImages/branch_05.png",
-    name: "آرزو محمدعلیزاده",
+    image: "/assets/images/avatars/01.png",
+    name: "محمد محمدی",
     date: "۲۳ اسفند ۱۴۰۱",
     comment:
       "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم. ",
   },
   {
     id: "2",
-    image: "/assets/images/branchImages/branch_06.png",
-    name: "سردار وظیفه",
+    image: "/assets/images/avatars/02.png",
+    name: "آرزو حسن زاده",
     date: "۲۳ اسفند ۱۴۰۱",
     comment:
       "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم. ",
   },
   {
     id: "3",
-    image: "/assets/images/branchImages/branch_05.png",
-    name: "آرزو محمدعلیزاده",
+    image: "/assets/images/avatars/03.png",
+    name: "حسین حسینی",
     date: "۲۳ اسفند ۱۴۰۱",
     comment:
       "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم. ",
   },
   {
     id: "4",
-    image: "/assets/images/branchImages/branch_06.png",
-    name: "سردار وظیفه",
+    image: "/assets/images/avatars/04.png",
+    name: "فرزانه رمضانی",
     date: "۲۳ اسفند ۱۴۰۱",
     comment:
       "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم. ",
   },
   {
     id: "5",
-    image: "/assets/images/branchImages/branch_05.png",
-    name: "آرزو محمدعلیزاده",
+    image: "/assets/images/avatars/01.png",
+    name: "سجاد رحیمی",
     date: "۲۳ اسفند ۱۴۰۱",
     comment:
       "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم. ",
   },
   {
     id: "6",
-    image: "/assets/images/branchImages/branch_06.png",
-    name: "سردار وظیفه",
+    image: "/assets/images/avatars/02.png",
+    name: "آنا عسگری",
     date: "۲۳ اسفند ۱۴۰۱",
     comment:
       "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم. ",
