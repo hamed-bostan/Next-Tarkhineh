@@ -12,8 +12,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function NavigationMobile({ navigationItems, isDrawerOpen, handleClose }) {
-  const filteredItems = navigationItems.filter((item) => item.path !== "/franchise");
+export default function NavigationMobile({
+  navigationItems,
+  isDrawerOpen,
+  handleClose,
+}) {
+  const filteredItems = navigationItems.filter(
+    (item) => item.path !== "/franchise"
+  );
 
   return (
     <Drawer open={isDrawerOpen} onOpenChange={handleClose}>
@@ -31,7 +37,7 @@ export default function NavigationMobile({ navigationItems, isDrawerOpen, handle
             <Button
               onClick={handleClose}
               variant="outline"
-              className="border-none shadow-none bg-transparent text-white h-6 w-6"
+              className="border-none shadow-none bg-transparent text-[#FFFFFF] h-6 w-6 hover:bg-transparent hover:text-[#FFFFFF]"
             >
               <X />
             </Button>
