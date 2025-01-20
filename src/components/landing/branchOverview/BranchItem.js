@@ -16,8 +16,8 @@ function DisplayingImage({ branch }) {
   return (
     <div className="relative col-span-1 row-span-2 h-20 md:h-40 lg:h-52 md:row-span-1 md:group-hover:h-36 lg:group-hover:h-44 transition-all duration-300">
       <Image
-        width={100}
-        height={100}
+        width={300}
+        height={300}
         src={branch.image}
         alt={branch.title}
         className="w-full h-full object-cover"
