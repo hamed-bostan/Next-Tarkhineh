@@ -76,7 +76,7 @@ export default function Navbar() {
 
 function MenuIcon({ handleOpen }) {
   return (
-    <Menu color="#417F56" className="h-6 w-6 md:hidden" onClick={handleOpen} />
+    <Menu color="#417F56" className="h-6 w-6 cursor-pointer md:hidden" onClick={handleOpen} />
   );
 }
 
