@@ -10,9 +10,9 @@ import Image from "next/image";
 
 export default function BranchList() {
   const images = [
-    "/assets/images/branchImages/branch-10.jpg",
-    "/assets/images/branchImages/branch-11.jpg",
-    "/assets/images/branchImages/branch-12.jpg",
+    "/assets/images/branchImages/branch-01.jpg",
+    "/assets/images/branchImages/branch-02.jpg",
+    "/assets/images/branchImages/branch-03.jpg",
   ];
 
   return (
@@ -27,7 +27,7 @@ export default function BranchList() {
                   <Image
                     src={src}
                     alt={`Carousel image ${index + 1}`}
-                    width={200}
+                    width={800}
                     height={200}
                     className="w-full h-full object-cover"
                   />
