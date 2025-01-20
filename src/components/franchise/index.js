@@ -10,7 +10,7 @@ export default function Franchise() {
     <div className="hidden md:block">
       <Banner
         styleContainer="md:mb-0"
-        imageSrc="/assets/images/bannerImages/banner-franchise.jpg"
+        imageSrc="/assets/images/bannerImages/banner-06.jpg"
         text="همین الان به خانواده بزرگ ترخینه بپیوندید!"
         isButton={false}
       />

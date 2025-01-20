@@ -7,7 +7,7 @@ export default function index() {
   return (
     <>
       <Banner
-        imageSrc="/assets/images/bannerImages/slider_01.png"
+        imageSrc="/assets/images/bannerImages/banner-01.jpg"
         text="تجربه غذای سالم و گیاهی به سبک ترخینه"
       />
       <MenuSection />

@@ -27,7 +27,7 @@ const cardItems = [
 
 export default function DescriptionSection() {
   return (
-    <section className="bg-[url('/assets/images/bannerImages/about.png')] bg-cover bg-center px-5 py-4 md:h-80 md:px-10 lg:px-28 md:grid md:grid-cols-2 md:place-items-center lg:gap-x-10">
+    <section className="bg-[url('/assets/images/bannerImages/banner-02.jpg')] bg-cover bg-center px-5 py-4 md:h-80 md:px-10 lg:px-28 md:grid md:grid-cols-2 md:place-items-center lg:gap-x-10">
       <DescriptionDetails />
       <CardSection data={cardItems} />
     </section>

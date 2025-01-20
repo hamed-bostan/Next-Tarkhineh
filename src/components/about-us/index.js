@@ -6,7 +6,7 @@ export default function AboutUs() {
   return (
     <section className="container mx-auto">
       <Banner
-        imageSrc="/assets/images/bannerImages/slider_05.png"
+        imageSrc="/assets/images/bannerImages/banner-07.jpg"
         text="درباره ترخینه بیشتر بدانید!"
       />
       <Details />

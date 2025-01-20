@@ -9,7 +9,7 @@ export default function RestaurantBranch() {
   return (
     <section className="container mx-auto">
       <Banner
-        imageSrc="/assets/images/bannerImages/Slider-RestaurantBranch.jpg"
+        imageSrc="/assets/images/bannerImages/banner-04.jpg"
         text="طعم بی‌نظیر طبیعت!"
       />
       <FoodHighlights />
