@@ -44,16 +44,18 @@ function DisplayingDetails({ branch }) {
       <p className="text-xs text-[#717171] row-span-1 md:text-sm md:mb-4">
         {branch.address}
       </p>
-      <Link href="/branch">
-        <MyButton
-          label="صفحه شعبه"
-          variant="outline"
-          imageSrc="/assets/images/icons/arrow-left.svg"
-          alt="arrow left icon"
-          iconStyle="w-4 h-4 order-2 md:w-5 md:h-5"
-          buttonStyle="bg-transparent mx-auto text-[#315F41] border border-[#315F41] md:hover:text-[#FFF] hidden md:flex opacity-0 md:group-hover:opacity-100 transition-all duration-300"
-        />
-      </Link>
+      <div className="w-fit mx-auto">
+        <Link href="/branch">
+          <MyButton
+            label="صفحه شعبه"
+            variant="outline"
+            imageSrc="/assets/images/icons/arrow-left.svg"
+            alt="arrow left icon"
+            iconStyle="w-4 h-4 order-2 md:w-5 md:h-5"
+            buttonStyle="bg-transparent  text-[#315F41] border border-[#315F41] md:hover:text-[#FFF] hidden md:flex opacity-0 md:group-hover:opacity-100 transition-all duration-300"
+          />
+        </Link>
+      </div>
     </div>
   );
 }
