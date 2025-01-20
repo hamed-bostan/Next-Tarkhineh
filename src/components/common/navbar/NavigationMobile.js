@@ -20,9 +20,9 @@ export default function NavigationMobile({ navigationItems, isDrawerOpen, handle
       <DrawerContent className="md:hidden">
         <DrawerHeader className="relative gap-0">
           <Image
-            width={200}
-            height={80}
-            src="/assets/images/bannerImages/banner-sidebar.jpg"
+            width={300}
+            height={200}
+            src="/assets/images/bannerImages/banner-11.jpg"
             alt="Banner image"
             className="w-full h-full"
           />
