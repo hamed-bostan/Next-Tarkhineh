@@ -31,17 +31,17 @@ export default function BranchCard({ data }) {
         <p className="mb-0.5 md:mb-1">آدرس: {address}</p>
         <p className="mb-0.5 md:mb-1">شماره تماس: {phoneNumber}</p>
         <p className="mb-3 md:mb-4">ساعت کاری: {workTime}</p>
-        <div className="flex gap-x-4 justify-center md:opacity-0 md:group-hover:opacity-100 transition-all duration-300">
-          <Link href="/branch" className="h-6 py-0 md:h-9 md:w-2/5">
+        <div className="flex gap-x-4 justify-center md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 w-full">
+          <Link href="/branch" className="w-full">
             <MyButton
               variant="outline"
               label="صفحه شعبه"
-              buttonStyle="w-full text-[#417F56] border-[#417F56] rounded-sm hover:text-[#fff]"
+              buttonStyle="w-full py-0 md:h-9 h-6 text-[#417F56] border-[#417F56] rounded-sm hover:text-[#fff]"
             />
           </Link>
           <MyButton
             label="دیدن در نقشه"
-            buttonStyle="h-6 bg-[#417F56] py-0 w-full rounded-sm md:h-9 md:w-2/5"
+            buttonStyle="h-6 bg-[#417F56] py-0 w-full rounded-sm md:h-9"
           />
         </div>
       </div>
