@@ -15,7 +15,7 @@ export default function FAQ() {
   return (
     <>
       <Banner
-        imageSrc="/assets/images/bannerImages/banner-faq.jpg"
+        imageSrc="/assets/images/bannerImages/banner-10.jpg"
         text="سوالات متداول از ترخینه"
         isButton={false}
       />
