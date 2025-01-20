@@ -31,7 +31,7 @@ export default function BranchCard({ data }) {
         <p className="mb-0.5 md:mb-1">آدرس: {address}</p>
         <p className="mb-0.5 md:mb-1">شماره تماس: {phoneNumber}</p>
         <p className="mb-3 md:mb-4">ساعت کاری: {workTime}</p>
-        <div className="flex gap-x-4 justify-center md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 w-full">
+        <div className="flex gap-x-4 justify-center md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 md:w-2/5 md:mx-auto">
           <Link href="/branch" className="w-full">
             <MyButton
               variant="outline"
