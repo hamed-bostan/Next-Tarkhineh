@@ -30,7 +30,6 @@ function FoodImage({ image, title }) {
 function FoodDetails({ foodItem }) {
   const { id, title, description, price, discount, star } = foodItem;
 
-  // const discountedPrice = formatToPersianStyle(discountPrice(price, discount));
   const discountedPricePerItem = discountPrice(price, discount); // Price of a single item
 
   const dispatch = useDispatch();
