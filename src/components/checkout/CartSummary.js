@@ -20,6 +20,14 @@ export default function CartSummary() {
     }, 0)
     .toFixed(2); // Round to 2 decimal places
 
+  // Calculate total payable amount
+  const totalPayable = selectedItems
+    .reduce((total, item) => {
+      const discountedPrice = item.price - (item.price * item.discount) / 100;
+      return total + discountedPrice * item.quantity;
+    }, 0)
+    .toFixed(2);
+
   // Handler to clear the cart
   const handleClearCart = () => {
     dispatch(clear());
@@ -60,7 +68,9 @@ export default function CartSummary() {
       <Separator />
       <div className="flex justify-between py-3">
         <span>مبلغ قابل پرداخت</span>
-        <span className="text-[#417F56]">542000 تومان</span>
+        <span className="text-[#417F56]">
+          {formatToPersianStyle(totalPayable)} تومان
+        </span>
       </div>
       <MyButton label="ورود / ثبت‌ نام" buttonStyle="bg-[#417F56] w-full" />
     </div>
