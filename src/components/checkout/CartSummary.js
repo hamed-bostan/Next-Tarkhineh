@@ -3,12 +3,22 @@ import { Separator } from "@/components/ui/separator";
 import { OctagonAlert, Trash2 } from "lucide-react";
 import { useSelector, useDispatch } from "react-redux";
 import { clear } from "@/redux/actions/cartAction";
+import formatToPersianStyle from "@/lib/formattedPrice";
 
 export default function CartSummary() {
   const dispatch = useDispatch();
 
   // Fetch the itemsCounter from the Redux store
   const itemsCounter = useSelector((state) => state.cart.itemsCounter);
+  const selectedItems = useSelector((state) => state.cart.selectedItems);
+
+  // Calculate total discount
+  const totalDiscount = selectedItems
+    .reduce((total, item) => {
+      const itemDiscount = ((item.price * item.discount) / 100) * item.quantity;
+      return total + itemDiscount;
+    }, 0)
+    .toFixed(2); // Round to 2 decimal places
 
   // Handler to clear the cart
   const handleClearCart = () => {
@@ -29,7 +39,9 @@ export default function CartSummary() {
       <Separator className="hidden md:block" />
       <div className="flex justify-between py-3">
         <span>تخفیف محصولات</span>
-        <span className="text-[#717171]">63000 تومان</span>
+        <span className="text-[#717171]">
+          {formatToPersianStyle(totalDiscount)} تومان
+        </span>
       </div>
       <Separator />
       <div className="flex justify-between mt-3 mb-2">
