@@ -28,21 +28,27 @@ function FoodImage({ image, title }) {
 }
 
 function FoodDetails({ foodItem }) {
-  const { title, description, price, discount, star } = foodItem;
+  const { id, title, description, price, discount, star } = foodItem;
 
-  const discountedPrice = formatToPersianStyle(discountPrice(price, discount));
+  // const discountedPrice = formatToPersianStyle(discountPrice(price, discount));
+  const discountedPricePerItem = discountPrice(price, discount); // Price of a single item
 
   const dispatch = useDispatch();
   const selectedItems = useSelector((state) => state.cart.selectedItems);
 
   // Check if the current food item is selected
-  const selectedItem = selectedItems.find((item) => item.id === foodItem.id);
+  const selectedItem = selectedItems.find((item) => item.id === id);
+  const quantity = selectedItem?.quantity || 0;
 
-  const handleIncrease = () => dispatch(increase(foodItem.id));
+  // Calculate total discounted price for the selected item
+  const totalDiscountedPrice =
+    quantity > 0
+      ? formatToPersianStyle(discountedPricePerItem * quantity)
+      : formatToPersianStyle(discountedPricePerItem);
 
-  const handleDecrease = () => dispatch(decrease(foodItem.id));
-
-  const handleRemove = () => dispatch(removeItem(foodItem.id));
+  const handleIncrease = () => dispatch(increase(id));
+  const handleDecrease = () => dispatch(decrease(id));
+  const handleRemove = () => dispatch(removeItem(id));
 
   return (
     <div className="col-span-2 row-span-3 grid grid-cols-2 md:grid-rows-4 lg:grid-rows-3 p-2 text-[#353535] md:text-sm lg:p-0 lg:py-3 lg:ml-3 lg:mr-5 md:gap-y-1 lg:gap-y-2 md:grid-cols-3">
@@ -61,7 +67,7 @@ function FoodDetails({ foodItem }) {
         {description.slice(0, 40)} ...
       </p>
       <div className="flex gap-x-2 mr-auto md:col-start-3 items-center md:row-start-4">
-        <span>{discountedPrice}</span>
+        <span>{totalDiscountedPrice}</span>
         <span>تومان</span>
       </div>
       <Trash2
