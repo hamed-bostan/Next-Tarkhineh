@@ -1,6 +1,6 @@
 import MyButton from "@/components/common/MyButton";
 import Image from "next/image";
-import { Fullscreen } from "lucide-react";
+import { ArrowLeft, Fullscreen } from "lucide-react";
 import Link from "next/link";
 
 export default function BranchItem({ branch }) {
@@ -49,10 +49,10 @@ function DisplayingDetails({ branch }) {
           <MyButton
             label="صفحه شعبه"
             variant="outline"
-            imageSrc="/assets/images/icons/arrow-left.svg"
+            icon={<ArrowLeft className="order-2" />}
             alt="arrow left icon"
             iconStyle="w-4 h-4 order-2 md:w-5 md:h-5"
-            buttonStyle="bg-transparent  text-[#315F41] border border-[#315F41] md:hover:text-[#FFF] hidden md:flex opacity-0 md:group-hover:opacity-100 transition-all duration-300"
+            buttonStyle="bg-transparent text-[#315F41] border border-[#315F41] md:hover:text-[#FFF] hidden md:flex opacity-0 md:group-hover:opacity-100 transition-all duration-300"
           />
         </Link>
       </div>

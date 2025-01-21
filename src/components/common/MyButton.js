@@ -8,6 +8,7 @@ export default function MyButton({
   alt = "icon",
   label,
   onClick,
+  icon,
 }) {
   return (
     <Button
@@ -16,6 +17,7 @@ export default function MyButton({
       className={`flex items-center text-[#FFFFFF] text-xs text-center hover:bg-[#326343] md:text-sm ${buttonStyle}`}
     >
       {imageSrc && <img src={imageSrc} className={iconStyle} alt={alt} />}
+      {icon && icon}
       {label}
     </Button>
   );
