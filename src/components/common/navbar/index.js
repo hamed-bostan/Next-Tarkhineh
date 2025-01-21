@@ -7,6 +7,7 @@ import NavigationDesktop from "./NavigationDesktop";
 import Link from "next/link";
 import { Menu, Search, ShoppingCart, User } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { useSelector } from "react-redux";
 
 const navigationItems = [
   {
@@ -76,30 +77,41 @@ export default function Navbar() {
 
 function MenuIcon({ handleOpen }) {
   return (
-    <Menu color="#417F56" className="h-6 w-6 cursor-pointer md:hidden" onClick={handleOpen} />
+    <Menu
+      color="#417F56"
+      className="h-6 w-6 cursor-pointer md:hidden"
+      onClick={handleOpen}
+    />
   );
 }
 
 function ActionButton() {
   const pathname = usePathname();
+  const itemsCounter = useSelector((state) => state.cart.itemsCounter);
 
   return (
     <div className="flex items-center gap-x-1">
       <div className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer">
         <Search color="#417F56" className="h-4 w-4" />
       </div>
-      <Link
-        href="/checkout"
-        className={`p-2 box-content rounded-sm ${
+      <div
+        className={`p-2 box-content rounded-sm relative ${
           pathname === "/checkout" ? "bg-[#417F56]" : "bg-[#E5F2E9]"
         }`}
       >
-        <ShoppingCart
-          className={`h-4 w-4 ${
-            pathname === "/checkout" ? "text-[#fff]" : "text-[#417F56]"
-          }`}
-        />
-      </Link>
+        <Link href="/checkout">
+          <ShoppingCart
+            className={`h-4 w-4 ${
+              pathname === "/checkout" ? "text-[#fff]" : "text-[#417F56]"
+            }`}
+          />
+        </Link>
+        {itemsCounter > 0 && (
+          <span className="text-xs text-[#fff] bg-[#61AE7B] rounded-full absolute top-1 right-0 w-3 h-3 p-2 flex justify-center items-center">
+            {itemsCounter}
+          </span>
+        )}
+      </div>
       <div className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer">
         <User color="#417F56" className="h-4 w-4" />
       </div>
