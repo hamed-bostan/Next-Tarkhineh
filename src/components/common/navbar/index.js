@@ -4,10 +4,8 @@ import { useState } from "react";
 import Logo from "../logo";
 import NavigationMobile from "./NavigationMobile";
 import NavigationDesktop from "./NavigationDesktop";
-import Link from "next/link";
-import { Menu, Search, ShoppingCart, User } from "lucide-react";
-import { usePathname } from "next/navigation";
-import { useSelector } from "react-redux";
+import { Menu } from "lucide-react";
+import ActionButton from "./ActionButton";
 
 const navigationItems = [
   {
@@ -82,41 +80,5 @@ function MenuIcon({ handleOpen }) {
       className="h-6 w-6 cursor-pointer md:hidden"
       onClick={handleOpen}
     />
-  );
-}
-
-function ActionButton() {
-  const pathname = usePathname();
-  const itemsCounter = useSelector((state) => state.cart.itemsCounter);
-
-  return (
-    <div className="flex items-center gap-x-1">
-      <div className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer">
-        <Search color="#417F56" className="h-4 w-4" />
-      </div>
-      <div
-        className={`p-2 box-content rounded-sm relative ${
-          pathname === "/checkout" ? "bg-[#417F56]" : "bg-[#E5F2E9]"
-        }`}
-      >
-        <Link href="/checkout">
-          <ShoppingCart
-            className={`h-4 w-4 ${
-              pathname === "/checkout" ? "text-[#fff]" : "text-[#417F56]"
-            }`}
-          />
-        </Link>
-        {itemsCounter > 0 && (
-          <span className="text-xs text-[#fff] bg-[#61AE7B] rounded-full absolute top-1 right-0 w-3 h-3 p-2 flex justify-center items-center">
-            {itemsCounter}
-          </span>
-        )}
-      </div>
-      <Link href='/profile'>
-        <div className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer">
-          <User color="#417F56" className="h-4 w-4" />
-        </div>
-      </Link>
-    </div>
   );
 }
