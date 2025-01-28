@@ -112,9 +112,11 @@ function ActionButton() {
           </span>
         )}
       </div>
-      <div className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer">
-        <User color="#417F56" className="h-4 w-4" />
-      </div>
+      <Link href='/profile'>
+        <div className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer">
+          <User color="#417F56" className="h-4 w-4" />
+        </div>
+      </Link>
     </div>
   );
 }
