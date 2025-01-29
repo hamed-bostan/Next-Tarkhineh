@@ -7,6 +7,7 @@ import MyAddresses from "./myAddresses";
 import Logout from "./logout";
 import Profile from "./profile";
 import Header from "./header";
+import Sidebar from "./Sidebar";
 
 export default function UserPanel() {
   const [activeTab, setActiveTab] = useState(0);
@@ -18,6 +19,7 @@ export default function UserPanel() {
   return (
     <section className="px-5 py-6">
       <Header setActiveTab={setActiveTab} activeTab={activeTab} />
+      <Sidebar />
       <ActiveTabComponent />
     </section>
   );
