@@ -1,18 +1,21 @@
 "use client";
 
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import Link from "next/link";
-import { LogOut, Search, ShoppingCart, User } from "lucide-react";
+import { Search, ShoppingCart, User } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
-// import { getServerSession } from "next-auth";
-// import { options } from "@/app/api/auth/[...nextauth]/options";
+import { Separator } from "@/components/ui/separator";
+import { userMenuItems } from "../UserMenuItems";
 import { useSession } from "next-auth/react";
 
 export default function ActionButton() {
   const pathname = usePathname();
   const itemsCounter = useSelector((state) => state.cart.itemsCounter);
-  // const session = await getServerSession(options);
-  const { data: session } = useSession(); // Client-side session retrieval
 
   return (
     <div className="flex items-center gap-x-1">
@@ -37,18 +40,44 @@ export default function ActionButton() {
           </span>
         )}
       </div>
-      <Link href="/userPanel">
-        <div className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer">
-          {session ? (
-            <LogOut
-              color="#C30000"
-              className="w-4 h-4 md:w-5 md:h-5 cursor-pointer"
-            />
-          ) : (
-            <User color="#417F56" className="h-4 w-4" />
-          )}
-        </div>
-      </Link>
+      <UserMenuPopover />
     </div>
+  );
+}
+
+function UserMenuPopover() {
+  const { data: session } = useSession(); // Client-side session retrieval
+
+  return (
+    <Popover>
+      <PopoverTrigger asChild>
+        <Link
+          href={session ? "" : "/api/auth/signin"}
+          className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer"
+        >
+          <User color="#417F56" className="h-4 w-4" />
+        </Link>
+      </PopoverTrigger>
+      {session && (
+        <PopoverContent className="w-fit p-2">
+          <div className="p-0">
+            {userMenuItems.map((item, index) => (
+              <div key={index}>
+                <Link
+                  href={item.href}
+                  className="flex items-center text-xs gap-x-1 py-2 cursor-pointer w-fit"
+                >
+                  <item.icon className="w-4 h-4 text-[#353535]" />
+                  <span className="text-[#353535]">{item.label}</span>
+                </Link>
+                {index < userMenuItems.length - 1 && (
+                  <Separator className="bg-[#EDEDED]" />
+                )}
+              </div>
+            ))}
+          </div>
+        </PopoverContent>
+      )}
+    </Popover>
   );
 }
