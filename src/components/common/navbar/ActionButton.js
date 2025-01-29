@@ -51,13 +51,19 @@ function UserMenuPopover() {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Link
-          href={session ? "" : "/api/auth/signin"}
-          className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer flex"
-        >
-          <User color="#417F56" className="h-4 w-4" />
-          {session && <ArrowDown color="#417F56" className="h-4 w-4" />}
-        </Link>
+        {session ? (
+          <div className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer flex">
+            <User color="#417F56" className="h-4 w-4" />
+            <ArrowDown color="#417F56" className="h-4 w-4" />
+          </div>
+        ) : (
+          <Link
+            href="/api/auth/signin"
+            className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer flex"
+          >
+            <User color="#417F56" className="h-4 w-4" />
+          </Link>
+        )}
       </PopoverTrigger>
       {session && (
         <PopoverContent className="w-fit p-2">
