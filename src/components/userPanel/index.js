@@ -20,7 +20,7 @@ export default function UserPanel() {
     <section className="px-5 py-6">
       <HeaderMobile setActiveTab={setActiveTab} activeTab={activeTab} />
       <div className="md:grid md:grid-cols-[30fr_70fr] md:gap-x-5">
-        <Sidebar />
+        <Sidebar setActiveTab={setActiveTab} activeTab={activeTab}/>
         <ActiveTabComponent />
       </div>
     </section>
