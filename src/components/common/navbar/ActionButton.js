@@ -37,7 +37,7 @@ export default function ActionButton() {
           </span>
         )}
       </div>
-      <Link href="/profile">
+      <Link href="/userPanel">
         <div className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer">
           {session ? (
             <LogOut
