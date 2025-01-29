@@ -6,7 +6,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import Link from "next/link";
-import { Search, ShoppingCart, User } from "lucide-react";
+import { ArrowDown, Search, ShoppingCart, User } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
 import { Separator } from "@/components/ui/separator";
@@ -53,9 +53,10 @@ function UserMenuPopover() {
       <PopoverTrigger asChild>
         <Link
           href={session ? "" : "/api/auth/signin"}
-          className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer"
+          className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer flex"
         >
           <User color="#417F56" className="h-4 w-4" />
+          {session && <ArrowDown color="#417F56" className="h-4 w-4" />}
         </Link>
       </PopoverTrigger>
       {session && (
