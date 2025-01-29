@@ -28,8 +28,6 @@ export default function CartSummaryOverview() {
           className="cursor-pointer"
         />
       </div>
-      {/* Increament section */}
-      {/* Increament section */}
       <ItemsMobile
         selectedItems={selectedItems}
         containerStyle="hidden md:block"
