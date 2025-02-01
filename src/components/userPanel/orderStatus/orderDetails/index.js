@@ -5,10 +5,10 @@ export default function OrderDetails() {
     <div className="mb-4">
       <div className="text-xs flex items-center mb-4">
         <span className="text-sm text-[#757575] lg:text-base">شعبه اقدسیه</span>
-        <span className="flex items-center mr-auto px-2 h-6 text-[#353535] bg-[#EDEDED] rounded-sm md:h-7 cursor-pointer">
+        <span className="flex items-center mr-auto px-2 h-6 text-[#353535] bg-[#EDEDED] rounded-sm md:h-7">
           تحویل حضوری
         </span>
-        <span className="mr-2 flex items-center justify-center min-w-12 h-6 bg-[#FFF8E1] text-[#A9791C] rounded-sm md:h-7 cursor-pointer">
+        <span className="mr-2 flex items-center justify-center min-w-12 h-6 bg-[#FFF8E1] text-[#A9791C] rounded-sm md:h-7">
           جاری
         </span>
       </div>

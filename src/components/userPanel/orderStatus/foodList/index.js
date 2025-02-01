@@ -20,13 +20,13 @@ export default function FoodList() {
 function ActionButtons() {
   return (
     <>
-      <span className="text-[#717171] text-xs text-center block mb-4 md:hidden">
+      <span className="text-[#717171] text-xs text-center block mb-4 cursor-pointer md:hidden">
         مشاهده همه سفارشات
       </span>
       <MyButton
         label="لغو سفارش"
         variant="outline"
-        buttonStyle="border-[#C30000] text-[#C30000] mx-auto"
+        buttonStyle="border-[#C30000] text-[#C30000] mx-auto hover:bg-[#FFF2F2] hover:text-[#C30000]"
       />
     </>
   );
