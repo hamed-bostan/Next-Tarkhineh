@@ -6,7 +6,7 @@ import HeaderDesktop from "../header/HeaderDesktop";
 export default function Profile() {
   return (
     <div className="md:border md:border-[#CBCBCB] md:rounded-lg md:p-5 md:min-h-[30rem]">
-      <HeaderDesktop label="پروفایل من" />
+      <HeaderDesktop label="پروفایل من" style="mb-8" />
       <UserInformationForm />
     </div>
   );

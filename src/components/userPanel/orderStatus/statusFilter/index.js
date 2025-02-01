@@ -7,7 +7,7 @@ export default function StatusFilter({
   selectedCategory,
 }) {
   return (
-    <div className="flex gap-2 flex-wrap mb-5 md:gap-3 ">
+    <div className="flex gap-2 flex-wrap mb-7 md:gap-3 ">
       {filterLists.map((item, index) => (
         <FilterCard
           item={item}

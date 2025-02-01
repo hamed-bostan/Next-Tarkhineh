@@ -20,7 +20,7 @@ export default function FoodList() {
 function ActionButtons() {
   return (
     <>
-      <span className="text-[#717171] text-xs text-center block mb-4">
+      <span className="text-[#717171] text-xs text-center block mb-4 md:hidden">
         مشاهده همه سفارشات
       </span>
       <MyButton
