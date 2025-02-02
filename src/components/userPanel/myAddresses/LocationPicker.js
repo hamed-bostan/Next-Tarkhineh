@@ -78,6 +78,26 @@ export default function LocationPicker({ onLocationSelect }) {
     return position ? <Marker position={position} icon={customIcon} /> : null;
   };
 
+  // Function to get the user's current location
+  const handleGetCurrentLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          setPosition([latitude, longitude]);
+          fetchAddress(latitude, longitude); // Fetch the address based on the current location
+          onLocationSelect(latitude, longitude); // Pass the location to the parent
+        },
+        (error) => {
+          console.error("Error getting location: ", error);
+          setAddress("خطا در دریافت موقعیت");
+        }
+      );
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  };
+
   return (
     <div className="w-full h-[400px] relative">
       {/* Map with default location set to Mashhad Azadi Square */}
@@ -93,7 +113,8 @@ export default function LocationPicker({ onLocationSelect }) {
 
       {/* "موقعیت من" Button */}
       <div
-        className="bg-[#fff] rounded-sm shadow-2xl absolute flex items-center justify-center gap-x-1 top-5 right-5 h-8 w-24"
+        className="bg-[#fff] rounded-sm shadow-2xl absolute flex items-center justify-center gap-x-1 top-5 right-5 h-8 w-24 cursor-pointer"
+        onClick={handleGetCurrentLocation}
         style={{ zIndex: 1000 }}
       >
         <LocateFixed color="#417F56" size={16} />
