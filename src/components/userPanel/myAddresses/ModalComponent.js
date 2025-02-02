@@ -9,7 +9,7 @@ import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 import FetchAddress from "./FetchAddress";
 
-export function ModalComponent({ isOpen, onClose }) {
+export function ModalComponent({ isOpen, onClose, setIsInformedAddress }) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[425px] p-0">
@@ -19,7 +19,7 @@ export function ModalComponent({ isOpen, onClose }) {
             <DialogDescription>برای اضافه کردن آدرس</DialogDescription>
           </DialogHeader>
         </VisuallyHidden>
-        <FetchAddress />
+        <FetchAddress setIsInformedAddress={setIsInformedAddress} />
       </DialogContent>
     </Dialog>
   );
