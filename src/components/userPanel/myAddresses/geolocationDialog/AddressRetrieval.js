@@ -2,7 +2,7 @@
 import { useState } from "react";
 import LocationPicker from "./LocationPicker";
 
-export default function FetchAddress({ setIsInformedAddress, onClose }) {
+export default function AddressRetrieval({ setIsInformedAddress, onClose }) {
   const [location, setLocation] = useState(null);
   const [address, setAddress] = useState(null);
 

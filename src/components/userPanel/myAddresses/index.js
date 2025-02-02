@@ -2,9 +2,9 @@
 
 import EmptyStateMessage from "@/components/common/EmptyStateMessage";
 import { useSelector } from "react-redux";
-import { ModalComponent } from "./ModalComponent";
 import { useState } from "react";
-import InformAddress from "./InformAddress";
+import AddressDialog from "./AddressDialog";
+import { GeolocationDialog } from "./geolocationDialog";
 
 export default function MyAddresses() {
   const address = useSelector((state) => state.address.address); // Get address from Redux
@@ -21,14 +21,12 @@ export default function MyAddresses() {
           onClick={() => setIsModalOpen(true)} // Open modal on click
         />
       )}
-
-      <ModalComponent
+      <GeolocationDialog
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         setIsInformedAddress={setIsModalAddressOpen}
       />
-
-      <InformAddress
+      <AddressDialog
         isOpen={isModalAddressOpen}
         onClose={() => setIsModalAddressOpen(false)}
       />

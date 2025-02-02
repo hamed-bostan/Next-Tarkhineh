@@ -12,7 +12,7 @@ import MyInput from "@/components/common/MyInput";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 
-export default function InformAddress({ isOpen, onClose }) {
+export default function AddressDialog({ isOpen, onClose }) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[425px] px-4 py-6">
@@ -22,13 +22,13 @@ export default function InformAddress({ isOpen, onClose }) {
             <DialogDescription>برای اضافه کردن آدرس</DialogDescription>
           </DialogHeader>
         </VisuallyHidden>
-        <Details />
+        <AddressForm />
       </DialogContent>
     </Dialog>
   );
 }
 
-function Details() {
+function AddressForm() {
   return (
     <>
       <MyInput

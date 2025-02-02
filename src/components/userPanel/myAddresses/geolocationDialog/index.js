@@ -6,10 +6,9 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import AddressRetrieval from "./AddressRetrieval";
 
-import FetchAddress from "./FetchAddress";
-
-export function ModalComponent({ isOpen, onClose, setIsInformedAddress }) {
+export function GeolocationDialog({ isOpen, onClose, setIsInformedAddress }) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[425px] p-0">
@@ -19,7 +18,7 @@ export function ModalComponent({ isOpen, onClose, setIsInformedAddress }) {
             <DialogDescription>اضافه کردن آدرس</DialogDescription>
           </DialogHeader>
         </VisuallyHidden>
-        <FetchAddress
+        <AddressRetrieval
           setIsInformedAddress={setIsInformedAddress}
           onClose={onClose}
         />

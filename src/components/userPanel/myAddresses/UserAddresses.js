@@ -24,7 +24,7 @@ const information = [
   },
 ];
 
-export default function Details() {
+export default function UserAddresses() {
   return (
     <div className="flex flex-col gap-y-2">
       {information.map((item) => (
