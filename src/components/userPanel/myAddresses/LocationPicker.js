@@ -1,7 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  useMapEvents,
+  useMap,
+} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { LocateFixed, MapPin } from "lucide-react";
@@ -78,7 +84,7 @@ export default function LocationPicker({ onLocationSelect }) {
     return position ? <Marker position={position} icon={customIcon} /> : null;
   };
 
-  // Function to get the user's current location
+  // Function to get the user's current location and update the map center
   const handleGetCurrentLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -98,17 +104,25 @@ export default function LocationPicker({ onLocationSelect }) {
     }
   };
 
+  // Update the map center when the position changes, with increased zoom level
+  const MapCenter = () => {
+    const map = useMap();
+    map.setView(position, 14); // Zoom in more by setting a higher zoom level (e.g., 14)
+    return null;
+  };
+
   return (
     <div className="w-full h-[400px] relative">
       {/* Map with default location set to Mashhad Azadi Square */}
       <MapContainer
         center={position}
-        zoom={12}
+        zoom={12} // Default zoom level (can be adjusted)
         className="h-full w-full"
         style={{ zIndex: 0 }}
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         <LocationMarker />
+        <MapCenter /> {/* Update the map center */}
       </MapContainer>
 
       {/* "موقعیت من" Button */}
