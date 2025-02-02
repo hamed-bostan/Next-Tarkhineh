@@ -2,10 +2,12 @@ import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // LocalStorage
 import cartReducer from "./reducers/cartReducer";
+import addressReducer from "./reducers/addressReducer";
 
 // Combine reducers
 const rootReducer = combineReducers({
   cart: cartReducer,
+  address: addressReducer, 
 });
 
 // Persist configuration
