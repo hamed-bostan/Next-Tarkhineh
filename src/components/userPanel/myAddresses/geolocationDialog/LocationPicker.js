@@ -13,7 +13,6 @@ import L from "leaflet";
 import { LocateFixed, MapPin } from "lucide-react";
 import MyButton from "@/components/common/MyButton";
 
-// Fix missing marker issue in Leaflet
 const customIcon = new L.Icon({
   iconUrl:
     "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
@@ -129,25 +128,20 @@ export default function LocationPicker({
         <MapCenter /> {/* Update the map center */}
       </MapContainer>
 
-      {/* "موقعیت من" Button */}
       <div
-        className="bg-[#fff] rounded-sm shadow-2xl absolute flex items-center justify-center gap-x-1 top-5 right-5 h-8 w-24 cursor-pointer"
+        className="bg-[#fff] rounded-sm shadow-2xl absolute flex items-center justify-center gap-x-1 top-14 right-5 h-8 w-24 cursor-pointer"
         onClick={handleGetCurrentLocation}
         style={{ zIndex: 1000 }}
       >
         <LocateFixed color="#417F56" size={16} />
         <span className="text-xs text-[#417F56]">موقعیت من</span>
       </div>
-
-      {/* Address Display */}
       {address && (
         <div className="flex items-center gap-x-1 bg-[#fff] shadow-md rounded-sm p-2 absolute bottom-16 right-4 left-4">
           <MapPin size={16} color="#353535" />
           <p className="text-xs text-[#353535]">{address}</p>
         </div>
       )}
-
-      {/* Submit Button */}
       <MyButton
         label="ثبت موقعیت"
         buttonStyle="bg-[#417F56] absolute bottom-5 right-1/2 translate-x-1/2 w-36 h-8"
