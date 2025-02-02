@@ -1,8 +1,6 @@
 "use client";
 
 import EmptyStateMessage from "@/components/common/EmptyStateMessage";
-import FetchAddress from "./FetchAddress";
-import Details from "./Details";
 import { useSelector } from "react-redux";
 import { ModalComponent } from "./ModalComponent";
 import { useState } from "react";
