@@ -29,13 +29,11 @@ export default function FetchAddress({ setIsInformedAddress, onClose }) {
   };
 
   return (
-    <div className="">
-      <LocationPicker
-        onLocationSelect={handleLocationSelect}
-        address={address}
-        setIsInformedAddress={setIsInformedAddress}
-        onClose={onClose}
-      />
-    </div>
+    <LocationPicker
+      onLocationSelect={handleLocationSelect}
+      address={address}
+      setIsInformedAddress={setIsInformedAddress}
+      onClose={onClose}
+    />
   );
 }

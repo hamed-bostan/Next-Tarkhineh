@@ -116,7 +116,7 @@ export default function LocationPicker({
   };
 
   return (
-    <div className="w-full h-[400px] relative">
+    <div className="w-full h-[25rem] relative">
       {/* Map with default location set to Mashhad Azadi Square */}
       <MapContainer
         center={position}

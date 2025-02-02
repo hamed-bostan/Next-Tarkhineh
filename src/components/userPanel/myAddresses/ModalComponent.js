@@ -16,7 +16,7 @@ export function ModalComponent({ isOpen, onClose, setIsInformedAddress }) {
         <VisuallyHidden>
           <DialogHeader>
             <DialogTitle>افزودن آدرس جدید</DialogTitle>
-            <DialogDescription>برای اضافه کردن آدرس</DialogDescription>
+            <DialogDescription>اضافه کردن آدرس</DialogDescription>
           </DialogHeader>
         </VisuallyHidden>
         <FetchAddress

@@ -15,7 +15,7 @@ import { Textarea } from "@/components/ui/textarea";
 export default function InformAddress({ isOpen, onClose }) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[425px] p-0">
+      <DialogContent className="sm:max-w-[425px] px-4 py-6">
         <VisuallyHidden>
           <DialogHeader>
             <DialogTitle>افزودن آدرس جدید</DialogTitle>
