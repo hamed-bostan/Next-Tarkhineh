@@ -4,6 +4,7 @@ import EmptyStateMessage from "@/components/common/EmptyStateMessage";
 import { useSelector } from "react-redux";
 import { ModalComponent } from "./ModalComponent";
 import { useState } from "react";
+import InformAddress from "./InformAddress";
 
 export default function MyAddresses() {
   const address = useSelector((state) => state.address.address); // Get address from Redux
@@ -24,6 +25,7 @@ export default function MyAddresses() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
+      <InformAddress />
     </>
   );
 }
