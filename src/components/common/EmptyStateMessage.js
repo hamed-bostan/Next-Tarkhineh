@@ -3,7 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function EmptyStateMessage({ text, button }) {
+export default function EmptyStateMessage({
+  text,
+  button,
+  buttonText,
+  href,
+  onClick,
+}) {
   return (
     <div className="relative border border-[#CBCBCB] rounded-lg min-h-96">
       <Image
@@ -16,15 +22,23 @@ export default function EmptyStateMessage({ text, button }) {
       <p className="text-nowrap text-[#717171] text-xs absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:text-sm lg:text-base">
         {text}
       </p>
-      {button && (
-        <Link href="/menu">
+      {button &&
+        (href ? (
+          <Link href={href}>
+            <MyButton
+              label={buttonText}
+              variant="outline"
+              buttonStyle="text-[#417F56] border-[#417F56] absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-7 w-36 hover:text-[#FFFFFF] md:w-40 lg:w-48 md: translate-y-8"
+            />
+          </Link>
+        ) : (
           <MyButton
-            label="منوی رستوران"
+            onClick={onClick}
+            label={buttonText}
             variant="outline"
             buttonStyle="text-[#417F56] border-[#417F56] absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-7 w-36 hover:text-[#FFFFFF] md:w-40 lg:w-48 md: translate-y-8"
           />
-        </Link>
-      )}
+        ))}
     </div>
   );
 }

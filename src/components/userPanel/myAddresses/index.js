@@ -6,7 +6,8 @@ export default function MyAddresses() {
     <>
       <EmptyStateMessage
         text="شما در حال حاضر هیچ آدرسی ثبت نکرده‌اید!"
-        button="افزودن آدرس"
+        button={true}
+        buttonText="افزودن آدرس"
       />
       <FetchAddress />
     </>

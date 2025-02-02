@@ -21,6 +21,8 @@ export default function CartDetails() {
         <EmptyStateMessage
           button={true}
           text="شما در حال حاضر هیچ سفارشی ثبت نکرده‌اید!"
+          buttonText="منوی رستوران"
+          href="/menu"
         />
       )}
     </>
