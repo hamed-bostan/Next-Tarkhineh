@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function EmptyCartMessage({ text, button }) {
+export default function EmptyStateMessage({ text, button }) {
   return (
     <div className="relative border border-[#CBCBCB] rounded-lg min-h-96">
       <Image

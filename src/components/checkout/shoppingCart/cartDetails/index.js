@@ -3,8 +3,8 @@
 import { useSelector } from "react-redux";
 import { Separator } from "@/components/ui/separator";
 import Items from "./items";
-import EmptyCartMessage from "../../EmptyCartMessage";
 import CartSummary from "../../CartSummary";
+import EmptyStateMessage from "@/components/common/EmptyStateMessage";
 
 export default function CartDetails() {
   const selectedItems = useSelector((state) => state.cart.selectedItems);
@@ -18,7 +18,7 @@ export default function CartDetails() {
           <CartSummary />
         </div>
       ) : (
-        <EmptyCartMessage
+        <EmptyStateMessage
           button={true}
           text="شما در حال حاضر هیچ سفارشی ثبت نکرده‌اید!"
         />

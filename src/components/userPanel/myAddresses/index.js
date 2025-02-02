@@ -1,10 +1,10 @@
-import EmptyCartMessage from "@/components/checkout/EmptyCartMessage";
+import EmptyStateMessage from "@/components/common/EmptyStateMessage";
 import FetchAddress from "./FetchAddress";
 
 export default function MyAddresses() {
   return (
     <>
-      <EmptyCartMessage
+      <EmptyStateMessage
         text="شما در حال حاضر هیچ آدرسی ثبت نکرده‌اید!"
         button="افزودن آدرس"
       />
