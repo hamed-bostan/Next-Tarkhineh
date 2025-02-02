@@ -9,7 +9,7 @@ import InformAddress from "./InformAddress";
 export default function MyAddresses() {
   const address = useSelector((state) => state.address.address); // Get address from Redux
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isInformedAddress, setIsInformedAddress] = useState(false);
+  const [isModalAddressOpen, setIsModalAddressOpen] = useState(false);
 
   return (
     <>
@@ -25,9 +25,13 @@ export default function MyAddresses() {
       <ModalComponent
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        setIsInformedAddress={setIsInformedAddress}
+        setIsInformedAddress={setIsModalAddressOpen}
       />
-      {isInformedAddress && <InformAddress />}
+
+      <InformAddress
+        isOpen={isModalAddressOpen}
+        onClose={() => setIsModalAddressOpen(false)}
+      />
     </>
   );
 }

@@ -1,9 +1,34 @@
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+
 import MyButton from "@/components/common/MyButton";
 import MyInput from "@/components/common/MyInput";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 
-export default function InformAddress() {
+export default function InformAddress({ isOpen, onClose }) {
+  return (
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="sm:max-w-[425px] p-0">
+        <VisuallyHidden>
+          <DialogHeader>
+            <DialogTitle>افزودن آدرس جدید</DialogTitle>
+            <DialogDescription>برای اضافه کردن آدرس</DialogDescription>
+          </DialogHeader>
+        </VisuallyHidden>
+        <Details />
+      </DialogContent>
+    </Dialog>
+  );
+}
+
+function Details() {
   return (
     <>
       <MyInput
