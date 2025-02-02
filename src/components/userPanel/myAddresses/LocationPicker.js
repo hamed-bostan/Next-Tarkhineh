@@ -27,13 +27,34 @@ export default function LocationPicker({ onLocationSelect }) {
       );
       const data = await response.json();
 
-      if (data && data.display_name) {
-        let parts = data.display_name.split(","); // ✅ Convert address into an array
+      console.log("OpenStreetMap API Response:", data); // Log the entire response for debugging
 
-        // ✅ Extract most relevant parts: Street, City, Province, Country
-        let filteredAddress = parts.slice(0, 3).join(", "); // Take the first 3 most important parts
+      if (data && data.address) {
+        const {
+          state,
+          city,
+          county,
+          suburb,
+          class: roadClass,
+          road,
+          name,
+          neighbourhood,
+        } = data.address;
 
-        setAddress(filteredAddress.trim()); // ✅ Set cleaned address
+        let addressParts = [];
+
+        if (state) addressParts.push(state); // استان خراسان رضوی
+        if (county) addressParts.push(county); // شهرستان مشهد
+        if (city) addressParts.push(city); // شهر مشهد
+        if (suburb) addressParts.push(suburb); // خاتم الانبیا
+        if (roadClass) addressParts.push(roadClass); // road class (e.g., Boulevard, Street)
+        if (neighbourhood) addressParts.push(neighbourhood); // road class (e.g., Boulevard, Street)
+        if (road) addressParts.push(road); // road name (e.g., بلوار سجاد)
+        if (name) addressParts.push(name); // neighborhood or street name (e.g., اندیشه, مشکینی)
+
+        let formattedAddress = addressParts.join("، ");
+
+        setAddress(formattedAddress); // Update the address
       } else {
         setAddress("آدرس یافت نشد");
       }
@@ -56,8 +77,6 @@ export default function LocationPicker({ onLocationSelect }) {
 
     return position ? <Marker position={position} icon={customIcon} /> : null;
   };
-
-  console.log(address);
 
   return (
     <div className="w-full h-[400px] relative">
