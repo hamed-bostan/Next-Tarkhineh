@@ -2,7 +2,7 @@
 import { useState } from "react";
 import LocationPicker from "./LocationPicker";
 
-export default function FetchAddress({ setIsInformedAddress }) {
+export default function FetchAddress({ setIsInformedAddress, onClose }) {
   const [location, setLocation] = useState(null);
   const [address, setAddress] = useState(null);
 
@@ -34,6 +34,7 @@ export default function FetchAddress({ setIsInformedAddress }) {
         onLocationSelect={handleLocationSelect}
         address={address}
         setIsInformedAddress={setIsInformedAddress}
+        onClose={onClose}
       />
     </div>
   );
