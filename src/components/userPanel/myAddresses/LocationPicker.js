@@ -26,8 +26,14 @@ export default function LocationPicker({ onLocationSelect }) {
         `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&accept-language=fa`
       );
       const data = await response.json();
+
       if (data && data.display_name) {
-        setAddress(data.display_name); // Display Persian address
+        let parts = data.display_name.split(","); // ✅ Convert address into an array
+
+        // ✅ Extract most relevant parts: Street, City, Province, Country
+        let filteredAddress = parts.slice(0, 3).join(", "); // Take the first 3 most important parts
+
+        setAddress(filteredAddress.trim()); // ✅ Set cleaned address
       } else {
         setAddress("آدرس یافت نشد");
       }
