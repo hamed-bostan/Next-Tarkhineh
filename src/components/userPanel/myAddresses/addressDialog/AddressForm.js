@@ -13,6 +13,7 @@ export default function AddressForm() {
   // Local state to hold title and phone number
   const [title, setTitle] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [familyName, setFamilyName] = useState("");
   const { selectedAddress } = useContext(AddressContext);
 
   const dispatch = useDispatch();
@@ -20,13 +21,20 @@ export default function AddressForm() {
   function handleFormSubmit(e) {
     e.preventDefault();
 
-    if (!title || !phoneNumber) {
-      console.error("Title or Phone number is missing!");
+    if (!title || !phoneNumber || !familyName) {
+      console.error("Title or Phone number or familyName is missing!");
       return;
     }
 
     // Dispatch an action to store the address, title, and phone number in Redux
-    dispatch(storeAddress({ title, phoneNumber, address: selectedAddress }));
+    dispatch(
+      storeAddress({
+        title,
+        phoneNumber,
+        name: familyName,
+        address: selectedAddress,
+      })
+    );
 
     setTitle("");
     setPhoneNumber("");
@@ -47,8 +55,14 @@ export default function AddressForm() {
         </label>
       </div>
       <MyInput
+        placeholder="نام و نام‌خانوادگی تحویل گیرنده"
+        style="placeholder:text-[#717171] text-[#353535] mb-3"
+        value={familyName}
+        onChange={(e) => setFamilyName(e.target.value)}
+      />
+      <MyInput
         type="number"
-        placeholder="شماره همراه"
+        placeholder="شماره همراه تحویل گیرنده"
         style="placeholder:text-[#717171] text-[#353535] mb-3"
         value={phoneNumber}
         onChange={(e) => setPhoneNumber(e.target.value)}

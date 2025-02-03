@@ -49,7 +49,7 @@ function UserAddressList() {
             />
           </div>
           <span>{item.title}</span>
-          <span>محمد محمدی</span>
+          <span>{item.name}</span>
           <span className="mr-auto">{item.phoneNumber}</span>
         </div>
       ))}
