@@ -22,7 +22,7 @@ export default function MyAddresses() {
           onClick={() => setIsModalOpen(true)} // Open modal on click
         />
       ) : (
-        <UserAddresses />
+        <UserAddresses onClick={() => setIsModalOpen(true)} />
       )}
 
       <GeolocationDialog

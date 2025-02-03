@@ -1,8 +1,23 @@
+import MyButton from "@/components/common/MyButton";
 import { deleteAddress } from "@/redux/reducers/addressReducer";
 import { Pencil, Trash2 } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 
-export default function UserAddresses() {
+export default function UserAddresses({ onClick }) {
+  return (
+    <>
+      <Details />
+      <MyButton
+        onClick={onClick}
+        label="افزودن آدرس جدید"
+        variant="outline"
+        buttonStyle="text-[#417F56] border-[#417F56] hover:text-[#fff] mt-6 mx-auto md:hidden"
+      />
+    </>
+  );
+}
+
+function Details() {
   const dispatch = useDispatch();
   const addresses = useSelector((state) => state.address.addresses); // Get addresses from Redux
 
