@@ -12,6 +12,8 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { LocateFixed, MapPin } from "lucide-react";
 import MyButton from "@/components/common/MyButton";
+import { useDispatch } from "react-redux";
+import { updateAddress } from "@/redux/reducers/addressReducer";
 
 const customIcon = new L.Icon({
   iconUrl:
@@ -27,6 +29,14 @@ export default function LocationPicker({
 }) {
   const [position, setPosition] = useState([36.2976, 59.5671]); // Default: Mashhad Azadi Square
   const [address, setAddress] = useState("مشهد، میدان آزادی");
+
+  const dispatch = useDispatch();
+
+  const handleConfirmLocation = () => {
+    dispatch(updateAddress(address)); // Save address to Redux
+    setIsInformedAddress(true);
+    onClose();
+  };
 
   // Reverse geocoding function to get Persian address
   const fetchAddress = async (lat, lng) => {
@@ -145,10 +155,7 @@ export default function LocationPicker({
       <MyButton
         label="ثبت موقعیت"
         buttonStyle="bg-[#417F56] absolute bottom-5 right-1/2 translate-x-1/2 w-36 h-8"
-        onClick={() => {
-          setIsInformedAddress(true);
-          onClose();
-        }}
+        onClick={handleConfirmLocation}
       />
     </div>
   );

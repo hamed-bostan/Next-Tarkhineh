@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import AddressDialog from "./AddressDialog";
 import { GeolocationDialog } from "./geolocationDialog";
+import UserAddresses from "./UserAddresses";
 
 export default function MyAddresses() {
   const address = useSelector((state) => state.address.address); // Get address from Redux
@@ -30,6 +31,7 @@ export default function MyAddresses() {
         isOpen={isModalAddressOpen}
         onClose={() => setIsModalAddressOpen(false)}
       />
+      {address && <UserAddresses />}
     </>
   );
 }
