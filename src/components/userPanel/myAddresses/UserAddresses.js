@@ -13,7 +13,7 @@ export default function UserAddresses({ onClick }) {
         button={true}
         onClick={onClick}
       />
-      <Details />
+      <UserAddressList />
       <MyButton
         onClick={onClick}
         label="افزودن آدرس جدید"
@@ -24,7 +24,7 @@ export default function UserAddresses({ onClick }) {
   );
 }
 
-function Details() {
+function UserAddressList() {
   const dispatch = useDispatch();
   const addresses = useSelector((state) => state.address.addresses); // Get addresses from Redux
 
