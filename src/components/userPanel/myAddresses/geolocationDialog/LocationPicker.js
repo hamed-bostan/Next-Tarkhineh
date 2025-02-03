@@ -13,7 +13,7 @@ import L from "leaflet";
 import { LocateFixed, MapPin } from "lucide-react";
 import MyButton from "@/components/common/MyButton";
 import { useDispatch } from "react-redux";
-import { updateAddress } from "@/redux/reducers/addressReducer";
+import { storeAddress } from "@/redux/reducers/addressReducer";
 
 const customIcon = new L.Icon({
   iconUrl:
@@ -33,7 +33,7 @@ export default function LocationPicker({
   const dispatch = useDispatch();
 
   const handleConfirmLocation = () => {
-    dispatch(updateAddress(address)); // Save address to Redux
+    dispatch(storeAddress(address)); // Save address to Redux
     setIsInformedAddress(true);
     onClose();
   };

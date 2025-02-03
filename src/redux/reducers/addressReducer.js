@@ -8,7 +8,7 @@ const addressSlice = createSlice({
   name: "address",
   initialState,
   reducers: {
-    updateAddress: (state, action) => {
+    storeAddress: (state, action) => {
       state.address = action.payload;
     },
     clearAddress: (state) => {
@@ -17,5 +17,5 @@ const addressSlice = createSlice({
   },
 });
 
-export const { updateAddress, clearAddress } = addressSlice.actions;
+export const { storeAddress, clearAddress } = addressSlice.actions;
 export default addressSlice.reducer;
