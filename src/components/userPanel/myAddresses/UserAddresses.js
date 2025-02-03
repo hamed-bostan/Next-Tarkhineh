@@ -1,4 +1,5 @@
 import { Pencil, Trash2 } from "lucide-react";
+import { useSelector } from "react-redux";
 
 const information = [
   {
@@ -25,9 +26,11 @@ const information = [
 ];
 
 export default function UserAddresses() {
+  const addresses = useSelector((state) => state.address.addresses); // Get addresses from Redux
+
   return (
     <div className="flex flex-col gap-y-2">
-      {information.map((item) => (
+      {addresses.map((item) => (
         <div
           key={item.id}
           className="bg-[#F9F9F9] border border-[#CBCBCB] rounded-sm p-4 text-xs text-[#717171] grid grid-cols-3"

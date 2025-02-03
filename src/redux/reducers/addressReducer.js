@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  address: null, // Default: No address
+  addresses: [], // Store multiple addresses
 };
 
 const addressSlice = createSlice({
@@ -9,13 +9,13 @@ const addressSlice = createSlice({
   initialState,
   reducers: {
     storeAddress: (state, action) => {
-      state.address = action.payload;
+      state.addresses.push(action.payload); // Append a new address
     },
-    clearAddress: (state) => {
-      state.address = null;
+    clearAddresses: (state) => {
+      state.addresses = []; // Clear all addresses
     },
   },
 });
 
-export const { storeAddress, clearAddress } = addressSlice.actions;
+export const { storeAddress, clearAddresses } = addressSlice.actions;
 export default addressSlice.reducer;
