@@ -1,37 +1,45 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+"use client";
 
+import { useState } from "react";
 import MyButton from "@/components/common/MyButton";
 import MyInput from "@/components/common/MyInput";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
+import { useDispatch, useSelector } from "react-redux";
+import { storeAddress } from "@/redux/reducers/addressReducer";
 
-export default function AddressDialog({ isOpen, onClose }) {
-  return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[425px] px-4 py-16">
-        <VisuallyHidden>
-          <DialogHeader>
-            <DialogTitle>افزودن آدرس جدید</DialogTitle>
-            <DialogDescription>برای اضافه کردن آدرس</DialogDescription>
-          </DialogHeader>
-        </VisuallyHidden>
-        <AddressForm />
-      </DialogContent>
-    </Dialog>
-  );
-}
+export default function AddressForm() {
+  // Get the address from Redux state
+  const address = useSelector(
+    (state) => state.address.addresses[state.address.addresses.length - 1]
+  ); // Get the last address
 
-function AddressForm() {
+  // Local state to hold title and phone number
+  const [title, setTitle] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  const dispatch = useDispatch();
+
+  function handleFormSubmit(e) {
+    e.preventDefault();
+
+    if (!title || !phoneNumber) {
+      console.error("Title or Phone number is missing!");
+      return;
+    }
+
+    // Dispatch an action to store the address, title, and phone number in Redux
+    dispatch(storeAddress({ title, phoneNumber, address }));
+
+    setTitle("");
+    setPhoneNumber("");
+  }
+
   return (
-    <>
+    <form onSubmit={handleFormSubmit}>
       <MyInput
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
         placeholder="عنوان آدرس"
         style="placeholder:text-[#717171] text-[#353535] mb-3"
       />
@@ -42,12 +50,17 @@ function AddressForm() {
         </label>
       </div>
       <MyInput
+        type="number"
         placeholder="شماره همراه"
         style="placeholder:text-[#717171] text-[#353535] mb-3"
+        value={phoneNumber}
+        onChange={(e) => setPhoneNumber(e.target.value)}
       />
       <Textarea
         placeholder="آدرس دقیق شما"
         className="resize-none text-[#353535] placeholder:text-[#717171] border border-[#CBCBCB] placeholder:text-xs text-xs"
+        value={address}
+        readOnly
       />
       <div className="flex justify-between mt-6 gap-x-4">
         <MyButton
@@ -58,8 +71,9 @@ function AddressForm() {
         <MyButton
           label="ثبت آدرس"
           buttonStyle="bg-[#417F56] border border-[#417F56] w-full"
+          type="submit"
         />
       </div>
-    </>
+    </form>
   );
 }

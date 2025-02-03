@@ -9,13 +9,24 @@ const addressSlice = createSlice({
   initialState,
   reducers: {
     storeAddress: (state, action) => {
-      state.addresses.push(action.payload); // Append a new address
+      if (!state.addresses) {
+        state.addresses = []; // Ensure it's an array
+      }
+      state.addresses.push(action.payload);
     },
     clearAddresses: (state) => {
       state.addresses = []; // Clear all addresses
     },
+    deleteAddress: (state, action) => {
+      state.addresses = state.addresses.filter(
+        (address) => address.id !== action.payload
+      ); // Remove address by id
+    },
   },
 });
 
-export const { storeAddress, clearAddresses } = addressSlice.actions;
+console.log("Initial State:", initialState);
+
+export const { storeAddress, clearAddresses, deleteAddress } =
+  addressSlice.actions;
 export default addressSlice.reducer;

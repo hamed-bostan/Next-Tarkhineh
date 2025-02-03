@@ -12,7 +12,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { LocateFixed, MapPin } from "lucide-react";
 import MyButton from "@/components/common/MyButton";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { storeAddress } from "@/redux/reducers/addressReducer";
 
 const customIcon = new L.Icon({
@@ -33,10 +33,18 @@ export default function LocationPicker({
   const dispatch = useDispatch();
 
   const handleConfirmLocation = () => {
-    dispatch(storeAddress(address)); // Save address to Redux
+    if (!address) {
+      console.error("Address is undefined, cannot store.");
+      return;
+    }
+    // console.log("Address before dispatching:", address); // Log the address
+    dispatch(storeAddress(address)); // Ensure correct data is passed
     setIsInformedAddress(true);
     onClose();
   };
+
+  // const addresses = useSelector((state) => state.address.addresses);
+  // console.log("Redux store addresses:", addresses);
 
   // Reverse geocoding function to get Persian address
   const fetchAddress = async (lat, lng) => {
@@ -46,7 +54,7 @@ export default function LocationPicker({
       );
       const data = await response.json();
 
-      console.log("OpenStreetMap API Response:", data); // Log the entire response for debugging
+      // console.log("OpenStreetMap API Response:", data); // Log the entire response for debugging
 
       if (data && data.address) {
         const {
