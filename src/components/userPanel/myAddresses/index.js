@@ -6,15 +6,16 @@ import { useState } from "react";
 import { GeolocationDialog } from "./geolocationDialog";
 import UserAddresses from "./UserAddresses";
 import AddressDialog from "./addressDialog";
+import { AddressProvider } from "@/context/AddressContext";
 
 export default function MyAddresses() {
-  const address = useSelector((state) => state.address.addresses); // Get address from Redux
+  const addresses = useSelector((state) => state.address.addresses); // Get address from Redux
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalAddressOpen, setIsModalAddressOpen] = useState(false);
 
   return (
-    <>
-      {address.length === 0 ? (
+    <AddressProvider>
+      {addresses.length === 0 ? (
         <EmptyStateMessage
           text="شما در حال حاضر هیچ آدرسی ثبت نکرده‌اید!"
           button={true}
@@ -34,6 +35,6 @@ export default function MyAddresses() {
         isOpen={isModalAddressOpen}
         onClose={() => setIsModalAddressOpen(false)}
       />
-    </>
+    </AddressProvider>
   );
 }

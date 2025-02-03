@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {
   MapContainer,
   TileLayer,
@@ -12,8 +12,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { LocateFixed, MapPin } from "lucide-react";
 import MyButton from "@/components/common/MyButton";
-import { useDispatch, useSelector } from "react-redux";
-import { storeAddress } from "@/redux/reducers/addressReducer";
+import { AddressContext } from "@/context/AddressContext";
 
 const customIcon = new L.Icon({
   iconUrl:
@@ -29,15 +28,13 @@ export default function LocationPicker({
 }) {
   const [position, setPosition] = useState([36.2976, 59.5671]); // Default: Mashhad Azadi Square
   const [address, setAddress] = useState("مشهد، میدان آزادی");
-
-  const dispatch = useDispatch();
+  const { setSelectedAddress } = useContext(AddressContext);
 
   const handleConfirmLocation = () => {
     if (!address) {
-      console.error("Address is undefined, cannot store.");
       return;
     }
-    dispatch(storeAddress(address)); // Ensure correct data is passed
+    setSelectedAddress(address); // Store in Context api
     setIsInformedAddress(true);
     onClose();
   };

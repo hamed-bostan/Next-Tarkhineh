@@ -1,22 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import MyButton from "@/components/common/MyButton";
 import MyInput from "@/components/common/MyInput";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { storeAddress } from "@/redux/reducers/addressReducer";
+import { AddressContext } from "@/context/AddressContext";
 
 export default function AddressForm() {
-  // Get the address from Redux state
-  const address = useSelector(
-    (state) => state.address.addresses[state.address.addresses.length - 1]
-  ); // Get the last address
-
   // Local state to hold title and phone number
   const [title, setTitle] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const { selectedAddress } = useContext(AddressContext);
 
   const dispatch = useDispatch();
 
@@ -29,7 +26,7 @@ export default function AddressForm() {
     }
 
     // Dispatch an action to store the address, title, and phone number in Redux
-    dispatch(storeAddress({ title, phoneNumber, address }));
+    dispatch(storeAddress({ title, phoneNumber, address: selectedAddress }));
 
     setTitle("");
     setPhoneNumber("");
@@ -59,7 +56,7 @@ export default function AddressForm() {
       <Textarea
         placeholder="آدرس دقیق شما"
         className="resize-none text-[#353535] placeholder:text-[#717171] border border-[#CBCBCB] placeholder:text-xs text-xs"
-        value={address}
+        value={selectedAddress}
         readOnly
       />
       <div className="flex justify-between mt-6 gap-x-4">
