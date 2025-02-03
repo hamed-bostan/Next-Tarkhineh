@@ -12,7 +12,7 @@ const addressSlice = createSlice({
       if (!state.addresses) {
         state.addresses = []; // Ensure it's an array
       }
-      state.addresses.push(action.payload);
+      state.addresses.push({ id: Date.now(), ...action.payload }); // Assign unique id
     },
     clearAddresses: (state) => {
       state.addresses = []; // Clear all addresses
