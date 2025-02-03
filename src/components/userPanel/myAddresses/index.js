@@ -14,12 +14,17 @@ export default function MyAddresses() {
 
   return (
     <>
-      <EmptyStateMessage
-        text="شما در حال حاضر هیچ آدرسی ثبت نکرده‌اید!"
-        button={true}
-        buttonText="افزودن آدرس"
-        onClick={() => setIsModalOpen(true)} // Open modal on click
-      />
+      {address.length === 0 ? (
+        <EmptyStateMessage
+          text="شما در حال حاضر هیچ آدرسی ثبت نکرده‌اید!"
+          button={true}
+          buttonText="افزودن آدرس"
+          onClick={() => setIsModalOpen(true)} // Open modal on click
+        />
+      ) : (
+        <UserAddresses />
+      )}
+
       <GeolocationDialog
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
@@ -29,7 +34,6 @@ export default function MyAddresses() {
         isOpen={isModalAddressOpen}
         onClose={() => setIsModalAddressOpen(false)}
       />
-      {address && <UserAddresses />}
     </>
   );
 }
