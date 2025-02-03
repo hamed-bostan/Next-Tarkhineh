@@ -25,8 +25,6 @@ const addressSlice = createSlice({
   },
 });
 
-console.log("Initial State:", initialState);
-
 export const { storeAddress, clearAddresses, deleteAddress } =
   addressSlice.actions;
 export default addressSlice.reducer;

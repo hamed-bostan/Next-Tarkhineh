@@ -37,14 +37,10 @@ export default function LocationPicker({
       console.error("Address is undefined, cannot store.");
       return;
     }
-    // console.log("Address before dispatching:", address); // Log the address
     dispatch(storeAddress(address)); // Ensure correct data is passed
     setIsInformedAddress(true);
     onClose();
   };
-
-  // const addresses = useSelector((state) => state.address.addresses);
-  // console.log("Redux store addresses:", addresses);
 
   // Reverse geocoding function to get Persian address
   const fetchAddress = async (lat, lng) => {
@@ -53,8 +49,6 @@ export default function LocationPicker({
         `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&accept-language=fa`
       );
       const data = await response.json();
-
-      // console.log("OpenStreetMap API Response:", data); // Log the entire response for debugging
 
       if (data && data.address) {
         const {
