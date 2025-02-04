@@ -17,6 +17,7 @@ import {
   fetchAddress,
   handleGetCurrentLocation,
 } from "@/components/utils/locationUtils";
+import { useAddressDialog } from "@/context/AddressDialogContext";
 
 const customIcon = new L.Icon({
   iconUrl:
@@ -25,14 +26,12 @@ const customIcon = new L.Icon({
   iconAnchor: [12, 41],
 });
 
-export default function LocationPicker({
-  onLocationSelect,
-  openAddressDialog,
-  onClose,
-}) {
+export default function LocationPicker({ onLocationSelect }) {
   const [position, setPosition] = useState([36.2976, 59.5671]); // Default: Mashhad Azadi Square
   const [address, setAddress] = useState("مشهد، میدان آزادی");
   const { setSelectedAddress } = useContext(AddressContext);
+
+  const { closeGeolocationDialog, openAddressDialog } = useAddressDialog(); // Access the context values
 
   const handleGetLocationClick = () => {
     handleGetCurrentLocation(
@@ -49,7 +48,7 @@ export default function LocationPicker({
     }
     setSelectedAddress(address); // Store in Context api
     openAddressDialog();
-    onClose();
+    closeGeolocationDialog();
   };
 
   // Click event handler for setting location

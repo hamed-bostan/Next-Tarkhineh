@@ -7,10 +7,17 @@ import {
 } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import AddressRetrieval from "./AddressRetrieval";
+import { useAddressDialog } from "@/context/AddressDialogContext";
 
-export function GeolocationDialog({ isOpen, onClose, openAddressDialog }) {
+export function GeolocationDialog() {
+  const { isGeolocationDialogOpen, closeGeolocationDialog } =
+    useAddressDialog(); // Access the context values
+
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+    <Dialog
+      open={isGeolocationDialogOpen}
+      onOpenChange={closeGeolocationDialog}
+    >
       <DialogContent className="sm:max-w-[425px] p-0">
         <VisuallyHidden>
           <DialogHeader>
@@ -18,10 +25,7 @@ export function GeolocationDialog({ isOpen, onClose, openAddressDialog }) {
             <DialogDescription>اضافه کردن آدرس</DialogDescription>
           </DialogHeader>
         </VisuallyHidden>
-        <AddressRetrieval
-          openAddressDialog={openAddressDialog}
-          onClose={onClose}
-        />
+        <AddressRetrieval />
       </DialogContent>
     </Dialog>
   );

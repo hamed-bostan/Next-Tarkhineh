@@ -8,10 +8,13 @@ import {
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 import AddressForm from "./AddressForm";
+import { useAddressDialog } from "@/context/AddressDialogContext";
 
-export default function AddressDialog({ isOpen, onClose }) {
+export default function AddressDialog() {
+  const { isAddressDialogOpen, closeAddressDialog } = useAddressDialog(); // Access the context values
+
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+    <Dialog open={isAddressDialogOpen} onOpenChange={closeAddressDialog}>
       <DialogContent className="sm:max-w-[425px] px-4 py-16">
         <VisuallyHidden>
           <DialogHeader>

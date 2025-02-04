@@ -1,15 +1,12 @@
 import MyButton from "@/components/common/MyButton";
+import { useAddressDialog } from "@/context/AddressDialogContext";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function EmptyStateMessage({
-  text,
-  button,
-  buttonText,
-  href,
-  openGeolocationDialog,
-}) {
+export default function EmptyStateMessage({ text, button, buttonText, href }) {
+  const { openGeolocationDialog } = useAddressDialog(); // Access the context values
+
   return (
     <div className="relative border border-[#CBCBCB] rounded-lg min-h-96">
       <Image

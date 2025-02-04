@@ -2,7 +2,12 @@ import MyButton from "@/components/common/MyButton";
 import { Separator } from "@/components/ui/separator";
 import { CirclePlus } from "lucide-react";
 
-export default function HeaderDesktop({ label, style, button, openGeolocationDialog }) {
+export default function HeaderDesktop({
+  label,
+  style,
+  button,
+  openGeolocationDialog,
+}) {
   return (
     <div className={`hidden md:block ${style}`}>
       <div className="flex justify-between items-center mb-2">

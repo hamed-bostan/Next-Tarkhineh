@@ -3,16 +3,14 @@ import { deleteAddress } from "@/redux/reducers/addressReducer";
 import { Pencil, Trash2 } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import HeaderDesktop from "../header/HeaderDesktop";
+import { useAddressDialog } from "@/context/AddressDialogContext";
 
-export default function UserAddresses({ openGeolocationDialog }) {
+export default function UserAddresses() {
+  const { openGeolocationDialog } = useAddressDialog(); // Access the context values
+
   return (
     <div className="md:border md:border-[#CBCBCB] md:rounded-lg md:p-5">
-      <HeaderDesktop
-        label="آدرس ها"
-        style="mb-4"
-        button={true}
-        openGeolocationDialog={openGeolocationDialog}
-      />
+      <HeaderDesktop label="آدرس ها" style="mb-4" button={true} openGeolocationDialog={openGeolocationDialog}/>
       <UserAddressList />
       <MyButton
         onClick={openGeolocationDialog}
