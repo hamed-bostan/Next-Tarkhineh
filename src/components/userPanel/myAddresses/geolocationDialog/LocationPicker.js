@@ -13,6 +13,10 @@ import L from "leaflet";
 import { LocateFixed, MapPin } from "lucide-react";
 import MyButton from "@/components/common/MyButton";
 import { AddressContext } from "@/context/AddressContext";
+import {
+  fetchAddress,
+  handleGetCurrentLocation,
+} from "@/components/utils/locationUtils";
 
 const customIcon = new L.Icon({
   iconUrl:
@@ -30,6 +34,15 @@ export default function LocationPicker({
   const [address, setAddress] = useState("مشهد، میدان آزادی");
   const { setSelectedAddress } = useContext(AddressContext);
 
+  const handleGetLocationClick = () => {
+    handleGetCurrentLocation(
+      setPosition,
+      fetchAddress,
+      setAddress,
+      onLocationSelect
+    );
+  };
+
   const handleConfirmLocation = () => {
     if (!address) {
       return;
@@ -39,68 +52,18 @@ export default function LocationPicker({
     onClose();
   };
 
-  // Reverse geocoding function to get Persian address
-  const fetchAddress = async (lat, lng) => {
-    try {
-      const response = await fetch(
-        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&accept-language=fa`
-      );
-      const data = await response.json();
-
-      if (!data?.address) return setAddress("آدرس یافت نشد");
-
-      const addressParts = [
-        data.address.state,
-        data.address.county,
-        data.address.city,
-        data.address.suburb,
-        data.address.class,
-        data.address.neighbourhood,
-        data.address.road,
-        data.address.name,
-      ].filter(Boolean); // Removes undefined values
-
-      setAddress(
-        addressParts.length ? addressParts.join("، ") : "آدرس یافت نشد"
-      );
-    } catch (error) {
-      console.error("خطا در دریافت آدرس:", error);
-      setAddress("خطا در دریافت آدرس");
-    }
-  };
-
   // Click event handler for setting location
   const LocationMarker = () => {
     useMapEvents({
       click: async (e) => {
         const { lat, lng } = e.latlng;
         setPosition([lat, lng]);
-        await fetchAddress(lat, lng);
+        await fetchAddress(lat, lng, setAddress);
         onLocationSelect(lat, lng);
       },
     });
 
     return position ? <Marker position={position} icon={customIcon} /> : null;
-  };
-
-  // Function to get the user's current location and update the map center
-  const handleGetCurrentLocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          setPosition([latitude, longitude]);
-          fetchAddress(latitude, longitude); // Fetch the address based on the current location
-          onLocationSelect(latitude, longitude); // Pass the location to the parent
-        },
-        (error) => {
-          console.error("Error getting location: ", error);
-          setAddress("خطا در دریافت موقعیت");
-        }
-      );
-    } else {
-      alert("Geolocation is not supported by this browser.");
-    }
   };
 
   // Update the map center when the position changes, with increased zoom level
@@ -126,7 +89,7 @@ export default function LocationPicker({
 
       <div
         className="bg-[#fff] rounded-sm shadow-2xl absolute flex items-center justify-center gap-x-1 top-14 right-5 h-8 w-24 cursor-pointer"
-        onClick={handleGetCurrentLocation}
+        onClick={handleGetLocationClick}
         style={{ zIndex: 1000 }}
       >
         <LocateFixed color="#417F56" size={16} />
