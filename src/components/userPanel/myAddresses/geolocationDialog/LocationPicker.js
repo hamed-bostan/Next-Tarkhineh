@@ -47,35 +47,22 @@ export default function LocationPicker({
       );
       const data = await response.json();
 
-      if (data && data.address) {
-        const {
-          state,
-          city,
-          county,
-          suburb,
-          class: roadClass,
-          road,
-          name,
-          neighbourhood,
-        } = data.address;
+      if (!data?.address) return setAddress("آدرس یافت نشد");
 
-        let addressParts = [];
+      const addressParts = [
+        data.address.state,
+        data.address.county,
+        data.address.city,
+        data.address.suburb,
+        data.address.class,
+        data.address.neighbourhood,
+        data.address.road,
+        data.address.name,
+      ].filter(Boolean); // Removes undefined values
 
-        if (state) addressParts.push(state); // استان خراسان رضوی
-        if (county) addressParts.push(county); // شهرستان مشهد
-        if (city) addressParts.push(city); // شهر مشهد
-        if (suburb) addressParts.push(suburb); // خاتم الانبیا
-        if (roadClass) addressParts.push(roadClass); // road class (e.g., Boulevard, Street)
-        if (neighbourhood) addressParts.push(neighbourhood); // road class (e.g., Boulevard, Street)
-        if (road) addressParts.push(road); // road name (e.g., بلوار سجاد)
-        if (name) addressParts.push(name); // neighborhood or street name (e.g., اندیشه, مشکینی)
-
-        let formattedAddress = addressParts.join("، ");
-
-        setAddress(formattedAddress); // Update the address
-      } else {
-        setAddress("آدرس یافت نشد");
-      }
+      setAddress(
+        addressParts.length ? addressParts.join("، ") : "آدرس یافت نشد"
+      );
     } catch (error) {
       console.error("خطا در دریافت آدرس:", error);
       setAddress("خطا در دریافت آدرس");
