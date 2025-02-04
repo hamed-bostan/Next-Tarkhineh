@@ -16,7 +16,6 @@ export default function UserAddressList() {
 
   const handleEdit = (address) => {
     setEditingAddress(address); // Set the editing address
-    // setSelectedAddress(address.address); // Update the selected address
     openAddressDialog();
   };
 
@@ -32,7 +31,6 @@ export default function UserAddressList() {
           className="bg-[#F9F9F9] border border-[#CBCBCB] rounded-sm p-4 text-xs text-[#717171] grid grid-cols-3"
         >
           <p className="text-[#353535] col-span-2 mb-2">{item.address}</p>
-          {/* <p className="text-[#353535] col-span-2 mb-2">wow 222</p> */}
           <div className="flex gap-x-3 mr-auto">
             <Pencil
               onClick={() => handleEdit(item)}
