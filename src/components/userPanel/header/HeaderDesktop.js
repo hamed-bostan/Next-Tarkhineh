@@ -2,7 +2,7 @@ import MyButton from "@/components/common/MyButton";
 import { Separator } from "@/components/ui/separator";
 import { CirclePlus } from "lucide-react";
 
-export default function HeaderDesktop({ label, style, button, onClick }) {
+export default function HeaderDesktop({ label, style, button, openGeolocationDialog }) {
   return (
     <div className={`hidden md:block ${style}`}>
       <div className="flex justify-between items-center mb-2">
@@ -10,7 +10,7 @@ export default function HeaderDesktop({ label, style, button, onClick }) {
         {button && (
           <MyButton
             icon={<CirclePlus size={16} />}
-            onClick={onClick}
+            onClick={openGeolocationDialog}
             label="افزودن آدرس جدید"
             variant="outline"
             buttonStyle="hidden md:flex text-[#417F56] border-none shadow-none p-0 hover:bg-transparent hover:text-[#326343] md:text-xs"

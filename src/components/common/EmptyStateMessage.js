@@ -8,7 +8,7 @@ export default function EmptyStateMessage({
   button,
   buttonText,
   href,
-  onClick,
+  openGeolocationDialog,
 }) {
   return (
     <div className="relative border border-[#CBCBCB] rounded-lg min-h-96">
@@ -33,7 +33,7 @@ export default function EmptyStateMessage({
           </Link>
         ) : (
           <MyButton
-            onClick={onClick}
+            onClick={openGeolocationDialog}
             label={buttonText}
             variant="outline"
             buttonStyle="text-[#417F56] border-[#417F56] absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-7 w-36 hover:text-[#FFFFFF] md:w-40 lg:w-48 md: translate-y-8"

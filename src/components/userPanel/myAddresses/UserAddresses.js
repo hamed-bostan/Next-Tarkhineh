@@ -4,18 +4,18 @@ import { Pencil, Trash2 } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import HeaderDesktop from "../header/HeaderDesktop";
 
-export default function UserAddresses({ onClick }) {
+export default function UserAddresses({ openGeolocationDialog }) {
   return (
     <div className="md:border md:border-[#CBCBCB] md:rounded-lg md:p-5">
       <HeaderDesktop
         label="آدرس ها"
         style="mb-4"
         button={true}
-        onClick={onClick}
+        openGeolocationDialog={openGeolocationDialog}
       />
       <UserAddressList />
       <MyButton
-        onClick={onClick}
+        onClick={openGeolocationDialog}
         label="افزودن آدرس جدید"
         variant="outline"
         buttonStyle="text-[#417F56] border-[#417F56] hover:text-[#fff] mt-6 mx-auto md:hidden"

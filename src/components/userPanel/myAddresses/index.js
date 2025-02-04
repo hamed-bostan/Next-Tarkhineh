@@ -10,7 +10,7 @@ import { AddressProvider } from "@/context/AddressContext";
 
 export default function MyAddresses() {
   const addresses = useSelector((state) => state.address.addresses); // Get address from Redux
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isGeolocationDialogOpen, setIsGeolocationDialogOpen] = useState(false);
   const [isAddressDialogOpen, setIsAddressDialogOpen] = useState(false);
 
   return (
@@ -20,15 +20,15 @@ export default function MyAddresses() {
           text="شما در حال حاضر هیچ آدرسی ثبت نکرده‌اید!"
           button={true}
           buttonText="افزودن آدرس"
-          onClick={() => setIsModalOpen(true)} // Open modal on click
+          openGeolocationDialog={() => setIsGeolocationDialogOpen(true)}
         />
       ) : (
-        <UserAddresses onClick={() => setIsModalOpen(true)} />
+        <UserAddresses openGeolocationDialog={() => setIsGeolocationDialogOpen(true)} />
       )}
 
       <GeolocationDialog
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        isOpen={isGeolocationDialogOpen}
+        onClose={() => setIsGeolocationDialogOpen(false)}
         openAddressDialog={() => setIsAddressDialogOpen(true)}
       />
       <AddressDialog
