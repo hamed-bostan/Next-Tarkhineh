@@ -68,6 +68,11 @@ export default function AddressForm() {
     setEditingAddress(null);
   }
 
+  function onCancel() {
+    closeAddressDialog();
+    setEditingAddress(null);
+  }
+
   return (
     <form onSubmit={handleFormSubmit}>
       <MyInput
@@ -103,7 +108,7 @@ export default function AddressForm() {
       />
       <div className="flex justify-between mt-6 gap-x-4">
         <MyButton
-          onClick={closeAddressDialog}
+          onClick={onCancel}
           variant="outline"
           label="انصراف"
           buttonStyle="text-[#417F56] border-none hover:text-[#fff] w-full shadow-none hover:shadow-sm"
