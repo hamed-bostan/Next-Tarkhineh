@@ -3,10 +3,21 @@ import { createContext, useState } from "react";
 export const AddressContext = createContext();
 
 export function AddressProvider({ children }) {
-  const [selectedAddress, setSelectedAddress] = useState("");
+  const [editingAddress, setEditingAddress] = useState(null);
+
+  const [selectedAddress, setSelectedAddress] = useState(
+    editingAddress?.address || ""
+  );
 
   return (
-    <AddressContext.Provider value={{ selectedAddress, setSelectedAddress }}>
+    <AddressContext.Provider
+      value={{
+        selectedAddress,
+        setSelectedAddress,
+        editingAddress,
+        setEditingAddress,
+      }}
+    >
       {children}
     </AddressContext.Provider>
   );

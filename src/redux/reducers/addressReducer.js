@@ -22,9 +22,17 @@ const addressSlice = createSlice({
         (address) => address.id !== action.payload
       ); // Remove address by id
     },
+    updateAddress: (state, action) => {
+      const index = state.addresses.findIndex(
+        (address) => address.id === action.payload.id
+      );
+      if (index !== -1) {
+        state.addresses[index] = action.payload; // Update the address object
+      }
+    },
   },
 });
 
-export const { storeAddress, clearAddresses, deleteAddress } =
+export const { storeAddress, clearAddresses, deleteAddress, updateAddress } =
   addressSlice.actions;
 export default addressSlice.reducer;
