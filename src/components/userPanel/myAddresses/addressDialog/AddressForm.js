@@ -5,7 +5,7 @@ import MyButton from "@/components/common/MyButton";
 import MyInput from "@/components/common/MyInput";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { storeAddress, updateAddress } from "@/redux/reducers/addressReducer";
 import { AddressContext } from "@/context/AddressContext";
 import { useAddressDialog } from "@/context/AddressDialogContext";
@@ -23,7 +23,6 @@ export default function AddressForm() {
   } = useContext(AddressContext);
 
   const { closeAddressDialog } = useAddressDialog(); // Access the context values
-  const addresses = useSelector((state) => state.address.addresses); // Get addresses from Redux
 
   const dispatch = useDispatch();
 
@@ -51,7 +50,7 @@ export default function AddressForm() {
           title,
           phoneNumber,
           name: familyName,
-          address: addresses.address,
+          address: selectedAddress,
         })
       );
     } else {
