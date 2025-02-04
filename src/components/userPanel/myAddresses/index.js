@@ -11,7 +11,7 @@ import { AddressProvider } from "@/context/AddressContext";
 export default function MyAddresses() {
   const addresses = useSelector((state) => state.address.addresses); // Get address from Redux
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isModalAddressOpen, setIsModalAddressOpen] = useState(false);
+  const [isAddressDialogOpen, setIsAddressDialogOpen] = useState(false);
 
   return (
     <AddressProvider>
@@ -29,11 +29,11 @@ export default function MyAddresses() {
       <GeolocationDialog
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        setIsInformedAddress={setIsModalAddressOpen}
+        openAddressDialog={() => setIsAddressDialogOpen(true)}
       />
       <AddressDialog
-        isOpen={isModalAddressOpen}
-        onClose={() => setIsModalAddressOpen(false)}
+        isOpen={isAddressDialogOpen}
+        onClose={() => setIsAddressDialogOpen(false)}
       />
     </AddressProvider>
   );

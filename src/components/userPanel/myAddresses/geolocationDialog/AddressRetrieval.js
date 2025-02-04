@@ -2,7 +2,7 @@
 import { useState } from "react";
 import LocationPicker from "./LocationPicker";
 
-export default function AddressRetrieval({ setIsInformedAddress, onClose }) {
+export default function AddressRetrieval({ openAddressDialog, onClose }) {
   const [location, setLocation] = useState(null);
   const [address, setAddress] = useState(null);
 
@@ -32,7 +32,7 @@ export default function AddressRetrieval({ setIsInformedAddress, onClose }) {
     <LocationPicker
       onLocationSelect={handleLocationSelect}
       address={address}
-      setIsInformedAddress={setIsInformedAddress}
+      openAddressDialog={openAddressDialog}
       onClose={onClose}
     />
   );

@@ -27,7 +27,7 @@ const customIcon = new L.Icon({
 
 export default function LocationPicker({
   onLocationSelect,
-  setIsInformedAddress,
+  openAddressDialog,
   onClose,
 }) {
   const [position, setPosition] = useState([36.2976, 59.5671]); // Default: Mashhad Azadi Square
@@ -48,7 +48,7 @@ export default function LocationPicker({
       return;
     }
     setSelectedAddress(address); // Store in Context api
-    setIsInformedAddress(true);
+    openAddressDialog();
     onClose();
   };
 

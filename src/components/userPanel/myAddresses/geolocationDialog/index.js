@@ -8,7 +8,7 @@ import {
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import AddressRetrieval from "./AddressRetrieval";
 
-export function GeolocationDialog({ isOpen, onClose, setIsInformedAddress }) {
+export function GeolocationDialog({ isOpen, onClose, openAddressDialog }) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[425px] p-0">
@@ -19,7 +19,7 @@ export function GeolocationDialog({ isOpen, onClose, setIsInformedAddress }) {
           </DialogHeader>
         </VisuallyHidden>
         <AddressRetrieval
-          setIsInformedAddress={setIsInformedAddress}
+          openAddressDialog={openAddressDialog}
           onClose={onClose}
         />
       </DialogContent>
