@@ -39,7 +39,7 @@ export default function CartSummary() {
   return (
     <div
       className={`text-sm text-[#353535] md:border md:border-[#CBCBCB] md:p-6 md:rounded-lg md:h-fit ${
-        hasBorder && "border border-[red]"
+        hasBorder && "border border-[#CBCBCB] rounded-lg p-4"
       }`}
     >
       <div className="hidden md:flex justify-between mb-3">
