@@ -4,8 +4,11 @@ import { ArrowLeft, ArrowRight, Trash2 } from "lucide-react";
 import { clear } from "@/redux/actions/cartAction";
 import { useDispatch, useSelector } from "react-redux";
 import { tabsConfig } from "./TabsConfig";
+import { useCheckoutTab } from "@/context/CheckoutTabContext";
 
-export default function HeaderMobile({ setActiveTab, activeTab }) {
+export default function HeaderMobile() {
+  const { activeTab, setActiveTab } = useCheckoutTab();
+
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.selectedItems);
 

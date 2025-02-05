@@ -4,9 +4,12 @@ import { OctagonAlert, Trash2 } from "lucide-react";
 import { useSelector, useDispatch } from "react-redux";
 import { clear } from "@/redux/actions/cartAction";
 import formatToPersianStyle from "@/lib/formattedPrice";
+import { useCheckoutTab } from "@/context/CheckoutTabContext";
 
 export default function CartSummary() {
   const dispatch = useDispatch();
+  const { activeTab } = useCheckoutTab();
+  const hasBorder = activeTab === 1 || activeTab === 2;
 
   // Fetch the itemsCounter from the Redux store
   const itemsCounter = useSelector((state) => state.cart.itemsCounter);
@@ -34,7 +37,11 @@ export default function CartSummary() {
   };
 
   return (
-    <div className="text-sm text-[#353535] md:border md:border-[#CBCBCB] md:p-6 md:rounded-lg md:h-fit">
+    <div
+      className={`text-sm text-[#353535] md:border md:border-[#CBCBCB] md:p-6 md:rounded-lg md:h-fit ${
+        hasBorder && "border border-[red]"
+      }`}
+    >
       <div className="hidden md:flex justify-between mb-3">
         <span className="text-base">سبد خرید ({itemsCounter})</span>
         <Trash2

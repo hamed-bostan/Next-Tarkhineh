@@ -1,6 +1,9 @@
+import { useCheckoutTab } from "@/context/CheckoutTabContext";
 import { tabsConfig } from "./TabsConfig";
 
-export default function HeaderDesktop({ setActiveTab, activeTab }) {
+export default function HeaderDesktop() {
+  const { activeTab, setActiveTab } = useCheckoutTab();
+
   return (
     <div className="hidden md:flex justify-between mb-7">
       {tabsConfig.map((tab) => (

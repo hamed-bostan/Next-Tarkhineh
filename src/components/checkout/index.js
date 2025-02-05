@@ -5,6 +5,7 @@ import Header from "./header";
 import OrderOverview from "./orderOverview";
 import Payments from "./payments";
 import ShoppingCart from "./shoppingCart";
+import { CheckoutTabProvider } from "@/context/CheckoutTabContext";
 
 export default function Checkout() {
   const [activeTab, setActiveTab] = useState(0);
@@ -14,9 +15,11 @@ export default function Checkout() {
   const ActiveTabComponent = tabs[activeTab];
 
   return (
-    <section className="px-5 py-6">
-      <Header setActiveTab={setActiveTab} activeTab={activeTab} />
-      <ActiveTabComponent />
-    </section>
+    <CheckoutTabProvider>
+      <section className="px-5 py-6">
+        <Header setActiveTab={setActiveTab} activeTab={activeTab} />
+        <ActiveTabComponent />
+      </section>
+    </CheckoutTabProvider>
   );
 }
