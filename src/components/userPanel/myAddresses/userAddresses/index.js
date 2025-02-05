@@ -12,7 +12,9 @@ export default function UserAddresses() {
   return (
     <div
       className={`md:border md:border-[#CBCBCB] md:rounded-lg md:p-5 ${
-        pathname === "/checkout" ? "border border-[#CBCBCB] p-4 pb-6 rounded-lg" : ""
+        pathname === "/checkout"
+          ? "border border-[#CBCBCB] p-4 pb-6 rounded-lg"
+          : ""
       }`}
     >
       <HeaderDesktop
@@ -26,7 +28,9 @@ export default function UserAddresses() {
         onClick={openGeolocationDialog}
         label="افزودن آدرس جدید"
         variant="outline"
-        buttonStyle="text-[#417F56] border-[#417F56] hover:text-[#fff] mt-6 mx-auto md:hidden"
+        buttonStyle={`${
+          pathname === "/checkout" && "hidden"
+        } text-[#417F56] border-[#417F56] hover:text-[#fff] mt-6 mx-auto md:hidden`}
       />
     </div>
   );
