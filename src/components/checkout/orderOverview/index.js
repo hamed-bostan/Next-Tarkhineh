@@ -1,7 +1,7 @@
 import MyAddresses from "@/components/userPanel/myAddresses";
-import MoreInformation from "./address/MoreInformation";
 import OrderDeliveryMethod from "./OrderDeliveryMethod";
 import CartSummary from "../CartSummary";
+import MoreInformation from "./MoreInformation";
 
 export default function OrderOverview() {
   return (
