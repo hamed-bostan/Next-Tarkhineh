@@ -1,7 +1,6 @@
 "use client";
 
 import { useSelector } from "react-redux";
-import { Separator } from "@/components/ui/separator";
 import Items from "./items";
 import CartSummary from "../../CartSummary";
 import EmptyStateMessage from "@/components/common/EmptyStateMessage";
@@ -21,7 +20,6 @@ export default function CartDetails() {
           }`}
         >
           <Items selectedItems={selectedItems} />
-          <Separator className="md:hidden" />
           <CartSummary />
         </div>
       ) : (

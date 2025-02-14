@@ -5,11 +5,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { clear } from "@/redux/actions/cartAction";
 import formatToPersianStyle from "@/lib/formattedPrice";
 import { useCheckoutTab } from "@/context/CheckoutTabContext";
+import ItemsMobile from "./shoppingCart/cartDetails/items/itemsMobile";
 
 export default function CartSummary() {
   const dispatch = useDispatch();
   const { activeTab } = useCheckoutTab();
   const hasBorder = activeTab === 1 || activeTab === 2;
+  const hasQuantitySelector = activeTab === 1 || activeTab === 2;
 
   // Fetch the itemsCounter from the Redux store
   const itemsCounter = useSelector((state) => state.cart.itemsCounter);
@@ -51,7 +53,12 @@ export default function CartSummary() {
           className="cursor-pointer"
         />
       </div>
-      <Separator className="hidden md:block" />
+      <Separator className="hidden md:block md:mb-3" />
+      {hasQuantitySelector && (
+        <div className="hidden md:block">
+          <ItemsMobile selectedItems={selectedItems} />
+        </div>
+      )}
       <div className="flex justify-between py-3">
         <span>تخفیف محصولات</span>
         <span className="text-[#717171]">
