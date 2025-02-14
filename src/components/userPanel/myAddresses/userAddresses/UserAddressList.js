@@ -24,7 +24,7 @@ export default function UserAddressList() {
   };
 
   return (
-    <div className="flex flex-col gap-y-2">
+    <div className="grid gap-y-2 md:grid-cols-2 md:gap-x-2 lg:gap-x-4">
       {addresses.map((item, index) => (
         <div
           key={index}
