@@ -1,10 +1,10 @@
 import ItemsDesktop from "./itemsDesktop";
-import ItemsMobile from "./itemsMobile";
+import ItemsOverviewMobile from "@/components/checkout/itemsOverviewMobile";
 
 export default function Items({ selectedItems }) {
   return (
     <>
-      <ItemsMobile selectedItems={selectedItems} containerStyle="md:hidden" />
+      <ItemsOverviewMobile selectedItems={selectedItems} containerStyle="md:hidden" />
       <ItemsDesktop selectedItems={selectedItems} />
     </>
   );

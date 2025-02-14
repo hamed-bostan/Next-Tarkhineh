@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { clear } from "@/redux/actions/cartAction";
 import formatToPersianStyle from "@/lib/formattedPrice";
 import { useCheckoutTab } from "@/context/CheckoutTabContext";
-import ItemsMobile from "./shoppingCart/cartDetails/items/itemsMobile";
+import ItemsOverviewMobile from "./itemsOverviewMobile";
 
 export default function CartSummary() {
   const dispatch = useDispatch();
@@ -56,7 +56,7 @@ export default function CartSummary() {
       <Separator className="hidden md:block md:mb-3" />
       {hasQuantitySelector && (
         <div className="hidden md:block">
-          <ItemsMobile selectedItems={selectedItems} />
+          <ItemsOverviewMobile selectedItems={selectedItems} />
         </div>
       )}
       <div className="flex justify-between py-3">

@@ -2,7 +2,7 @@ import { Separator } from "@/components/ui/separator";
 import ItemsCard from "./ItemsCard";
 import { useCheckoutTab } from "@/context/CheckoutTabContext";
 
-export default function ItemsMobile({ selectedItems, containerStyle }) {
+export default function ItemsOverviewMobile({ selectedItems, containerStyle }) {
   const { activeTab } = useCheckoutTab();
   const shoppingCartTab = activeTab === 0;
 
