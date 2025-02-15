@@ -23,17 +23,17 @@ export default function ActionButton() {
       <div className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer">
         <Search color="#417F56" className="h-4 w-4" />
       </div>
-      <div
-        className={`p-2 box-content rounded-sm relative ${
-          pathname === "/checkout" ? "bg-[#417F56]" : "bg-[#E5F2E9]"
-        }`}
-      >
+      <div className="relative">
         <Link href="/checkout">
-          <ShoppingCart
-            className={`h-4 w-4 ${
-              pathname === "/checkout" ? "text-[#fff]" : "text-[#417F56]"
+          <div
+            className={`p-2 box-content rounded-sm  ${
+              pathname === "/checkout"
+                ? "bg-[#417F56] text-[#fff]"
+                : "bg-[#E5F2E9] text-[#417F56]"
             }`}
-          />
+          >
+            <ShoppingCart className="h-4 w-4" />
+          </div>
         </Link>
         {itemsCounter > 0 && (
           <span className="text-xs text-[#fff] bg-[#61AE7B] rounded-full absolute top-1 right-0 w-3 h-3 p-2 flex justify-center items-center">
