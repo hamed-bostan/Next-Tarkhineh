@@ -47,14 +47,21 @@ export default function ActionButton() {
 
 function UserMenuPopover() {
   const { data: session } = useSession(); // Client-side session retrieval
+  const pathname = usePathname();
 
   return (
     <Popover>
       <PopoverTrigger asChild>
         {session ? (
-          <div className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer flex">
-            <User color="#417F56" className="h-4 w-4" />
-            <ArrowDown color="#417F56" className="h-4 w-4" />
+          <div
+            className={`p-2 box-content rounded-sm cursor-pointer flex ${
+              pathname === "/userPanel"
+                ? "bg-[#417F56] text-[#fff]"
+                : "bg-[#E5F2E9] text-[#417F56]"
+            }`}
+          >
+            <User className="h-4 w-4" />
+            <ArrowDown className="h-4 w-4" />
           </div>
         ) : (
           <Link
