@@ -1,13 +1,28 @@
+"use client";
+
+import { useState } from "react";
+import CartSummary from "../CartSummary";
 import DiscountCode from "./DiscountCode";
-import PaymentGateway from "./PaymentGateway";
 import PaymentMethod from "./PaymentMethod";
+import OnlinePayment from "./OnlinePayment";
+import PayOnDelivery from "./PayOnDelivery";
 
 export default function Payments() {
+  const [selectedTab, setSelectedTab] = useState("OnlinePayment");
+
   return (
-    <>
-      <DiscountCode />
-      <PaymentMethod />
-      <PaymentGateway />
-    </>
+    <section className="md:grid md:grid-cols-[60fr_40fr] md:gap-x-4 lg:gap-x-6">
+      <div>
+        <DiscountCode />
+        <PaymentMethod
+          selectedTab={selectedTab}
+          setSelectedTab={setSelectedTab}
+        />
+        {/* <PaymentGateway /> */}
+        {selectedTab === "OnlinePayment" && <OnlinePayment />}
+        {selectedTab === "PayOnDelivery" && <PayOnDelivery />}
+      </div>
+      <CartSummary />
+    </section>
   );
 }

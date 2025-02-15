@@ -5,7 +5,7 @@ import { BadgePercent } from "lucide-react";
 
 export default function DiscountCode() {
   return (
-    <div className="p-4 border border-[#CBCBCB] rounded-lg">
+    <div className="p-4 border border-[#CBCBCB] rounded-lg mb-3 md:mb-5">
       <div className="mb-2 flex gap-x-1 items-center">
         <BadgePercent color="#353535" className="w-4 h-4" />
         <span className="text-sm text-[#353535]">ثبت کد تخفیف</span>

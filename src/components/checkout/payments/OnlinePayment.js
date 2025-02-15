@@ -2,9 +2,9 @@ import { Separator } from "@/components/ui/separator";
 import { Wallet } from "lucide-react";
 import Image from "next/image";
 
-export default function PaymentGateway() {
+export default function OnlinePayment() {
   return (
-    <div className="p-4 border border-[#CBCBCB] rounded-lg md:grid md:grid-cols-[30fr_60fr]">
+    <div className="p-4 border border-[#CBCBCB] rounded-lg md:grid md:grid-cols-[30fr_60fr] mb-3 md:mb-5">
       <div className="flex items-center gap-x-1 text-[#353535] mb-2 md:mb-0 md:items-start">
         <Wallet className="w-4 h-4 md:w-5 md:h-5" />
         <span className="text-sm">درگاه پرداخت</span>
