@@ -8,7 +8,7 @@ export default function OrderDeliveryMethod({ selectedTab, setSelectedTab }) {
   }
 
   return (
-    <div className="border border-[#CBCBCB] rounded-lg text-xs text-[#717171] p-4 md:text-sm md:grid md:grid-cols-3 mb-3">
+    <div className="border border-[#CBCBCB] rounded-lg text-xs text-[#717171] p-4 md:text-sm md:grid md:grid-cols-3 mb-3 md:mb-5">
       <div className="flex gap-x-1 items-center mb-4 md:mb-0">
         <Truck color="#353535" className="w-4 h-4 md:w-5 md:h-5" />
         <span className="text-[#353535] text-sm md:text-base">

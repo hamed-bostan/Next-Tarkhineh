@@ -18,7 +18,6 @@ export default function Payments() {
           selectedTab={selectedTab}
           setSelectedTab={setSelectedTab}
         />
-        {/* <PaymentGateway /> */}
         {selectedTab === "OnlinePayment" && <OnlinePayment />}
         {selectedTab === "PayOnDelivery" && <PayOnDelivery />}
       </div>
