@@ -29,7 +29,7 @@ export default function HeaderDesktop({
           />
         )}
       </div>
-      <Separator className="bg-[#CBCBCB]" />
+      <Separator />
     </div>
   );
 }

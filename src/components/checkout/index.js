@@ -3,11 +3,12 @@
 import Header from "./header";
 import OrderOverview from "./orderOverview";
 import Payments from "./payments";
-import ShoppingCart from "./shoppingCart";
+
 import {
   CheckoutTabProvider,
   useCheckoutTab,
 } from "@/context/CheckoutTabContext";
+import ShoppingCart from "./shoppingCart";
 
 export default function Checkout() {
   return (
