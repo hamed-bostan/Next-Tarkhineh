@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 import { Separator } from "@/components/ui/separator";
 import { userMenuItems } from "../UserMenuItems";
 import { useSession } from "next-auth/react";
+import { useState } from "react";
 
 export default function ActionButton() {
   const pathname = usePathname();
@@ -48,9 +49,10 @@ export default function ActionButton() {
 function UserMenuPopover() {
   const { data: session } = useSession(); // Client-side session retrieval
   const pathname = usePathname();
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
 
   return (
-    <Popover>
+    <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
       <PopoverTrigger asChild>
         {session ? (
           <div
@@ -78,6 +80,7 @@ function UserMenuPopover() {
             {userMenuItems.map((item, index) => (
               <div key={index}>
                 <Link
+                  onClick={() => setIsPopoverOpen(false)}
                   href={item.href}
                   className="flex items-center text-xs gap-x-1 py-2 cursor-pointer w-fit"
                 >
