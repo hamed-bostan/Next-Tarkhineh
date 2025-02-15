@@ -16,21 +16,21 @@ export default function OnlinePayment() {
           width={50}
           height={50}
           alt="bank image"
-          className="w-20 h-20 md:w-28 md:h-28"
+          className="w-20 h-20 lg:w-28 lg:h-28"
         />
         <Image
           src="/assets/images/bank/bank-melat.jpg"
           width={50}
           height={50}
           alt="bank image"
-          className="w-20 h-20 md:w-28 md:h-28"
+          className="w-20 h-20 lg:w-28 lg:h-28"
         />
         <Image
           src="/assets/images/bank/bank-parsian.jpg"
           width={50}
           height={50}
           alt="bank image"
-          className="w-20 h-20 md:w-28 md:h-28"
+          className="w-20 h-20 lg:w-28 lg:h-28"
         />
       </div>
       <div className="text-xs text-[#717171] text-center md:col-start-2 md:text-start md:w-fit">

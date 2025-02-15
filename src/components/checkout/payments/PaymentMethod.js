@@ -23,7 +23,7 @@ export default function PaymentMethod({ selectedTab, setSelectedTab }) {
         />
         <label
           htmlFor="term1"
-          className="cursor-pointer md:col-span-2 ml-1 mr-2 md:mx-0"
+          className="md:col-span-2 ml-1 mr-2 md:mx-0 w-fit md:mb-1"
         >
           پرداخت اینترنتی
         </label>
@@ -44,7 +44,7 @@ export default function PaymentMethod({ selectedTab, setSelectedTab }) {
         />
         <label
           htmlFor="term2"
-          className="cursor-pointer md:col-span-2 ml-1 mr-2 md:mx-0"
+          className="md:col-span-2 ml-1 mr-2 md:mx-0 w-fit md:mb-1"
         >
           پرداخت در محل
         </label>

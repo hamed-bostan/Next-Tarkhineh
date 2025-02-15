@@ -25,7 +25,7 @@ export default function OrderDeliveryMethod({ selectedTab, setSelectedTab }) {
         />
         <label
           htmlFor="term1"
-          className="cursor-pointer md:col-span-2 ml-1 mr-2 md:mx-0"
+          className="md:col-span-2 ml-1 mr-2 md:mx-0 w-fit mb-1"
         >
           ارسال توسط پیک
         </label>
@@ -46,7 +46,7 @@ export default function OrderDeliveryMethod({ selectedTab, setSelectedTab }) {
         />
         <label
           htmlFor="term2"
-          className="cursor-pointer md:col-span-2 ml-1 mr-2 md:mx-0"
+          className="md:col-span-2 ml-1 mr-2 md:mx-0 w-fit mb-1"
         >
           تحویل حضوری
         </label>
