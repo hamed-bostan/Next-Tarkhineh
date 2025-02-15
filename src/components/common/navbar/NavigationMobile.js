@@ -49,6 +49,7 @@ export default function NavigationMobile({
               key={item.id}
               item={item}
               isLast={index < filteredItems.length - 1}
+              handleClose={handleClose}
             />
           ))}
         </div>
@@ -57,12 +58,16 @@ export default function NavigationMobile({
   );
 }
 
-function NavigationList({ item, isLast }) {
+function NavigationList({ item, isLast, handleClose }) {
   const pathname = usePathname();
 
   return (
     <>
-      <Link href={item.path} className="flex items-center gap-x-1 py-2">
+      <Link
+        onClick={handleClose}
+        href={item.path}
+        className="flex items-center gap-x-1 py-2"
+      >
         <Image
           src={item.image}
           alt={item.text}

@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 import { Separator } from "@/components/ui/separator";
 import { userMenuItems } from "../UserMenuItems";
 import { useSession } from "next-auth/react";
+import { useState } from "react";
 
 export default function ActionButton() {
   const pathname = usePathname();
@@ -22,17 +23,17 @@ export default function ActionButton() {
       <div className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer">
         <Search color="#417F56" className="h-4 w-4" />
       </div>
-      <div
-        className={`p-2 box-content rounded-sm relative ${
-          pathname === "/checkout" ? "bg-[#417F56]" : "bg-[#E5F2E9]"
-        }`}
-      >
+      <div className="relative">
         <Link href="/checkout">
-          <ShoppingCart
-            className={`h-4 w-4 ${
-              pathname === "/checkout" ? "text-[#fff]" : "text-[#417F56]"
+          <div
+            className={`p-2 box-content rounded-sm  ${
+              pathname === "/checkout"
+                ? "bg-[#417F56] text-[#fff]"
+                : "bg-[#E5F2E9] text-[#417F56]"
             }`}
-          />
+          >
+            <ShoppingCart className="h-4 w-4" />
+          </div>
         </Link>
         {itemsCounter > 0 && (
           <span className="text-xs text-[#fff] bg-[#61AE7B] rounded-full absolute top-1 right-0 w-3 h-3 p-2 flex justify-center items-center">
@@ -47,14 +48,22 @@ export default function ActionButton() {
 
 function UserMenuPopover() {
   const { data: session } = useSession(); // Client-side session retrieval
+  const pathname = usePathname();
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
 
   return (
-    <Popover>
+    <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
       <PopoverTrigger asChild>
         {session ? (
-          <div className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer flex">
-            <User color="#417F56" className="h-4 w-4" />
-            <ArrowDown color="#417F56" className="h-4 w-4" />
+          <div
+            className={`p-2 box-content rounded-sm cursor-pointer flex ${
+              pathname === "/userPanel"
+                ? "bg-[#417F56] text-[#fff]"
+                : "bg-[#E5F2E9] text-[#417F56]"
+            }`}
+          >
+            <User className="h-4 w-4" />
+            <ArrowDown className="h-4 w-4" />
           </div>
         ) : (
           <Link
@@ -71,6 +80,7 @@ function UserMenuPopover() {
             {userMenuItems.map((item, index) => (
               <div key={index}>
                 <Link
+                  onClick={() => setIsPopoverOpen(false)}
                   href={item.href}
                   className="flex items-center text-xs gap-x-1 py-2 cursor-pointer w-fit"
                 >
