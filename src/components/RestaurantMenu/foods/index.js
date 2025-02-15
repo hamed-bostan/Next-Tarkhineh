@@ -7,8 +7,8 @@ export default function Foods({ selectedCategory }) {
     <>
       {isAllCategories ? (
         <>
-          <FoodList filter="غذاهای ایرانی" title="غذاهای ایرانی" />
           <FoodList title="غذاهای غیر ایرانی" filter="غذاهای غیر ایرانی" />
+          <FoodList filter="غذاهای ایرانی" title="غذاهای ایرانی" />
           <FoodList title="پیتزاها" filter="پیتزاها" />
           <FoodList title="ساندویچ‌ها" filter="ساندویچ‌ها" />
         </>
