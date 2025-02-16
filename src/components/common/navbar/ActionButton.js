@@ -67,7 +67,7 @@ function UserMenuPopover() {
           </div>
         ) : (
           <Link
-            href="/api/auth/signin"
+            href="/api/auth/signin?callbackUrl=/userPanel"
             className="bg-[#E5F2E9] p-2 box-content rounded-sm cursor-pointer flex"
           >
             <User color="#417F56" className="h-4 w-4" />
