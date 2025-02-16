@@ -1,4 +1,5 @@
 import GitHubProvider from "next-auth/providers/github";
+import GoogleProvider from "next-auth/providers/google";
 
 export const options = {
   providers: [
@@ -22,13 +23,13 @@ export const options = {
         console.log("Profile Google: ", profile);
         let userRole = "Google User";
         return {
+          id: profile.sub, // ✅ `sub` is the correct unique identifier
           ...profile,
-          id: profile.sub,
           role: userRole,
         };
       },
       clientId: process.env.GOOGLE_ID,
-      clientSecret: process.env.GOOGLE_Secret,
+      clientSecret: process.env.GOOGLE_SECRET, // ✅ Fixed variable name
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET, // ✅ Required in production
