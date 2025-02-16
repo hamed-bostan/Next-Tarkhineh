@@ -19,9 +19,11 @@ export default function FoodCard({ foodItem }) {
 }
 
 function FoodImage({ image, title }) {
+  const imageUrl = `https://ourbsjovbidvokapxslo.supabase.co/storage/v1/object/public/food-images/${image}`;
+
   return (
     <Image
-      src={image}
+      src={imageUrl}
       width={300}
       height={300}
       alt={title}
@@ -40,7 +42,6 @@ function FoodDetails({ foodItem }) {
   // Access the cart from Redux store
   const cartItems = useSelector((state) => state.cart.selectedItems);
   const isAddedToCart = cartItems.some((item) => item.id === id); // Check if the item is in the cart
-
 
   function handleAddToCart() {
     if (!isAddedToCart) {
