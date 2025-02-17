@@ -8,6 +8,7 @@ export default function FoodList({ filter, title }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null); // Handle error state
+  console.log(products);
 
   useEffect(() => {
     const getProducts = async () => {

@@ -19,11 +19,9 @@ export default function FoodCard({ foodItem }) {
 }
 
 function FoodImage({ image, title }) {
-  const imageUrl = `https://ourbsjovbidvokapxslo.supabase.co/storage/v1/object/public/food-images/${image}`;
-
   return (
     <Image
-      src={imageUrl}
+      src={image}
       width={300}
       height={300}
       alt={title}
