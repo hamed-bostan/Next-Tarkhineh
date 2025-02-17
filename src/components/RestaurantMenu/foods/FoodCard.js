@@ -5,7 +5,7 @@ import { addItem } from "@/redux/actions/cartAction";
 
 import MyButton from "@/components/common/MyButton";
 import Image from "next/image";
-import { Heart } from "lucide-react";
+import { Heart, Star } from "lucide-react";
 import formatToPersianStyle from "@/lib/formattedPrice";
 import discountPrice from "@/lib/discountPrice";
 
@@ -31,7 +31,7 @@ function FoodImage({ image, title }) {
 }
 
 function FoodDetails({ foodItem }) {
-  const { id, title, description, price, discount, star } = foodItem;
+  const { id, title, description, price, discount } = foodItem;
 
   const discountedPrice = formatToPersianStyle(discountPrice(price, discount));
 
@@ -73,9 +73,10 @@ function FoodDetails({ foodItem }) {
         color="#717171"
         className="w-4 h-4 row-start-3 col-start-1 md:row-start-1 md:col-start-2 md:mr-auto self-center lg:self-start lg:w-5 lg:h-5 cursor-pointer"
       />
-      <span className="row-start-3 col-start-1 mr-6 md:row-start-4 md:mr-0 self-center">
-        {star}
-      </span>
+      <Star
+        color="#717171"
+        className="row-start-3 col-start-1 mr-6 md:row-start-4 md:mr-0 self-center w-4 h-4 md:w-5 md:h-5 cursor-pointer"
+      />
       <MyButton
         onClick={handleAddToCart}
         label={isAddedToCart ? "افزوده شد" : "افزودن به سبد خرید"}
