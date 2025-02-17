@@ -1,13 +1,13 @@
-import { foodInformation } from "@/lib/dataOld";
 import FoodCategoriesCard from "./FoodCategoriesCard";
 
 export default function FoodCategoriesList({
   setSelectedCategory,
   selectedCategory,
+  products,
 }) {
   const FoodCategories = [
     "نمایش همه",
-    ...new Set(foodInformation.map((item) => item.category)),
+    ...new Set(products.map((item) => item.category)),
     "پرفروش‌ترین",
     "اقتصادی‌ترین",
   ];

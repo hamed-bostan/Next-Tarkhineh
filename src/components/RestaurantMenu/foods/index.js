@@ -1,9 +1,7 @@
 import FoodList from "./FoodList";
-import { useProducts } from "@/hooks/useProducts";
 
-export default function Foods({ selectedCategory }) {
+export default function Foods({ selectedCategory, products, loading, error }) {
   const isAllCategories = selectedCategory === "نمایش همه";
-  const { products, loading, error } = useProducts();
 
   if (loading) return <div>در حال بارگزاری ...</div>;
   if (error) return <div>{error}</div>;
