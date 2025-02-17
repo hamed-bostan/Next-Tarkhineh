@@ -1,32 +1,6 @@
-"use client";
-
 import FoodCard from "./FoodCard";
-import { useEffect, useState } from "react";
-import { fetchProducts } from "@/lib/api";
 
-export default function FoodList({ filter, title }) {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null); // Handle error state
-
-  useEffect(() => {
-    const getProducts = async () => {
-      try {
-        const data = await fetchProducts();
-        setProducts(data);
-      } catch (err) {
-        setError("Failed to load products");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    getProducts();
-  }, []);
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
-
+export default function FoodList({ filter, title, products }) {
   const filteredFood = products.filter((item) => item.category === filter);
 
   return (
