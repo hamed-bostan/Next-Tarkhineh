@@ -1,5 +1,4 @@
 import { Carousel, CarouselContent } from "@/components/ui/carousel";
-import { foodInformation } from "@/lib/data";
 import FoodCard from "./FoodCard";
 
 export default function FoodList({
@@ -7,11 +6,10 @@ export default function FoodList({
   filter,
   containerStyle = "",
   titleStyle = "text-[#353535]",
+  products,
 }) {
-  const filteredFood = foodInformation.filter((item) => item.filter === filter);
-  const nonIranianFood = foodInformation.filter(
-    (item) => item.category === filter
-  );
+  const filteredFood = products.filter((item) => item.filter === filter);
+  const nonIranianFood = products.filter((item) => item.category === filter);
 
   return (
     <div className={`p-5 md:p-6 lg:p-7 ${containerStyle}`}>
