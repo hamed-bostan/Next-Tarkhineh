@@ -10,7 +10,7 @@ import { addItem } from "@/redux/actions/cartAction";
 
 export default function FoodCard({ item }) {
   return (
-    <div className="border border-[#CBCBCB] rounded-sm overflow-hidden w-[9.5rem] md:h-72 md:w-48 md:rounded-lg">
+    <div className="border border-[#CBCBCB] rounded-sm overflow-hidden w-[9.5rem] md:w-48 md:rounded-lg">
       <DisplayingImage item={item} />
       <OfferDetails item={item} />
     </div>
@@ -47,7 +47,7 @@ function OfferDetails({ item }) {
   }
 
   return (
-    <div className="grid grid-cols-[1fr_auto] p-2 gap-y-2 md:gap-y-3 md:p-3 text-[#353535] text-xs md:text-sm">
+    <div className="grid grid-cols-[1fr_auto] p-2 gap-y-2 md:gap-y-3 md:p-3 text-[#353535] text-xs md:text-sm h-32 md:h-40">
       <h3 className="md:font-semibold">{title}</h3>
       <Heart
         color="#C30000"
@@ -66,7 +66,7 @@ function OfferDetails({ item }) {
       <MyButton
         onClick={handleAddToCart}
         label={isAddedToCart ? "افزوده شد" : "افزودن به سبد خرید"}
-        buttonStyle={`bg-[#417F56] md:text-sm col-span-full ${
+        buttonStyle={`bg-[#417F56] md:text-sm col-span-full flex self-end ${
           isAddedToCart ? "bg-[#717171] pointer-events-none" : "bg-[#417F56] "
         }`}
       />
