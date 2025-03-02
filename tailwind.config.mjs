@@ -10,14 +10,17 @@ export default {
   theme: {
     extend: {
       container: {
-        center: true, // Ensures the container is centered
+        center: true,
         screens: {
-          sm: "640px",
-          md: "768px",
-          lg: "1024px",
-          xl: "1280px",
-          "2xl": "1440px", // Stops container from growing beyond 1440px
+          "2xl": "1440px", // Ensure `2xl` is strictly 1440px
         },
+      },
+      screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1440px", // Override default 2xl (was 1536px)
       },
       colors: {
         background: "hsl(var(--background))",
