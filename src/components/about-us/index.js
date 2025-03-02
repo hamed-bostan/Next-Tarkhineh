@@ -4,7 +4,7 @@ import Highlights from "./Highlights";
 
 export default function AboutUs() {
   return (
-    <section className="container mx-auto">
+    <section>
       <Banner
         imageSrc="/assets/images/bannerImages/banner-07.jpg"
         text="درباره ترخینه بیشتر بدانید!"

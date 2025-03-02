@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Details() {
   return (
-    <section className="px-5 py-4 lg:px-10">
+    <section className="px-5 py-4 container mx-auto 2xl:px-28">
       <h3 className="text-md font-bold mb-2 text-[#353535]">درباره ما</h3>
       <div className="text-sm grid grid-cols-2 gap-x-4 gap-y-2 text-[#717171] md:grid-rows-[auto_1fr] lg:gap-x-6">
         <p className="col-span-1 row-span-1 text-justify">
