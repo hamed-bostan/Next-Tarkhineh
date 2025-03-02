@@ -13,7 +13,7 @@ export default function FoodCategoriesList({
   ];
 
   return (
-    <div className="flex gap-2 flex-wrap pr-5 md:gap-3">
+    <div className="flex gap-2 flex-wrap md:gap-3 px-5 lg:px-10 2xl:px-28">
       {FoodCategories.map((item, index) => (
         <FoodCategoriesCard
           item={item}

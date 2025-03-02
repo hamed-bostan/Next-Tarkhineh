@@ -26,7 +26,7 @@ export default function RestaurantMenu() {
         setSelectedCategory={setSelectedCategory}
         products={products}
       />
-      <div className="px-5 py-6">
+      <div className="px-5 py-6 lg:px-10 2xl:px-28 mx-auto">
         <CheckoutButton />
         <Foods
           selectedCategory={selectedCategory}
