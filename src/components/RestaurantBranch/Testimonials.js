@@ -58,7 +58,7 @@ const testimonialDetails = [
 ];
 export default function Testimonials() {
   return (
-    <div className="mt-14 px-5 py-6">
+    <div className="mt-14 px-5 py-6 lg:py-7 lg:px-10 2xl:px-28">
       <span className="block text-center font-bold text-[#353535] mb-3 text-sm md:text-base md:mb-4">
         نظرات کاربران
       </span>

@@ -12,7 +12,7 @@ export default function FoodList({
   const nonIranianFood = products.filter((item) => item.category === filter);
 
   return (
-    <div className={`p-5 md:p-6 lg:p-7 ${containerStyle}`}>
+    <div className={`p-5 md:p-6 lg:py-7 lg:px-10 2xl:px-28 ${containerStyle}`}>
       <span className={`font-bold mb-3 block md:text-lg md:mb-5 ${titleStyle}`}>
         {title}
       </span>

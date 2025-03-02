@@ -7,7 +7,7 @@ import Testimonials from "./Testimonials";
 
 export default function RestaurantBranch() {
   return (
-    <section className="container mx-auto">
+    <section>
       <Banner
         imageSrc="/assets/images/bannerImages/banner-04.jpg"
         text="طعم بی‌نظیر طبیعت!"
