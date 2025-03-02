@@ -37,7 +37,7 @@ const branchList = [
 
 export default function BranchOverview() {
   return (
-    <section className="px-5 py-6">
+    <section className="px-5 py-6 lg:px-10 2xl:px-28">
       <h2 className="block text-center mb-3 text-[#353535] md:text-lg font-bold md:mb-5">
         ترخینه گردی
       </h2>
@@ -48,7 +48,7 @@ export default function BranchOverview() {
 
 function BranchListContainer({ branches }) {
   return (
-    <div className="flex flex-col gap-y-3 md:grid md:grid-cols-4 md:gap-x-5">
+    <div className="flex flex-col gap-y-3 md:grid md:grid-cols-2 md:gap-x-5 lg:grid-cols-4">
       {branches.map((branch) => (
         <BranchItem branch={branch} key={branch.id} />
       ))}

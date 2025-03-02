@@ -23,7 +23,7 @@ const menuInformation = [
 
 export default function MenuSection() {
   return (
-    <div className="px-5 mb-16 text-[#353535]">
+    <div className="px-5 mb-16 text-[#353535] lg:px-10 2xl:px-28">
       <h1 className="text-center mb-3 font-bold md:text-xl md:mb-7">
         منوی رستوران
       </h1>
