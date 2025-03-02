@@ -37,7 +37,7 @@ const branchesData = [
 
 export default function BranchList() {
   return (
-    <div className="px-5 py-6">
+    <div className="px-5 py-6 container mx-auto lg:px-10 2xl:px-28">
       <div className="flex flex-col gap-y-7">
         {branchesData.map((item) => (
           <BranchCard data={item} key={item.id} />
