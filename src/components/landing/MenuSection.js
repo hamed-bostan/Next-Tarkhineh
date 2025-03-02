@@ -27,19 +27,19 @@ export default function MenuSection() {
       <h1 className="text-center mb-3 font-bold md:text-xl md:mb-7">
         منوی رستوران
       </h1>
-      <div className="grid grid-cols-2 place-items-center gap-y-16 md:grid-cols-4">
+      <div className="grid grid-cols-2 place-items-center gap-x-4 md:gap-x-6 gap-y-16 md:grid-cols-4">
         {menuInformation.map((item) => {
           return (
             <div
-              className="relative h-28 w-28 flex justify-center lg:w-36 lg:h-36"
+              className="relative h-28 w-full flex justify-center lg:h-36"
               key={item.id}
             >
               <img
                 src={item.image}
                 alt={item.text}
-                className="h-full w-full object-cover"
+                className="h-full object-cover"
               />
-              <div className="bg-[#417F56] shadow-xl w-36 h-20 rounded-sm absolute top-1/2 -z-10 lg:w-52 lg:h-24"></div>
+              <div className="bg-[#417F56] shadow-xl w-full h-20 rounded-sm absolute top-1/2 -z-10 lg:h-24"></div>
               <span className="text-xs w-24 h-8 bg-[#F9F9F9] rounded-sm shadow-md flex items-center justify-center absolute -bottom-1/2 -translate-y-1/2 md:text-base  lg:bottom-0 lg:translate-y-full lg:w-32 lg:h-10">
                 {item.text}
               </span>

@@ -48,7 +48,7 @@ export default function BranchOverview() {
 
 function BranchListContainer({ branches }) {
   return (
-    <div className="flex flex-col gap-y-3 md:grid md:grid-cols-2 md:gap-x-5 lg:grid-cols-4">
+    <div className="flex flex-col gap-y-3 md:grid md:grid-cols-2 md:gap-5 xl:grid-cols-4">
       {branches.map((branch) => (
         <BranchItem branch={branch} key={branch.id} />
       ))}
