@@ -14,7 +14,7 @@ export default function Franchise() {
         text="همین الان به خانواده بزرگ ترخینه بپیوندید!"
         isButton={false}
       />
-      <div className="px-12">
+      <div className="px-10 2xl:px-28 container">
         <Highlights />
         <Separator />
         <Privilege />
