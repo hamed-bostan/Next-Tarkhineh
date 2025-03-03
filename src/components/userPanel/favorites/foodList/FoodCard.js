@@ -10,7 +10,7 @@ import { addItem } from "@/redux/actions/cartAction";
 
 export default function FoodCard({ item }) {
   return (
-    <div className="border border-[#CBCBCB] rounded-sm overflow-hidden w-[9.5rem] md:w-48 md:rounded-lg">
+    <div className="border border-[#CBCBCB] rounded-sm overflow-hidden md:rounded-lg">
       <DisplayingImage item={item} />
       <OfferDetails item={item} />
     </div>
