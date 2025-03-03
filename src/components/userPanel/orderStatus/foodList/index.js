@@ -7,7 +7,7 @@ export default function FoodList() {
 
   return (
     <>
-      <div className="grid grid-cols-3 gap-2 mb-2 md:mb-4 lg:grid-cols-4 2xl:grid-cols-6">
+      <div className="grid grid-cols-3 gap-2 mb-2 md:mb-4 md:grid-cols-2 md:gap-5 lg:grid-cols-4 2xl:grid-cols-6 2xl:gap-4">
         {selectedItems.map((item) => (
           <FoodCard item={item} key={item.id} />
         ))}
