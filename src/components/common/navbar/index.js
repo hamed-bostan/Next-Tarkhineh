@@ -59,7 +59,7 @@ export default function Navbar() {
   }
 
   return (
-    <div className="flex items-center justify-between py-4 px-5 md:px-7 lg:px-28 md:py-9">
+    <div className="flex items-center justify-between py-4 px-5 md:py-9 lg:px-10 2xl:px-28 container">
       <MenuIcon handleOpen={handleOpen} />
       <Logo size="h-8" />
       <NavigationMobile
