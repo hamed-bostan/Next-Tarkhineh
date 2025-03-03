@@ -12,7 +12,7 @@ export default function FoodCard({ item }) {
   const selectedItem = selectedItems.find((item) => item.id === id);
 
   return (
-    <div className="text-xs border border-[#CBCBCB] rounded-lg overflow-hidden w-24 md:w-32">
+    <div className="text-xs border border-[#CBCBCB] rounded-lg overflow-hidden">
       <div className="relative">
         <Image
           src={image}
