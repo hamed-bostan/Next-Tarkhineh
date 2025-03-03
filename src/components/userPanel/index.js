@@ -17,7 +17,7 @@ export default function UserPanel() {
   const ActiveTabComponent = tabs[activeTab];
 
   return (
-    <section className="px-5 py-6">
+    <section className="px-5 py-6 lg:px-10 2xl:px-28">
       <HeaderMobile setActiveTab={setActiveTab} activeTab={activeTab} />
       <div className="md:grid md:grid-cols-[30fr_70fr] md:gap-x-5">
         <Sidebar setActiveTab={setActiveTab} activeTab={activeTab} />
