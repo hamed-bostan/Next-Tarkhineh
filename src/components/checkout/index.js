@@ -25,7 +25,7 @@ function CheckoutContent() {
   const ActiveTabComponent = tabs[activeTab];
 
   return (
-    <section className="px-5 py-6">
+    <section className="px-5 py-6 lg:px-10 2xl:px-28">
       <Header />
       <ActiveTabComponent />
     </section>
